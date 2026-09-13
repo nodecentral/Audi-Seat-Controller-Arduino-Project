@@ -32,7 +32,7 @@ independently.
 | Component | Part / model | Role |
 |---|---|---|
 | Seat switch panel | Preh `13250-757/0200`, marking `NCE02` | OEM Audi switch cluster — passive input device, 12-position connector |
-| Mating connector | TE Connectivity `1534096-1` / `1-1534096-1`, 12-cavity | Plugs into the switch panel; sold in listings cross-referenced to VW `8E0972112A` — see caveat below |
+| Mating connector | TE Connectivity `1534096-1` / `1-1534096-1`, 12-cavity — [sourced from AliExpress](https://www.aliexpress.com/item/1005004665778565.html), pre-wired pigtail | Plugs into the switch panel; wires already terminated, ready to connect to the Nano — see caveat below |
 | Motor driver | Cytron MDD10A | Dual-channel 10A H-bridge DC motor driver |
 | Microcontroller | Arduino Nano (ATmega328) | Reads switch panel, drives motor controller |
 | Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
@@ -58,8 +58,16 @@ confirmed empty.*
 > **Sourcing note:** that TE part number is what online listings sell as a match, cross-referenced
 > against VW `8E0972112A` and described there as a "radar" harness connector — i.e. it's being sold
 > as a generic shell reused across several VAG harnesses, not something listed specifically for this
-> seat switch. Before ordering, confirm cavity count, pitch, and keying against the photographed
-> connector rather than trusting the cross-reference alone.
+> seat switch. A pre-wired pigtail version has been bought and physically mates with the panel,
+> which confirms cavity count/pitch/keying are correct — what's still unconfirmed is which of the
+> pigtail's 12 wires correspond to which of the panel's cavities (see below).
+
+**Open item:** the pigtail presumably brings out all 12 wires, most likely colour-coded or otherwise
+distinguishable per cavity — but that mapping (wire colour/position → cavity number → the PIN 1–6
+functions already identified) hasn't been recorded here yet. Trace each wire from the connector back
+to its cavity before wiring anything to the Nano, and don't rely on wire colour alone matching a
+generic pinout found online, since this connector is sold as a shared shell across multiple VAG
+applications.
 
 ### Motor driver
 
@@ -238,10 +246,9 @@ Not started. Before any of this touches a vehicle:
   destination vehicle. The MDD10A is rated 10A/channel continuous; confirm the motors' stall
   current stays under that with margin, and size wiring/fuses to the stall figure, not the running
   figure.
-- **Connector matching** — use a proper 12-cavity mating connector (TE `1534096-1` /
-  `1-1534096-1`, or verified equivalent) rather than soldering directly to salvaged pins, so the
-  panel can be disconnected for service. Verify cavity count/pitch/keying against the physical
-  connector before buying — see the sourcing note under [Switch panel](#switch-panel).
+- ~~**Connector matching**~~ — done: pre-wired pigtail (TE `1534096-1` / `1-1534096-1`) bought and
+  confirmed to mate with the panel. Still open: trace and record which of its 12 wires land on
+  which cavity, per the note under [Switch panel](#switch-panel).
 - **Enclosure** — the Nano, both driver boards, and the wiring need protection from vibration and
   moisture once installed; this hasn't been designed yet.
 
@@ -253,6 +260,8 @@ Not started. Before any of this touches a vehicle:
   than reading the printed code from photos.
 - Probe the 6 unaccounted-for cavities on the 12-position connector — confirm whether they're
   genuinely unused or carry signals not yet identified.
+- Trace the pigtail's 12 wires back to their cavities and record the mapping in this README —
+  needed before wiring the pigtail to the Nano.
 - Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
