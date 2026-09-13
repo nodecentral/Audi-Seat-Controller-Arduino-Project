@@ -9,6 +9,24 @@ on the OEM hardware so far, the wiring scheme inferred from it, and what's still
 > photographed hardware, not yet confirmed end-to-end with a multimeter — treat resistor values and
 > PIN 6's function as working hypotheses until verified.
 
+## Voltage domains
+
+This system has two electrically separate voltage domains that must never be tied together
+directly:
+
+| Domain | Voltage | Covers |
+|---|---|---|
+| **Motor power** | 12V (vehicle supply) | Cytron `B+`/`B-` terminals → seat motors only |
+| **Logic** | 5V | Nano, its ADC reference, and (per the PIN 6 hypothesis) the switch panel's pull-up supply |
+
+The car is a 12V system, but the Nano and the switch panel's signal lines are **not** — the Nano's
+ADC reads 0–1023 against a 5V reference, and the confirmed PIN 1 idle reading of ~1023 only makes
+sense if the pull-up feeding that line is ~5V. Feeding 12V into a Nano analog/digital pin or into
+the switch panel's signal lines directly will exceed the pin's rating and damage it. The 5V rail is
+**derived from the 12V supply through a regulator** (see [Logic
+supply](#vehicle-integration-checklist) below) — it isn't a separate source you wire in
+independently.
+
 ## Hardware inventory
 
 | Component | Part / model | Role |
@@ -74,7 +92,7 @@ values (820 Ω / 392 Ω) visible on the panel.
 | PIN 3 | Entire seat forward/backward movement | Identified, ADC values not yet measured |
 | PIN 4 | Common reference (ground) | Confirmed |
 | PIN 5 | Backrest recline adjustment | Identified, ADC values not yet measured |
-| PIN 6 | Unknown | **Hypothesis:** shared +5V pull-up supply for the four resistor-ladder inputs (see below) — not yet measured |
+| PIN 6 | Unknown | **Hypothesis:** shared +5V (logic domain, *not* 12V — see [Voltage domains](#voltage-domains)) pull-up supply for the four resistor-ladder inputs — not yet measured |
 
 ## Inferred signal encoding
 
@@ -145,7 +163,8 @@ flowchart LR
     P3 --> A2
     P5 --> A3
     P4 --> GND1
-    P6 -. proposed .-> FIVEV
+    REG -. proposed .-> P6
+    REG -. proposed .-> FIVEV
 
     CTRL1 --> M1
     CTRL2 --> M2
@@ -156,6 +175,7 @@ flowchart LR
     M2 --> MOT2
 
     BATT["12V vehicle supply, fused"] --> BSUP
+    BATT --> REG["5V regulator<br/>(buck/linear, TBD — see Voltage domains)"]
     BSUP --> M1
     BSUP --> M2
 
@@ -164,7 +184,9 @@ flowchart LR
 ```
 
 Note only two of the four confirmed movement axes can be driven per MDD10A board — a second driver
-board is needed to cover all four (see Next Steps).
+board is needed to cover all four (see Next Steps). The 12V supply only ever reaches the `B+`/`B-`
+motor terminals; everything else (switch panel, Nano, ADC lines) runs on the 5V rail produced by
+the regulator, per [Voltage domains](#voltage-domains).
 
 ## Firmware
 
@@ -183,8 +205,15 @@ Not started. Before any of this touches a vehicle:
 - **Power source** — decide whether the controller runs off a fused, switched 12V feed (so it's
   dead with the ignition off) or a permanent feed with its own switching. Either way, fuse it at
   the source, not just at the driver board.
-- **Logic supply** — the Nano needs a clean 5V. Confirm whether the MDD10A's onboard regulator
-  can supply this, or budget a separate 5V regulator/buck converter fed from the same 12V rail.
+- **Logic supply** — the Nano and the switch panel's PIN 6 need a regulated 5V derived from the
+  12V rail, not 12V itself. Two safe options: (a) feed 12V into the Nano's `VIN` pin — its onboard
+  regulator accepts 7–12V and produces 5V for the board (the `5V` pin becomes an output in this
+  case, and the switch panel's PIN 6 could tap it if the resistor-ladder's current draw is small,
+  which it should be); or (b) use a separate 12V→5V buck converter (more efficient than the Nano's
+  linear regulator if driving extra load) and feed its regulated output into the Nano's `5V` pin
+  directly. **Never connect 12V straight to the Nano's `5V` pin** — that pin bypasses the onboard
+  regulator entirely and will destroy the board. Confirm from the MDD10A datasheet whether it
+  already has an onboard 5V logic output before adding a separate regulator.
 - **Common ground** — switch panel PIN 4, Nano GND, both Cytron boards' GND, and the 12V supply
   return all need to share one reference; a floating or high-resistance ground will show up as
   garbage ADC readings on the switch panel lines before it shows up anywhere else.
