@@ -1,6 +1,6 @@
 # Audi Q8 Seat Control Reverse-Engineering Project
 
-Repurposing an Audi 4N095747D switch assembly (Preh 13250-757/0200) as a standalone control
+Repurposing an Audi `4N0959748D` switch assembly (Preh `13250-757/0200`) as a standalone control
 interface for 12V seat motors in a different vehicle. This document tracks what's been measured
 on the OEM hardware so far, the wiring scheme inferred from it, and what's still open before any
 12V motor is connected.
@@ -31,7 +31,7 @@ independently.
 
 | Component | Part / model | Role |
 |---|---|---|
-| Seat switch panel | Preh `13250-757/0200`, marking `NCE02` | OEM Audi switch cluster — passive input device, 12-position connector |
+| Seat switch panel | Audi `4N0959748D`, PCB marked Preh `13250-757/0200` / `NCE02` — also cross-referenced by resellers to Audi S3 (8Y) | OEM Audi switch cluster — passive input device, 12-position connector |
 | Mating connector | TE Connectivity `1534096-1` / `1-1534096-1`, 12-cavity — [sourced from AliExpress](https://www.aliexpress.com/item/1005004665778565.html), pre-wired pigtail | Plugs into the switch panel; wires already terminated, ready to connect to the Nano — see caveat below |
 | Motor driver | Cytron MDD10A | Dual-channel 10A H-bridge DC motor driver |
 | Motor driver control cable | KF2510 2.54mm 5-pin pre-crimped cable, 20cm, 26AWG — sourced from eBay (listing: "KF2510 2.54mm Connectors & Wire Cable 2 3 4 5 6 Pin 20cm 26AWG UK SELLER", seller Electronic-Workshop) | Connectorised end mates with the MDD10A's `DIR1/PWM1/DIR2/PWM2/GND` header; the other end is bare flying leads that land on the Nano (via the HW-152 terminal adapter). Bought as a 2-pack, covering both this board and the second one still to be sourced |
@@ -41,6 +41,19 @@ independently.
 | Power latch module | "Trigger delay turn off" relay module, SRD-12VDC-SL-C based, 10A contacts, adjustable delay (~1–10s), onboard optocoupler — sourced, comes with a matching momentary pushbutton | Gates the permanent 12V feed to everything downstream (buck converter + both Cytron boards); pushbutton wakes it, Nano keeps it awake — see [Power latch](#power-latch) |
 
 ### Switch panel
+
+<img src="images/switch-unit-assembled.jpg" width="500" alt="Assembled switch unit with both rocker paddles">
+
+*Assembled unit as removed from the seat, part label `4N0959748D` / "Audi S3 8Y" visible. Two large
+rocker paddles are what the user actually presses — not the eight individual tactile switches seen
+on the bare PCB below. Each paddle rocks on 4 corners, each corner pressing a different underlying
+switch: 2 paddles × 4 corners = the 8 switches already documented, and lines up exactly with 4
+axes × 2 directions each. This is a standard mechanical pattern for this style of OEM seat switch.*
+
+<img src="images/switch-unit-connector.jpg" width="500" alt="Male connector header molded into the switch housing">
+
+*The mating connector is molded directly into the housing — this is the physical point the TE
+pigtail (below) plugs into.*
 
 <img src="images/switch-panel-full.jpg" width="500" alt="Preh switch panel, full board">
 
@@ -159,7 +172,9 @@ Nano ADC pin  <----------+----------  e.g. PIN 1 (front tilt)
 Each of the four movement pins (1, 2, 3, 5) is expected to follow this same pattern: idle high
 (~1023), pulled to a low-but-distinct ADC value depending on which of the two direction buttons for
 that axis is pressed. That matches the panel having 8 switches for 4 axes (2 directions each), and
-the two SMD resistor values repeating across the board.
+the two SMD resistor values repeating across the board — and now that the assembled unit's been
+seen (see [Switch panel](#switch-panel)), it also matches the physical layout exactly: 2 external
+rocker paddles, each a 4-corner rocker, giving 2 × 4 = 8 underlying switches.
 
 ## Proposed system wiring
 
