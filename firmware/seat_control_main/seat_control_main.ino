@@ -13,6 +13,15 @@
 // Safety cutoff: if a direction is held continuously past MAX_RUN_MS, the motor is
 // stopped regardless of switch state. This guards against a stuck button, broken wire,
 // or mechanical jam holding a seat motor energized indefinitely.
+//
+// Power latch: the whole board (Nano, buck converter, both Cytron boards) sits behind a
+// relay on the permanent 12V feed, normally off. A momentary pushbutton and POWER_HOLD_PIN
+// wire in parallel to the relay coil's trigger — either can energize it. On boot, this
+// sketch immediately drives POWER_HOLD_PIN high to take over holding the relay on from the
+// button (which the user has likely already released). After STANDBY_TIMEOUT_MS with no
+// switch-panel activity, it releases the pin; if the button isn't being held at that
+// instant, the relay drops out and everything (including this Nano) loses power. This is
+// what keeps the car battery from being drained by a permanently-live controller.
 
 struct Axis {
   const char* name;
@@ -35,16 +44,24 @@ Axis axes[] = {
 const unsigned long MAX_RUN_MS = 8000;
 const uint8_t MOTOR_SPEED = 200; // 0-255 PWM duty cycle
 
+const uint8_t POWER_HOLD_PIN = 12;
+const unsigned long STANDBY_TIMEOUT_MS = 5UL * 60UL * 1000UL; // 5 minutes idle -> power off
+unsigned long lastActivityMs = 0;
+
 void setup() {
   Serial.begin(115200);
   for (Axis& axis : axes) {
     pinMode(axis.dirPin, OUTPUT);
     pinMode(axis.pwmPin, OUTPUT);
   }
+  pinMode(POWER_HOLD_PIN, OUTPUT);
+  digitalWrite(POWER_HOLD_PIN, HIGH); // take over the power latch from the pushbutton
+  lastActivityMs = millis();
 }
 
 void loop() {
   unsigned long now = millis();
+  bool anyActivity = false;
 
   for (Axis& axis : axes) {
     int reading = analogRead(axis.analogPin);
@@ -59,7 +76,15 @@ void loop() {
       requested = 0; // safety cutoff
     }
 
+    if (requested != 0) anyActivity = true;
+
     digitalWrite(axis.dirPin, requested > 0 ? HIGH : LOW);
     analogWrite(axis.pwmPin, requested == 0 ? 0 : MOTOR_SPEED);
+  }
+
+  if (anyActivity) {
+    lastActivityMs = now;
+  } else if (now - lastActivityMs > STANDBY_TIMEOUT_MS) {
+    digitalWrite(POWER_HOLD_PIN, LOW); // release the latch; relay drops unless button is held
   }
 }

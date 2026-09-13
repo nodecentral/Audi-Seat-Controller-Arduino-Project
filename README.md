@@ -38,6 +38,8 @@ independently.
 | Microcontroller | Arduino Nano (ATmega328) | Reads switch panel, drives motor controller |
 | Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
 | Logic supply regulator | 12V→5V buck converter, module marked `C1205003`, 15W, 5V/3A max output | Steps the constant 12V feed down to 5V for the Nano and switch panel; see [Logic supply](#vehicle-integration-checklist) for the recommended wiring — bypass the pre-attached micro-USB cable |
+| Power latch relay | 12V automotive relay (SPDT/SPST-NO, ~30A contacts) — not yet sourced | Gates the permanent 12V feed to everything downstream (buck converter + both Cytron boards), so the whole controller is fully off between uses — see [Power latch](#power-latch) |
+| Power latch pushbutton | Momentary, normally-open pushbutton — not yet sourced | User-facing "wake" trigger, dash or seat-mounted; draws zero current when not pressed |
 
 ### Switch panel
 
@@ -186,6 +188,7 @@ flowchart LR
         FIVEV["5V"]
         CTRL1["D2/D3 — DIR1/PWM1 (front_tilt)"]
         CTRL2["D7/D6 — DIR2/PWM2 (fore_aft)"]
+        HOLD["D12 — POWER_HOLD_PIN"]
     end
 
     subgraph DRV1["Cytron MDD10A #1 (drives 2 of 4 axes)"]
@@ -210,8 +213,11 @@ flowchart LR
     M1 --> MOT1
     M2 --> MOT2
 
-    BATT["12V vehicle supply, fused"] --> BSUP
-    BATT --> REG["12V→5V buck converter<br/>(C1205003, hardwired — no USB cable)"]
+    BATT["12V vehicle supply, permanent, fused"] --> RELAY["Power latch relay<br/>(NO contacts, not yet sourced)"]
+    RELAY --> BSUP
+    RELAY --> REG["12V→5V buck converter<br/>(C1205003, hardwired — no USB cable)"]
+    PBTN["Pushbutton (momentary,<br/>not yet sourced)"] -. wake .-> RELAY
+    HOLD -. latch, see Power latch .-> RELAY
     BSUP --> M1
     BSUP --> M2
 
@@ -224,12 +230,56 @@ board is needed to cover all four (see Next Steps). The 12V supply only ever rea
 motor terminals; everything else (switch panel, Nano, ADC lines) runs on the 5V rail produced by
 the regulator, per [Voltage domains](#voltage-domains).
 
+## Power latch
+
+The controller needs to work with the ignition off (so seat position can be adjusted before
+getting in), but the whole point is that it must **not** sit drawing current 24/7 off the permanent
+12V feed — that's how you come back to a dead battery. Solution: a relay gates the entire 12V feed
+to everything downstream, normally off, woken by a momentary pushbutton and kept on by the Nano
+until it decides it's been idle long enough to power back down.
+
+```
++12V permanent  ----+----------------------------+
+                     |                            |
+                  [FUSE]                    (relay coil, pin 86)
+                     |                            |
+                (relay pin 30)                    |
+                     |                      (relay pin 85)
+              relay contacts                       |
+              (NO, pin 87) ---> switched +12V      +------+--------+
+                     |          out (to buck                |        |
+                     |          converter IN and      [pushbutton]  [NPN/MOSFET]
+                     |          Cytron B+)             (momentary,    (base/gate
+                     |                                  dash/seat)    <- Nano D12
+                     |                                       |        POWER_HOLD_PIN)
+                     +---------------- both trigger paths ---+--------+
+                                        pull relay pin 85 to GND
+                                        (flyback diode across coil, not shown)
+```
+
+- **Wake:** pressing the pushbutton grounds the relay coil's low side, energizing the relay,
+  applying switched +12V to the buck converter and Cytron board(s). The Nano boots.
+- **Latch:** within milliseconds of booting, the Nano drives `POWER_HOLD_PIN` (D12 in
+  `seat_control_main.ino`) high, turning on a small transistor/MOSFET wired in parallel with the
+  pushbutton — this takes over holding the relay closed, so the user doesn't need to keep the
+  button pressed.
+- **Auto-off:** the sketch tracks time since the last switch-panel activity. After
+  `STANDBY_TIMEOUT_MS` (5 minutes, adjustable in the sketch) with nothing pressed, it drops
+  `POWER_HOLD_PIN` low. If the pushbutton isn't being held at that instant, the relay opens and
+  everything — Nano included — loses power. Resting draw between uses is whatever a mechanical
+  switch and a de-energized relay coil draw: effectively zero.
+
+Not yet sourced: the relay itself, the pushbutton, and the small transistor/MOSFET + flyback diode
+for the coil-switching side (a 2N2222-class NPN or a logic-level N-MOSFET both work — whatever's
+on hand is fine, this isn't current-critical since it's only switching a ~150-200mA relay coil, not
+motor current).
+
 ## Firmware
 
 | Sketch | Purpose |
 |---|---|
 | [`firmware/diagnostic_read_switch_panel`](firmware/diagnostic_read_switch_panel/diagnostic_read_switch_panel.ino) | Prints raw ADC values for all four movement pins over serial. Use this to fill in the still-missing PIN 2/3/5 measurements and to sanity-check the PIN 6 hypothesis. |
-| [`firmware/seat_control_main`](firmware/seat_control_main/seat_control_main.ino) | Draft control loop: reads all four axes, drives the Cytron board(s), and stops a motor if it's held on past an 8-second safety cutoff. Thresholds are copied from the PIN 1 measurement and are placeholders for the other three axes until measured. |
+| [`firmware/seat_control_main`](firmware/seat_control_main/seat_control_main.ino) | Draft control loop: reads all four axes, drives the Cytron board(s), stops a motor if it's held on past an 8-second safety cutoff, and holds the [power latch](#power-latch) relay closed until 5 minutes of inactivity. Thresholds are copied from the PIN 1 measurement and are placeholders for the other three axes until measured. |
 
 Neither sketch has been run against real hardware yet — the diagnostic sketch is the next thing to
 flash once PIN 6 is wired up per the hypothesis above.
@@ -238,13 +288,11 @@ flash once PIN 6 is wired up per the hypothesis above.
 
 Not started. Before any of this touches a vehicle:
 
-- **Power source** — decided: a constant (always-live, not ignition-switched) 12V feed straight
-  from the battery, shared by the Cytron board(s) and the Nano's logic supply. Fuse it at the
-  battery end of that feed, sized to the sum of what's downstream, not just at each board. Because
-  it's always live, the whole controller draws standby current even with the car off — the Nano
-  alone is tens of mA, small next to typical alarm/ECU standby draw, but worth being aware of on a
-  car that sits for weeks; an inline switch or relay tapped to ignition-switched 12V is the fallback
-  if parasitic drain ever becomes a problem.
+- **Power source** — decided: a permanent 12V feed straight from the battery, fused at the battery
+  end and sized to the sum of what's downstream. Seat adjustment needs to work with the ignition
+  off, which rules out simply gating this off an ignition-switched circuit — instead the feed goes
+  through the [power latch](#power-latch) relay, so the controller draws no standby current between
+  uses despite being fed from a permanent source.
 - **Logic supply** — sourced: a 12V→5V buck converter (module marked `C1205003`, 15W, rated 5V/3A
   output — comfortably more than the Nano plus the switch panel's PIN 6 pull-up will ever draw). It
   comes with a pre-attached micro-USB cable meant for powering the Nano through its USB port — for
@@ -288,6 +336,12 @@ Not started. Before any of this touches a vehicle:
 - Cut off the buck converter's micro-USB plug and wire its `Y`/`B` output leads directly to the
   Nano's `5V`/`GND` pins via the HW-152 adapter; fuse its `R` (12V in) lead separately from the
   motor supply fuse.
+- Source the [power latch](#power-latch) relay, pushbutton, and coil-switching transistor/MOSFET
+  (+ flyback diode), and wire per that section. Decide on and mount the pushbutton location
+  (dashboard vs. seat).
+- Bench-test the power latch on its own (relay + button + a Nano running just the latch logic)
+  before wiring it into the rest of the system — confirm it holds on, and actually drops out after
+  `STANDBY_TIMEOUT_MS`, before it's gating anything that matters.
 - Work through the [vehicle integration checklist](#vehicle-integration-checklist) above — power,
   grounding, target motor ratings, connectors, enclosure — before connecting any seat motor. Do not
   wire B+/B- to a vehicle 12V supply until that's done.
