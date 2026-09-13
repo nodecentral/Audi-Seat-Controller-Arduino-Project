@@ -1,425 +1,179 @@
-Audi Q8 (2022) S-Line Electric Seat — 4N095747D Control Switch
-
-Reverse-Engineering & Arduino Standalone Controller — Working Notes
-
-1. Objective
-
-The original Audi seat control electronics/module is missing.
-
-The objective is to retain the original Audi seat adjustment controls and use them as a standalone control interface for the 12V electric seat motors in a different vehicle.
-
-The proposed architecture is:
-
-Audi 4N095747D switch assembly
-          ↓
-Arduino — reads/decode switch signals
-          ↓
-High-current H-bridge motor drivers
-          ↓
-12V seat motors
-
-The Audi switch assembly is NOT being used to supply motor current. It is only being used as a low-current control input.
-
-⸻
-
-2. 4N095747D Switch PCB — Findings
-
-The 4N095747D is the seat adjustment switch/control assembly.
-
-The PCB was physically inspected.
-
-Important observations:
-
-* The PCB contains the physical seat adjustment controls.
-* No obvious microcontroller was found.
-* No CAN/LIN transceiver was found.
-* No high-current motor-driving components were found.
-* The PCB therefore appears to be a passive control/signal interface rather than the seat motor controller.
-* The connector has 12 positions physically, but only the TOP ROW of 6 pins is currently relevant/used.
-* The bottom row has not been identified as being used for the functions under investigation.
-* There are resistors on the PCB, consistent with the control signals being encoded electrically rather than simply providing a separate wire for every direction.
-
-⸻
-
-3. Connector Pin Arrangement
-
-Viewed as previously identified:
-
-TOP ROW
-PIN 1   PIN 2   PIN 3   PIN 4   PIN 5   PIN 6
-
-Only these six top-row positions are currently being used.
-
-PIN 4 has been identified as the COMMON connection.
-
-For testing, Pin 4 has been connected to Arduino GND.
-
-⸻
-
-4. Confirmed Functional Pin Mapping
-
-The following has been established by continuity testing of the switch assembly.
-
-Pin	Function
-PIN 1	Front of seat base tilt — UP / DOWN
-PIN 2	Rear of seat base tilt — UP / DOWN
-PIN 3	Entire seat — FORWARD / BACKWARD
-PIN 4	COMMON / reference / GND
-PIN 5	Seat backrest — FORWARD / BACKWARD (recline)
-PIN 6	Not yet assigned / not currently required
-
-Therefore:
-
-PIN 1 ↔ PIN 4 = front seat-base tilt control
-PIN 2 ↔ PIN 4 = rear seat-base tilt control
-PIN 3 ↔ PIN 4 = complete seat forward/back movement
-PIN 5 ↔ PIN 4 = backrest recline movement
-
-PIN 4 is common to the control functions.
-
-⸻
-
-5. Important Discovery About Direction
-
-Continuity testing showed an important characteristic:
-
-Moving a control in either direction produces continuity between the relevant control pin and Pin 4.
-
-For example:
-
-PIN 1 + PIN 4
-
-produces a circuit/continuity when the front-seat tilt control is moved in either direction.
-
-Therefore the direction is NOT determined simply by:
-
-Direction A = different pair of pins
-Direction B = another pair of pins
-
-Instead, the electrical characteristics of the circuit change depending on which direction the control is moved.
-
-This strongly indicates that the resistors on the PCB are being used to encode the direction.
-
-⸻
-
-6. Arduino Test — First Confirmed Measurement
-
-An Arduino was connected to the switch assembly to investigate the electrical signal.
-
-Initial test:
-
-Seat PIN 4 → Arduino GND
-Seat PIN 1 → Arduino A0
-
-The Arduino was connected to the PC by USB.
-
-The Arduino was configured to read the analogue input.
-
-With the control in its neutral/unpressed state:
-
-PIN 1 / A0 = approximately 1023
-
-This indicates that the input is effectively at the top of the Arduino ADC range when no adjustment is being requested.
-
-⸻
-
-7. Confirmed PIN 1 Measurements
-
-The front seat-base tilt control was then tested in both directions.
-
-Front seat tilt DOWN
-
-Arduino reading:
-
-approximately 27–28
-
-The reading fluctuated slightly between 27 and 28.
-
-Front seat tilt UP
-
-Arduino reading:
-
-approximately 40–41
-
-Again, the reading fluctuated slightly, approximately 40–41.
-
-PIN 1 results
-
-Control state	Arduino ADC reading
-Neutral / nothing pressed	~1023
-Front seat tilt DOWN	~27–28
-Front seat tilt UP	~40–41
-
-These are VERY strong evidence that the two directions are electrically distinguishable.
-
-The small fluctuations are not considered significant. They can be caused by normal ADC noise, switch/contact pressure, resistor tolerance, USB power variation, etc.
-
-The software should therefore use ranges rather than relying on one exact ADC number.
-
-⸻
-
-8. Current Electrical Interpretation
-
-The working hypothesis is now:
-
-PIN 4 = common/reference
-
-Each control pin is associated with a particular seat function.
-
-The physical rocker/switch changes the resistance network when moved in one direction or the other.
-
-Conceptually:
-
-PIN X
-   │
-   ├── resistance network
-   │
-switch mechanism
-   │
-PIN 4 / COMMON
-
-The Arduino measures the resulting analogue voltage.
-
-The exact resistor values and voltage-divider arrangement have NOT yet been fully mapped.
-
-Therefore, we should describe this as:
-
-"analogue/resistance encoded switch outputs"
-
-rather than claiming we have completely reverse-engineered the original Audi circuit.
-
-⸻
-
-9. Why the Arduino Approach Is Being Used
-
-The Arduino provides a convenient way of measuring the analogue signal produced by the original Audi control.
-
-Instead of trying to reproduce the missing Audi seat ECU, we can make our own controller.
-
-The Arduino will eventually perform two jobs:
-
-1. Decode the Audi switch signals.
-2. Control the motor-driver hardware.
-
-The switch PCB itself remains a low-current input device.
-
-The Arduino does NOT drive the seat motors directly.
-
-⸻
-
-10. Proposed Arduino Control Architecture
-
-┌──────────────────────────────┐
-│ Audi 4N095747D Switch PCB    │
-│                              │
-│ Pin 1 ───── analogue input   │
-│ Pin 2 ───── analogue input   │
-│ Pin 3 ───── analogue input   │
-│ Pin 4 ───── Arduino GND      │
-│ Pin 5 ───── analogue input   │
-│ Pin 6 ───── TBD              │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│ Arduino                      │
-│                              │
-│ Read analogue values         │
-│ Identify direction           │
-│ Apply thresholds/ranges      │
-│ Generate motor commands      │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│ High-current H-bridge        │
-│ motor drivers                │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│ 12V Seat Motors              │
-│                              │
-│ Forward / Reverse            │
-└──────────────────────────────┘
-
-⸻
-
-11. Important Principle for the Final Motor System
-
-The Arduino will only provide LOW-CURRENT control signals.
-
-The seat motors will have their own 12V/high-current power supply.
-
-A motor requires polarity reversal to change direction:
-
-+12V / 0V  → Motor direction A
-0V / +12V  → Motor direction B
-
-Therefore each motor requires a suitable H-bridge or equivalent reversing arrangement.
-
-The previously discussed approach is to use high-current H-bridge motor drivers rather than attempting to switch the motors directly from the Arduino.
-
-⸻
-
-12. What Has NOT Yet Been Established
-
-The following should remain marked as TBD:
-
-* Exact resistance values used by each switch direction.
-* Exact analogue voltage corresponding to every control position.
-* PIN 6 function.
-* Whether PIN 6 is required for another seat function or is unused.
-* Exact number of motors in the particular seat.
-* Which motor corresponds to each physical adjustment.
-* Motor current requirements, particularly stall current.
-* Whether the seat motors contain any additional position/safety circuitry.
-* Whether any seat functions require additional feedback signals.
-* Final motor-driver choice.
-* Final Arduino model.
-* Final power supply and fuse arrangement.
-
-These should be investigated before connecting the motors.
-
-⸻
-
-13. Next Investigation Stage
-
-The next task is to repeat the successful Arduino measurement for the remaining control pins.
-
-Keep:
-
-PIN 4 → Arduino GND
-
-Then measure:
-
-PIN 2 → Arduino analogue input
-PIN 3 → Arduino analogue input
-PIN 5 → Arduino analogue input
-
-For each pin record:
-
-Neutral
-Direction 1
-Direction 2
-
-For example:
-
-Pin	Function	Neutral	Direction 1	Direction 2
-1	Front base tilt	1023	27–28 DOWN	40–41 UP
-2	Rear base tilt	TBD	TBD	TBD
-3	Seat forward/back	TBD	TBD	TBD
-4	Common	—	—	—
-5	Backrest forward/back	TBD	TBD	TBD
-6	Unknown	TBD	TBD	TBD
-
-Once this table is complete, we should have the complete switch-input map.
-
-⸻
-
-14. Software Strategy
-
-Do NOT initially write the final motor-control software.
-
-First create a diagnostic Arduino program whose ONLY job is to display the analogue readings.
-
-The diagnostic output should make it easy to establish stable ranges such as:
-
-PIN 1
-1023 = neutral
-27–28 = front tilt down
-40–41 = front tilt up
-
-After all controls have been measured, the final program can translate those readings into commands such as:
-
-FRONT_TILT_DOWN
-FRONT_TILT_UP
-REAR_TILT_DOWN
-REAR_TILT_UP
-SEAT_FORWARD
-SEAT_BACKWARD
-BACKREST_FORWARD
-BACKREST_BACKWARD
-
-Only after that decoding stage is proven should the Arduino be connected to motor-driver inputs.
-
-⸻
-
-15. Safety / Testing Rules
-
-At the current stage:
-
-DO NOT connect the 12V seat supply to the Arduino input pins.
-
-The current testing is being performed using the Arduino’s low-voltage USB supply and analogue inputs.
-
-The seat motors should remain completely disconnected while reverse-engineering the switch signals.
-
-Once the control signals are understood, the motor side should be designed separately with:
-
-* appropriate high-current drivers
-* correctly sized wiring
-* individual motor protection/fusing
-* suitable main supply protection
-* common ground/reference between Arduino and driver electronics
-* software protection against contradictory forward/reverse commands
-* sensible maximum run-time/time-out protection
-
-⸻
-
-16. Current Project Status
-
-CONFIRMED:
-
-✓ 4N095747D switch PCB can be used as a standalone input device
-✓ Only the top six connector positions are currently relevant
-✓ Pin 4 is common
-✓ Pin 1 controls front seat-base tilt
-✓ Pin 2 controls rear seat-base tilt
-✓ Pin 3 controls whole-seat forward/back movement
-✓ Pin 5 controls backrest forward/back movement
-✓ Direction is not represented simply by different connector pins
-✓ Direction produces different analogue readings
-✓ PIN 1 has been successfully decoded using Arduino
-✓ PIN 1 neutral = ~1023
-✓ PIN 1 front tilt DOWN = ~27–28
-✓ PIN 1 front tilt UP = ~40–41
-✓ Arduino is therefore capable of detecting the original Audi control signals
-
-NOT YET CONFIRMED:
-
-? Exact resistor values
-? Remaining analogue values
-? PIN 6 function
-? Complete motor mapping
-? Motor current requirements
-? Final H-bridge hardware
-? Final Arduino software
-
-⸻
-
-Overall Approach
-
-The project is now being treated as a two-stage system:
-
-STAGE 1 — REVERSE ENGINEER THE CONTROL
-
-Audi switch PCB
-      ↓
-Arduino analogue inputs
-      ↓
-Determine every button/direction value
-      ↓
-Create definitive control map
-
-STAGE 2 — BUILD STANDALONE SEAT CONTROLLER
-
-Audi switch PCB
-      ↓
-Arduino
-      ↓
-Motor-driver electronics
-      ↓
-12V seat motors
-
-The key discovery so far is that the original Audi control switch does not need to be replicated or replaced. We can potentially retain the original OEM switch hardware and use the Arduino as the missing “interpretation” layer between the switch and the seat motors.
+# Audi Q8 Seat Control Reverse-Engineering Project
+
+Repurposing an Audi 4N095747D switch assembly (Preh 13250-757/0200) as a standalone control
+interface for 12V seat motors in a different vehicle. This document tracks what's been measured
+on the OEM hardware so far, the wiring scheme inferred from it, and what's still open before any
+12V motor is connected.
+
+> **Status:** reverse-engineering in progress. The wiring scheme below is an interpretation of the
+> photographed hardware, not yet confirmed end-to-end with a multimeter — treat resistor values and
+> PIN 6's function as working hypotheses until verified.
+
+## Hardware inventory
+
+| Component | Part / model | Role |
+|---|---|---|
+| Seat switch panel | Preh `13250-757/0200`, marking `NCE02` | OEM Audi switch cluster — passive input device, 6-pin connector |
+| Motor driver | Cytron MDD10A | Dual-channel 10A H-bridge DC motor driver |
+| Microcontroller | Arduino Nano (ATmega328) | Reads switch panel, drives motor controller |
+| Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
+
+### Switch panel
+
+<img src="images/switch-panel-full.jpg" width="500" alt="Preh switch panel, full board">
+
+*Full switch panel (back side). Eight tactile switches are visible, wired through two repeated SMD
+resistor values (silkscreened `8200` and `3920` — read as 820 Ω and 392 Ω using the standard
+3-digit + multiplier code, unverified against a multimeter). Eight switches across four movement
+axes lines up with two buttons (one per direction) per axis, each routed through a different
+resistor — see [Inferred signal encoding](#inferred-signal-encoding) below.*
+
+<img src="images/switch-connector-closeup.jpg" width="500" alt="Preh switch panel connector close-up">
+
+*Close-up of the 6-pin output connector, part marking `13250-757/0200 Preh NCE02 25380.E230374`.*
+
+### Motor driver
+
+<img src="images/cytron-mdd10a-dimensions.png" width="500" alt="Cytron MDD10A dimensions and pinout">
+
+*Cytron MDD10A dual-channel 10A DC motor driver. Terminal block: `M1B / M1A / B+ / B- / M2A / M2B`.
+Control header: `DIR1 / PWM1 / DIR2 / PWM2 / GND`. This board only drives two motors — see
+[Next Steps](#next-steps) for the implication on a 4-axis seat.*
+
+### Controller
+
+<img src="images/arduino-nano.jpg" width="450" alt="Arduino Nano">
+<img src="images/nano-terminal-adapter.jpg" width="450" alt="HW-152 Nano terminal adapter">
+
+*Arduino Nano and the HW-152 screw-terminal adapter used to break out its header pins for
+solderless wiring to the switch panel and motor driver.*
+
+## Key Findings
+
+The switch PCB functions as a passive input device rather than a motor controller. Directional
+information is encoded through resistance networks, not separate connector pins. The Arduino
+successfully decoded PIN 1 signals (10-bit ADC, 0–1023):
+
+| State | ADC reading |
+|---|---|
+| Neutral (no button pressed) | ~1023 |
+| Downward adjustment | ~27–28 |
+| Upward adjustment | ~40–41 |
+
+The large gap between neutral (~1023, i.e. pulled high) and either pressed state (~27–41, pulled
+sharply low) indicates a pull-up on the line with a low-value resistor switched in to ground on
+each button press — different resistors per direction, which is exactly the two repeated SMD
+values (820 Ω / 392 Ω) visible on the panel.
+
+## Confirmed control mapping
+
+| Pin | Function | Status |
+|---|---|---|
+| PIN 1 | Front seat-base tilt | Confirmed (ADC values above) |
+| PIN 2 | Rear seat-base tilt | Identified, ADC values not yet measured |
+| PIN 3 | Entire seat forward/backward movement | Identified, ADC values not yet measured |
+| PIN 4 | Common reference (ground) | Confirmed |
+| PIN 5 | Backrest recline adjustment | Identified, ADC values not yet measured |
+| PIN 6 | Unknown | **Hypothesis:** shared +5V pull-up supply for the four resistor-ladder inputs (see below) — not yet measured |
+
+## Inferred signal encoding
+
+Working theory for how each axis line behaves, based on the eight switches and two resistor values
+on the panel plus the PIN 1 readings above. This is inferred from photos, not confirmed by
+continuity testing — verify with a multimeter before relying on it:
+
+```
+                 PIN 6 (+5V?, proposed pull-up supply)
+                         |
+                    [pull-up resistor, value TBD]
+                         |
+Nano ADC pin  <----------+----------  e.g. PIN 1 (front tilt)
+                         |
+              +----------+----------+
+              |                     |
+         [~820R]                [~392R]
+        "down" resistor       "up" resistor
+              |                     |
+          SW down                SW up
+              |                     |
+              +----------+----------+
+                         |
+                 PIN 4 (GND, common return)
+```
+
+Each of the four movement pins (1, 2, 3, 5) is expected to follow this same pattern: idle high
+(~1023), pulled to a low-but-distinct ADC value depending on which of the two direction buttons for
+that axis is pressed. That matches the panel having 8 switches for 4 axes (2 directions each), and
+the two SMD resistor values repeating across the board.
+
+## Proposed system wiring
+
+End-to-end signal path from switch panel to motors, based on the parts in the [hardware
+inventory](#hardware-inventory). Only PIN 1's behavior is empirically confirmed; the rest of this
+diagram is a proposed build, not a verified one.
+
+```mermaid
+flowchart LR
+    subgraph SWITCH["Preh switch panel (13250-757/0200)"]
+        P1["PIN 1 — front tilt"]
+        P2["PIN 2 — rear tilt"]
+        P3["PIN 3 — fore/aft"]
+        P5["PIN 5 — recline"]
+        P4["PIN 4 — GND"]
+        P6["PIN 6 — +5V? (unconfirmed)"]
+    end
+
+    subgraph NANO["Arduino Nano (via HW-152 terminal adapter)"]
+        A0["A0"]
+        A1["A1"]
+        A2["A2"]
+        A3["A3"]
+        GND1["GND"]
+        FIVEV["5V"]
+        CTRL1["D2/D3 — DIR1/PWM1"]
+        CTRL2["D4/D5 — DIR2/PWM2"]
+    end
+
+    subgraph DRV1["Cytron MDD10A #1 (drives 2 of 4 axes)"]
+        M1["M1A/M1B"]
+        M2["M2A/M2B"]
+        BSUP["B+ / B-"]
+    end
+
+    P1 --> A0
+    P2 --> A1
+    P3 --> A2
+    P5 --> A3
+    P4 --> GND1
+    P6 -. proposed .-> FIVEV
+
+    CTRL1 --> M1
+    CTRL2 --> M2
+
+    MOT1["Seat motor — front tilt"]
+    MOT2["Seat motor — fore/aft"]
+    M1 --> MOT1
+    M2 --> MOT2
+
+    BATT["12V vehicle supply, fused"] --> BSUP
+    BSUP --> M1
+    BSUP --> M2
+
+    DRV2["Cytron MDD10A #2 (needed for remaining 2 axes:<br/>rear tilt, recline) — not yet built"]
+    CTRL1 -.-> DRV2
+```
+
+Note only two of the four confirmed movement axes can be driven per MDD10A board — a second driver
+board is needed to cover all four (see Next Steps).
+
+## Next Steps
+
+- Measure analogue values for PINs 2, 3, and 5 (same neutral/up/down method used for PIN 1).
+- Verify PIN 6 with a multimeter — confirm whether it's the +5V pull-up supply proposed above, an
+  illumination/LED feed, or something else.
+- Confirm the two SMD resistor values (silkscreened `8200` / `3920`) by direct measurement rather
+  than reading the printed code from photos.
+- Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
+  seat motors.
+- Design the 12V power distribution (fusing, wire gauge for stall current, flyback protection)
+  before connecting any seat motor. Do not wire B+/B- to a vehicle 12V supply until this is done.
