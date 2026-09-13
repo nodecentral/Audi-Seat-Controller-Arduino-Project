@@ -31,7 +31,8 @@ independently.
 
 | Component | Part / model | Role |
 |---|---|---|
-| Seat switch panel | Preh `13250-757/0200`, marking `NCE02` | OEM Audi switch cluster — passive input device, 6-pin connector |
+| Seat switch panel | Preh `13250-757/0200`, marking `NCE02` | OEM Audi switch cluster — passive input device, 12-position connector |
+| Mating connector | TE Connectivity `1534096-1` / `1-1534096-1`, 12-cavity | Plugs into the switch panel; sold in listings cross-referenced to VW `8E0972112A` — see caveat below |
 | Motor driver | Cytron MDD10A | Dual-channel 10A H-bridge DC motor driver |
 | Microcontroller | Arduino Nano (ATmega328) | Reads switch panel, drives motor controller |
 | Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
@@ -48,7 +49,17 @@ resistor — see [Inferred signal encoding](#inferred-signal-encoding) below.*
 
 <img src="images/switch-connector-closeup.jpg" width="500" alt="Preh switch panel connector close-up">
 
-*Close-up of the 6-pin output connector, part marking `13250-757/0200 Preh NCE02 25380.E230374`.*
+*Close-up of the panel's output connector, part marking `13250-757/0200 Preh NCE02 25380.E230374`.
+The panel's case takes a 12-position mating connector (TE Connectivity `1534096-1` /
+`1-1534096-1`) — only 6 of those 12 cavities have been identified as functional so far (see
+[Confirmed control mapping](#confirmed-control-mapping)); the other 6 are unaccounted for, not
+confirmed empty.*
+
+> **Sourcing note:** that TE part number is what online listings sell as a match, cross-referenced
+> against VW `8E0972112A` and described there as a "radar" harness connector — i.e. it's being sold
+> as a generic shell reused across several VAG harnesses, not something listed specifically for this
+> seat switch. Before ordering, confirm cavity count, pitch, and keying against the photographed
+> connector rather than trusting the cross-reference alone.
 
 ### Motor driver
 
@@ -93,6 +104,12 @@ values (820 Ω / 392 Ω) visible on the panel.
 | PIN 4 | Common reference (ground) | Confirmed |
 | PIN 5 | Backrest recline adjustment | Identified, ADC values not yet measured |
 | PIN 6 | Unknown | **Hypothesis:** shared +5V (logic domain, *not* 12V — see [Voltage domains](#voltage-domains)) pull-up supply for the four resistor-ladder inputs — not yet measured |
+
+The panel's mating connector has 12 cavities (see [hardware inventory](#hardware-inventory)); PINs
+1–6 above are the ones identified so far. The remaining 6 cavities haven't been probed — they may
+be unused on this panel variant, reserved for other functions (e.g. lumbar, memory buttons) present
+on related Preh panels but not populated here, or something else entirely. Don't assume they're
+empty until checked.
 
 ## Inferred signal encoding
 
@@ -221,8 +238,10 @@ Not started. Before any of this touches a vehicle:
   destination vehicle. The MDD10A is rated 10A/channel continuous; confirm the motors' stall
   current stays under that with margin, and size wiring/fuses to the stall figure, not the running
   figure.
-- **Connector matching** — source a mating connector for the Preh 6-pin block rather than
-  soldering directly to salvaged pins, so the panel can be disconnected for service.
+- **Connector matching** — use a proper 12-cavity mating connector (TE `1534096-1` /
+  `1-1534096-1`, or verified equivalent) rather than soldering directly to salvaged pins, so the
+  panel can be disconnected for service. Verify cavity count/pitch/keying against the physical
+  connector before buying — see the sourcing note under [Switch panel](#switch-panel).
 - **Enclosure** — the Nano, both driver boards, and the wiring need protection from vibration and
   moisture once installed; this hasn't been designed yet.
 
@@ -232,6 +251,8 @@ Not started. Before any of this touches a vehicle:
   used for PIN 1), and check whether tying PIN 6 to 5V is actually needed for sane readings.
 - Confirm the two SMD resistor values (silkscreened `8200` / `3920`) by direct measurement rather
   than reading the printed code from photos.
+- Probe the 6 unaccounted-for cavities on the 12-position connector — confirm whether they're
+  genuinely unused or carry signals not yet identified.
 - Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
