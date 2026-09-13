@@ -130,8 +130,8 @@ flowchart LR
         A3["A3"]
         GND1["GND"]
         FIVEV["5V"]
-        CTRL1["D2/D3 — DIR1/PWM1"]
-        CTRL2["D4/D5 — DIR2/PWM2"]
+        CTRL1["D2/D3 — DIR1/PWM1 (front_tilt)"]
+        CTRL2["D7/D6 — DIR2/PWM2 (fore_aft)"]
     end
 
     subgraph DRV1["Cytron MDD10A #1 (drives 2 of 4 axes)"]
@@ -159,21 +159,53 @@ flowchart LR
     BSUP --> M1
     BSUP --> M2
 
-    DRV2["Cytron MDD10A #2 (needed for remaining 2 axes:<br/>rear tilt, recline) — not yet built"]
+    DRV2["Cytron MDD10A #2 (needed for remaining 2 axes:<br/>rear tilt on D4/D5, recline on D8/D9)<br/>— not yet built"]
     CTRL1 -.-> DRV2
 ```
 
 Note only two of the four confirmed movement axes can be driven per MDD10A board — a second driver
 board is needed to cover all four (see Next Steps).
 
+## Firmware
+
+| Sketch | Purpose |
+|---|---|
+| [`firmware/diagnostic_read_switch_panel`](firmware/diagnostic_read_switch_panel/diagnostic_read_switch_panel.ino) | Prints raw ADC values for all four movement pins over serial. Use this to fill in the still-missing PIN 2/3/5 measurements and to sanity-check the PIN 6 hypothesis. |
+| [`firmware/seat_control_main`](firmware/seat_control_main/seat_control_main.ino) | Draft control loop: reads all four axes, drives the Cytron board(s), and stops a motor if it's held on past an 8-second safety cutoff. Thresholds are copied from the PIN 1 measurement and are placeholders for the other three axes until measured. |
+
+Neither sketch has been run against real hardware yet — the diagnostic sketch is the next thing to
+flash once PIN 6 is wired up per the hypothesis above.
+
+## Vehicle integration checklist
+
+Not started. Before any of this touches a vehicle:
+
+- **Power source** — decide whether the controller runs off a fused, switched 12V feed (so it's
+  dead with the ignition off) or a permanent feed with its own switching. Either way, fuse it at
+  the source, not just at the driver board.
+- **Logic supply** — the Nano needs a clean 5V. Confirm whether the MDD10A's onboard regulator
+  can supply this, or budget a separate 5V regulator/buck converter fed from the same 12V rail.
+- **Common ground** — switch panel PIN 4, Nano GND, both Cytron boards' GND, and the 12V supply
+  return all need to share one reference; a floating or high-resistance ground will show up as
+  garbage ADC readings on the switch panel lines before it shows up anywhere else.
+- **Target motor ratings** — get the stall current and connector type for the seat motors in the
+  destination vehicle. The MDD10A is rated 10A/channel continuous; confirm the motors' stall
+  current stays under that with margin, and size wiring/fuses to the stall figure, not the running
+  figure.
+- **Connector matching** — source a mating connector for the Preh 6-pin block rather than
+  soldering directly to salvaged pins, so the panel can be disconnected for service.
+- **Enclosure** — the Nano, both driver boards, and the wiring need protection from vibration and
+  moisture once installed; this hasn't been designed yet.
+
 ## Next Steps
 
-- Measure analogue values for PINs 2, 3, and 5 (same neutral/up/down method used for PIN 1).
-- Verify PIN 6 with a multimeter — confirm whether it's the +5V pull-up supply proposed above, an
-  illumination/LED feed, or something else.
+- Flash `diagnostic_read_switch_panel` and measure PINs 2, 3, and 5 (same neutral/up/down method
+  used for PIN 1), and check whether tying PIN 6 to 5V is actually needed for sane readings.
 - Confirm the two SMD resistor values (silkscreened `8200` / `3920`) by direct measurement rather
   than reading the printed code from photos.
+- Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
-- Design the 12V power distribution (fusing, wire gauge for stall current, flyback protection)
-  before connecting any seat motor. Do not wire B+/B- to a vehicle 12V supply until this is done.
+- Work through the [vehicle integration checklist](#vehicle-integration-checklist) above — power,
+  grounding, target motor ratings, connectors, enclosure — before connecting any seat motor. Do not
+  wire B+/B- to a vehicle 12V supply until that's done.
