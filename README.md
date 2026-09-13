@@ -23,7 +23,7 @@ The car is a 12V system, but the Nano and the switch panel's signal lines are **
 ADC reads 0–1023 against a 5V reference, and the confirmed PIN 1 idle reading of ~1023 only makes
 sense if the pull-up feeding that line is ~5V. Feeding 12V into a Nano analog/digital pin or into
 the switch panel's signal lines directly will exceed the pin's rating and damage it. The 5V rail is
-**derived from the 12V supply through a regulator** (see [Logic
+**derived from the 12V supply through a buck converter** (module marked `C1205003` — see [Logic
 supply](#vehicle-integration-checklist) below) — it isn't a separate source you wire in
 independently.
 
@@ -37,6 +37,7 @@ independently.
 | Motor driver control cable | KF2510 2.54mm 5-pin pre-crimped cable, 20cm, 26AWG — sourced from eBay (listing: "KF2510 2.54mm Connectors & Wire Cable 2 3 4 5 6 Pin 20cm 26AWG UK SELLER", seller Electronic-Workshop) | Connectorised end mates with the MDD10A's `DIR1/PWM1/DIR2/PWM2/GND` header; the other end is bare flying leads that land on the Nano (via the HW-152 terminal adapter). Bought as a 2-pack, covering both this board and the second one still to be sourced |
 | Microcontroller | Arduino Nano (ATmega328) | Reads switch panel, drives motor controller |
 | Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
+| Logic supply regulator | 12V→5V buck converter, module marked `C1205003`, 15W, 5V/3A max output | Steps the constant 12V feed down to 5V for the Nano and switch panel; see [Logic supply](#vehicle-integration-checklist) for the recommended wiring — bypass the pre-attached micro-USB cable |
 
 ### Switch panel
 
@@ -210,7 +211,7 @@ flowchart LR
     M2 --> MOT2
 
     BATT["12V vehicle supply, fused"] --> BSUP
-    BATT --> REG["5V regulator<br/>(buck/linear, TBD — see Voltage domains)"]
+    BATT --> REG["12V→5V buck converter<br/>(C1205003, hardwired — no USB cable)"]
     BSUP --> M1
     BSUP --> M2
 
@@ -237,18 +238,25 @@ flash once PIN 6 is wired up per the hypothesis above.
 
 Not started. Before any of this touches a vehicle:
 
-- **Power source** — decide whether the controller runs off a fused, switched 12V feed (so it's
-  dead with the ignition off) or a permanent feed with its own switching. Either way, fuse it at
-  the source, not just at the driver board.
-- **Logic supply** — the Nano and the switch panel's PIN 6 need a regulated 5V derived from the
-  12V rail, not 12V itself. Two safe options: (a) feed 12V into the Nano's `VIN` pin — its onboard
-  regulator accepts 7–12V and produces 5V for the board (the `5V` pin becomes an output in this
-  case, and the switch panel's PIN 6 could tap it if the resistor-ladder's current draw is small,
-  which it should be); or (b) use a separate 12V→5V buck converter (more efficient than the Nano's
-  linear regulator if driving extra load) and feed its regulated output into the Nano's `5V` pin
-  directly. **Never connect 12V straight to the Nano's `5V` pin** — that pin bypasses the onboard
-  regulator entirely and will destroy the board. Confirm from the MDD10A datasheet whether it
-  already has an onboard 5V logic output before adding a separate regulator.
+- **Power source** — decided: a constant (always-live, not ignition-switched) 12V feed straight
+  from the battery, shared by the Cytron board(s) and the Nano's logic supply. Fuse it at the
+  battery end of that feed, sized to the sum of what's downstream, not just at each board. Because
+  it's always live, the whole controller draws standby current even with the car off — the Nano
+  alone is tens of mA, small next to typical alarm/ECU standby draw, but worth being aware of on a
+  car that sits for weeks; an inline switch or relay tapped to ignition-switched 12V is the fallback
+  if parasitic drain ever becomes a problem.
+- **Logic supply** — sourced: a 12V→5V buck converter (module marked `C1205003`, 15W, rated 5V/3A
+  output — comfortably more than the Nano plus the switch panel's PIN 6 pull-up will ever draw). It
+  comes with a pre-attached micro-USB cable meant for powering the Nano through its USB port — for
+  a permanent vehicle install, **don't use that USB connection**. A USB plug isn't rated for
+  continuous vibration and is one more failure point with no benefit here. Instead: cut off (or
+  ignore) the micro-USB plug, and wire the module's `Y` (yellow, +5V out) and `B` (black, GND out)
+  leads directly into the Nano's `5V` and `GND` pins via the HW-152 terminal adapter you already
+  have. Fuse the module's `R` (red, 12V in) lead separately from the motor supply fuse — 1A is
+  ample headroom for what this rail actually powers. **Never connect 12V straight to the Nano's
+  `5V` pin** — only the module's regulated 5V *output* goes there; the module's 12V *input* side is
+  a completely separate pair of wires. Confirm from the MDD10A datasheet whether it already has an
+  onboard 5V logic output before assuming you need this converter for anything beyond the Nano.
 - **Common ground** — switch panel PIN 4, Nano GND, both Cytron boards' GND, and the 12V supply
   return all need to share one reference; a floating or high-resistance ground will show up as
   garbage ADC readings on the switch panel lines before it shows up anywhere else.
@@ -277,6 +285,9 @@ Not started. Before any of this touches a vehicle:
 - Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
+- Cut off the buck converter's micro-USB plug and wire its `Y`/`B` output leads directly to the
+  Nano's `5V`/`GND` pins via the HW-152 adapter; fuse its `R` (12V in) lead separately from the
+  motor supply fuse.
 - Work through the [vehicle integration checklist](#vehicle-integration-checklist) above — power,
   grounding, target motor ratings, connectors, enclosure — before connecting any seat motor. Do not
   wire B+/B- to a vehicle 12V supply until that's done.
