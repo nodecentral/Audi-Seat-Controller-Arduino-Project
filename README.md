@@ -34,6 +34,7 @@ independently.
 | Seat switch panel | Preh `13250-757/0200`, marking `NCE02` | OEM Audi switch cluster — passive input device, 12-position connector |
 | Mating connector | TE Connectivity `1534096-1` / `1-1534096-1`, 12-cavity — [sourced from AliExpress](https://www.aliexpress.com/item/1005004665778565.html), pre-wired pigtail | Plugs into the switch panel; wires already terminated, ready to connect to the Nano — see caveat below |
 | Motor driver | Cytron MDD10A | Dual-channel 10A H-bridge DC motor driver |
+| Motor driver control cable | KF2510 2.54mm 5-pin pre-crimped cable, 20cm, 26AWG — sourced from eBay (listing: "KF2510 2.54mm Connectors & Wire Cable 2 3 4 5 6 Pin 20cm 26AWG UK SELLER", seller Electronic-Workshop) | Mates with the MDD10A's `DIR1/PWM1/DIR2/PWM2/GND` control header; bought as a 2-pack, covering both this board and the second one still to be sourced |
 | Microcontroller | Arduino Nano (ATmega328) | Reads switch panel, drives motor controller |
 | Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
 
@@ -74,8 +75,14 @@ applications.
 <img src="images/cytron-mdd10a-dimensions.png" width="500" alt="Cytron MDD10A dimensions and pinout">
 
 *Cytron MDD10A dual-channel 10A DC motor driver. Terminal block: `M1B / M1A / B+ / B- / M2A / M2B`.
-Control header: `DIR1 / PWM1 / DIR2 / PWM2 / GND`. This board only drives two motors — see
-[Next Steps](#next-steps) for the implication on a 4-axis seat.*
+Control header: `DIR1 / PWM1 / DIR2 / PWM2 / GND` — a standard 2.54mm 5-position connector, matched
+by the KF2510 pigtail in the [hardware inventory](#hardware-inventory) above. This board only
+drives two motors — see [Next Steps](#next-steps) for the implication on a 4-axis seat.*
+
+**Open item:** the KF2510 pigtail's 5 wires need to be traced to their connector positions (1–5)
+and matched against the board's `DIR1/PWM1/DIR2/PWM2/GND` silkscreen before connecting to the
+Nano — don't assume a fixed wire-colour order, since KF2510 is a generic 2.54mm standard, not
+something Cytron-specific.
 
 ### Controller
 
@@ -262,6 +269,8 @@ Not started. Before any of this touches a vehicle:
   genuinely unused or carry signals not yet identified.
 - Trace the pigtail's 12 wires back to their cavities and record the mapping in this README —
   needed before wiring the pigtail to the Nano.
+- Trace the KF2510 cable's 5 wires to their connector positions and match against
+  `DIR1/PWM1/DIR2/PWM2/GND` before wiring it to the Nano.
 - Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
