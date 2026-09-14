@@ -14,28 +14,21 @@
 // stopped regardless of switch state. This guards against a stuck button, broken wire,
 // or mechanical jam holding a seat motor energized indefinitely.
 //
-// Power latch: the whole board (Nano, buck converter, both Cytron boards) sits behind a
-// retriggerable delay-off relay module (e.g. an SRD-12VDC-SL-C based "trigger delay turn
-// off" board) on the permanent 12V feed, normally off. A momentary pushbutton wired to the
-// module's trigger input wakes it; the module's own onboard timer (its potentiometer,
-// independent of this sketch) then holds the relay closed for a short window (set toward
-// the top of its range, e.g. 5-10s) before cutting power on its own.
+// Power latch: the whole board (Nano, buck converter, both Cytron boards) sits behind an
+// LCD-programmable delay-relay module (e.g. an XY-LJ02-style board) that handles wake and
+// auto-off entirely on its own — no firmware involvement. A pushbutton wired into the
+// module's own power-supply input (not just a trigger pin) wakes it; the module's relay
+// then self-latches its own power on and drives a separate, properly-rated main relay that
+// actually feeds the buck converter and Cytron board(s) (this module's own relay is only
+// rated 5A, well under motor stall current, so it pilots the main relay rather than
+// switching motor power itself). The module's own onboard timer (set generously, e.g.
+// 10-15 minutes, directly on its LCD) cuts everything — including this Nano — after that
+// period, regardless of what this sketch does. See README Power latch section for the full
+// wiring and the current design's known open items.
 //
-// POWER_KEEPALIVE_PIN mimics the pushbutton — via a small transistor wired in parallel with
-// it, not driven directly into the trigger input — pulsing periodically as long as there's
-// genuine switch-panel activity, which retriggers the module's timer and keeps the system
-// awake for as long as the seat is actually being adjusted. Once STANDBY_TIMEOUT_MS passes
-// with no activity, this sketch simply stops pulsing; the module's own short timer expires
-// shortly after and cuts all power, including to this Nano.
-//
-// This split matters: because the final cutoff is done by the module's own hardware timer
-// rather than this sketch holding a pin high indefinitely, a hung or crashed Nano can't keep
-// the system powered forever — it can only fail to extend the (short) delay, which is a much
-// safer failure mode for something sitting on a permanent 12V feed.
-//
-// Unverified: that the module's trigger input is actually retriggerable (repeated triggers
-// reset/extend the countdown rather than being ignored) — confirm on the bench before
-// wiring this in. See README Power latch section.
+// This sketch has no role in power management as a result: it can't accidentally keep the
+// system powered (nothing here can prevent the module's timer from cutting power), and a
+// hung/crashed Nano has no effect on the auto-off behavior either.
 
 struct Axis {
   const char* name;
@@ -58,29 +51,16 @@ Axis axes[] = {
 const unsigned long MAX_RUN_MS = 8000;
 const uint8_t MOTOR_SPEED = 200; // 0-255 PWM duty cycle
 
-const uint8_t POWER_KEEPALIVE_PIN = 12;
-const unsigned long STANDBY_TIMEOUT_MS = 5UL * 60UL * 1000UL;  // give up after 5 min idle
-const unsigned long KEEPALIVE_INTERVAL_MS = 2000;              // must stay well under the
-                                                                // module's own delay setting
-const unsigned long KEEPALIVE_PULSE_MS = 100;
-unsigned long lastActivityMs = 0;
-unsigned long lastKeepaliveMs = 0;
-bool keepaliveHigh = false;
-
 void setup() {
   Serial.begin(115200);
   for (Axis& axis : axes) {
     pinMode(axis.dirPin, OUTPUT);
     pinMode(axis.pwmPin, OUTPUT);
   }
-  pinMode(POWER_KEEPALIVE_PIN, OUTPUT);
-  digitalWrite(POWER_KEEPALIVE_PIN, LOW);
-  lastActivityMs = millis();
 }
 
 void loop() {
   unsigned long now = millis();
-  bool anyActivity = false;
 
   for (Axis& axis : axes) {
     int reading = analogRead(axis.analogPin);
@@ -95,27 +75,7 @@ void loop() {
       requested = 0; // safety cutoff
     }
 
-    if (requested != 0) anyActivity = true;
-
     digitalWrite(axis.dirPin, requested > 0 ? HIGH : LOW);
     analogWrite(axis.pwmPin, requested == 0 ? 0 : MOTOR_SPEED);
   }
-
-  if (anyActivity) {
-    lastActivityMs = now;
-  }
-
-  bool awake = (now - lastActivityMs) < STANDBY_TIMEOUT_MS;
-  if (awake) {
-    // Pulse periodically to retrigger the delay-off module, mimicking a fresh button press.
-    if (!keepaliveHigh && now - lastKeepaliveMs >= KEEPALIVE_INTERVAL_MS) {
-      digitalWrite(POWER_KEEPALIVE_PIN, HIGH);
-      keepaliveHigh = true;
-      lastKeepaliveMs = now;
-    } else if (keepaliveHigh && now - lastKeepaliveMs >= KEEPALIVE_PULSE_MS) {
-      digitalWrite(POWER_KEEPALIVE_PIN, LOW);
-      keepaliveHigh = false;
-    }
-  }
-  // else: stop pulsing and let the module's own timer expire and cut power.
 }
