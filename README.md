@@ -38,8 +38,8 @@ independently.
 | Microcontroller | Arduino Nano (ATmega328) | Reads switch panel, drives motor controller |
 | Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
 | Logic supply regulator | 12V→5V buck converter, module marked `C1205003`, 15W, 5V/3A max output | Steps the constant 12V feed down to 5V for the Nano and switch panel; see [Logic supply](#vehicle-integration-checklist) for the recommended wiring — bypass the pre-attached micro-USB cable |
-| Power latch pilot module | LCD-programmable delay-relay module (XY-LJ02-style), 6–30V supply, timing 0.01s–9999min, relay rated 5A/30V max — sourced, comes with a matching momentary pushbutton | Pushbutton-powered, self-latching wake/auto-off controller; its own relay is too small for motor current, so it only pilots the main relay's coil — see [Power latch](#power-latch) |
-| Power latch main relay | 12V automotive relay (~30A class) — not yet sourced | Carries the actual switched 12V to the buck converter and Cytron `B+`; driven by the pilot module's relay, not by the Nano |
+| Power latch module | Garosa YYLOCK-2 (or equivalent) self-locking delay-relay module, `SLA-12VDC-SL-C` relay, 30A/250VAC or 30A/30VDC at the module level, delay 0s–100min — not yet sourced | Pushbutton-powered, self-latching wake/auto-off controller; its relay contacts also carry the actual switched load (Cytron `B+` + buck converter) — see [Power latch](#power-latch) |
+| Power latch pushbutton | Momentary, normally-open pushbutton — not yet sourced | User-facing wake trigger, dash or seat-mounted; draws zero current when not pressed |
 
 ### Switch panel
 
@@ -227,13 +227,13 @@ flowchart LR
     M1 --> MOT1
     M2 --> MOT2
 
-    BATT["12V vehicle supply, permanent, fused"] --> PBTN["Pushbutton<br/>(sourced with pilot module)"]
-    PBTN --> PILOT["Delay-relay pilot module<br/>(LCD-programmable, self-latching,<br/>5A relay — pilots only, see Power latch)"]
-    PILOT -- self-latch --> PBTN
-    PILOT -- energizes coil --> MAINRELAY["Main relay<br/>(~30A class, not yet sourced)"]
-    BATT -- through contacts --> MAINRELAY
-    MAINRELAY --> BSUP
-    MAINRELAY --> REG["12V→5V buck converter<br/>(C1205003, hardwired — no USB cable)"]
+    BATT["12V vehicle supply, permanent, fused"] --> PBTN["Pushbutton<br/>(not yet sourced)"]
+    BATT --> LATCH["YYLOCK-2 'COM'"]
+    PBTN --> DCPLUS["YYLOCK-2 'DC+'<br/>(IN jumpered to DC+, mode P-3)"]
+    LATCH -- closes onto NO when triggered --> NOOUT["YYLOCK-2 'NO'<br/>(switched +12V out)"]
+    NOOUT -- self-latch --> DCPLUS
+    NOOUT --> BSUP
+    NOOUT --> REG["12V→5V buck converter<br/>(C1205003, hardwired — no USB cable)"]
     BSUP --> M1
     BSUP --> M2
 
@@ -250,62 +250,59 @@ the regulator, per [Voltage domains](#voltage-domains).
 
 The controller needs to work with the ignition off (so seat position can be adjusted before
 getting in), but the whole point is that it must **not** sit drawing current 24/7 off the permanent
-12V feed — that's how you come back to a dead battery. Solution: an LCD-programmable delay-relay
-module (XY-LJ02-style: 6–30V supply, timing continuously adjustable 0.01s–9999min, relay rated 5A
-at 30V max) whose own power input — not just a trigger pin — is gated by a pushbutton, so at rest
-it draws genuinely nothing. Its relay both self-latches its own power on and pilots a separate,
-properly-rated main relay that actually carries the load.
-
-**This module's relay must not switch the seat motors directly** — 5A is well under what even one
-Cytron channel can pull at stall (10A). It only ever drives the main relay's coil.
+12V feed — that's how you come back to a dead battery. Solution: a single self-locking delay-relay
+module (Garosa YYLOCK-2 or equivalent: `SLA-12VDC-SL-C` relay, 30A/250VAC or 30A/30VDC rated at the
+module level — not just the bare relay chip, terminals sized to match) whose own power input, not
+just a signal pin, is gated by a pushbutton. At rest, nothing downstream has any power at all.
 
 ```
-+12V permanent ----+------------------------------------------------+
-                    |                                                |
-              [pushbutton]                                     main relay coil
-              (momentary,                                       (fed only when
-               dash/seat)                                     the module is awake)
-                    |                                                |
-                    +---------------+                                |
-                                    |                                |
-                          delay module "Power supply +/-"            |
-                          (module boots, timer starts)               |
-                                    |                                |
-                          module relay (COM/NO) ---------------------+---> also
-                          closes: feeds its own                          feeds
-                          power pins (self-latch)                        main relay
-                                                                          coil's hot side
-                                                                          (coil low side -> GND,
-                                                                           flyback diode across coil)
++12V permanent (fused) ----+------------------------------------+
+                            |                                    |
+                      [pushbutton]                          YYLOCK "COM"
+                      (momentary)                        (permanent feed in)
+                            |                                    |
+                            +--------------+          closes onto "NO" when
+                                           |            the relay is energized
+                                     YYLOCK "DC+" <----------- YYLOCK "NO"
+                                           |               (switched +12V out)
+                                     YYLOCK "IN" (jumpered to DC+
+                                     on the module itself — mode P-3)
+                                           |
+                                     YYLOCK "DC-" ---> common GND
 
-main relay contacts (NO) ---> switched +12V out ---> buck converter IN and Cytron B+ (both boards)
+switched +12V (from "NO") ---> Cytron B+ and buck converter IN (both fed from here)
 ```
 
-- **Wake:** pressing the pushbutton applies 12V to the module's own power input. It boots and
-  (once set to the right mode — see below) immediately closes its relay.
-- **Self-latch:** that same relay contact is wired back to the module's own power input in parallel
-  with the pushbutton, so releasing the button changes nothing — the module now holds its own power
-  on. The same contact also energizes the main relay's coil.
-- **Load:** the main relay's contacts — not the delay module's — carry the buck converter and
-  Cytron `B+` feeds, sized appropriately (~30A class) for real motor stall current.
-- **Auto-off:** the delay module's own timer, set generously (e.g. 10–15 minutes) directly via its
-  `SET`/`UP`/`DOWN` buttons on the LCD, cuts its relay when it expires — dropping its own power and
-  the main relay's coil together. Everything downstream, including the Nano, loses power. At rest,
-  the pushbutton is open and the module has no power on it at all: draw is genuinely zero, not just
-  low. The module's 15mA quiescent spec only applies while it's awake, which doesn't matter.
-- **No firmware role:** because the module handles wake and timeout entirely on its own hardware,
-  `seat_control_main.ino` has no power-management code at all — nothing it does can affect whether
-  or when the system powers down. A future enhancement could use the module's documented trigger
-  input (high-level 3.0–24V — a Nano 5V GPIO is compatible with no extra parts; low-level
-  0.0–0.2V is also available) to have the Nano retrigger the timer during long sessions, but a
-  generously-set fixed duration is simpler and sufficient for a first build.
+- **Wake:** pressing the pushbutton applies 12V to the module's `DC+`/`DC-`. Because `IN` is
+  permanently jumpered to `DC+`, the module sees itself as already triggered the instant it powers
+  up — no separate trigger wiring needed.
+- **Mode P-3** ("Timed Output Mode"), per the module's manual: *"if the input is continuously
+  shorted, the relay activates for the set delay period and then deactivates until power is
+  removed."* That's the whole behavior in one sentence — relay closes immediately, stays closed for
+  a delay set via the `SET` button (aim for 10–15 minutes), then opens and stays open until power
+  is fully cycled again.
+- **Self-latch and load, same contact:** the relay's `NO`/`COM` pair is wired back to `DC+` in
+  parallel with the pushbutton (so releasing the button changes nothing — the module now holds its
+  own power on) **and** feeds the buck converter + Cytron `B+` downstream. One 30A-rated contact
+  pair does both jobs — no separate main relay needed, unlike the two-stage design this replaces.
+- **Auto-off:** when the set delay elapses, the relay opens, cutting its own power and the
+  downstream load together — including the Nano. At rest, the pushbutton is open and the module has
+  no power on it: draw is genuinely zero.
+- **No firmware role:** `seat_control_main.ino` has no power-management code — the module handles
+  wake and timeout entirely on its own hardware.
+
+Other modes exist (`P-1` self-locking/toggle, `P-2` power-off delay, `P-4` delayed-on) but none fit
+this use case — see the module's manual for the full function list if reconsidering.
 
 **Open items:**
-1. Confirm which of the module's selectable modes (`P__` codes on the LCD) does "close relay
-   immediately on power-up, stay closed for the set duration" — mode numbering varies between
-   clones of this board, check the specific listing/manual.
-2. Source the main relay (~30A class) and a flyback diode for its coil — same requirement as
-   before, just now clearly separated from the delay module's own (unrelated, lower-current) relay.
+1. Bench-test the module standalone (module + pushbutton + multimeter, nothing else attached):
+   confirm `P-3` with `IN` shorted to `DC+` behaves as documented, and confirm the module actually
+   retains its configured mode/delay across a full power cycle — it's advertised to ("permanent
+   memory mode when power is off"), which matters more here than in a normally-always-powered
+   application, since this module's own power is cut every single time it goes to sleep by design.
+2. Confirm real-world current handling under a load similar to actual motor stall current before
+   trusting the 30A rating for good — the module-level rating is more credible than a bare relay
+   chip's printed number, but hasn't been independently verified here.
 
 ## Firmware
 
@@ -368,13 +365,12 @@ Not started. Before any of this touches a vehicle:
   seat motors.
 - Cut off the buck converter's micro-USB plug and wire its `Y`/`B` output leads directly to the
   Nano's `5V`/`GND` pins via the HW-152 adapter; fuse its `R` (12V in) lead separately from the
-  motor supply fuse.
-- Find the delay module's mode table and confirm which mode gives "close relay on power-up, hold
-  for the set duration" (see [Power latch](#power-latch)); set the duration generously (10–15 min).
-- Source the main relay (~30A class) and a flyback diode for its coil.
-- Bench-test the power latch on its own (pushbutton + pilot module + main relay, no Nano/buck
-  converter/Cytron attached yet) — confirm it self-latches on a single press, actually cuts power
-  after the set duration, and draws nothing at rest — before it's gating anything that matters.
+  motor supply fuse, even though both now come from the same switched output.
+- Source the YYLOCK-2 (or equivalent) module and a momentary pushbutton.
+- Bench-test the power latch on its own (module + pushbutton, no Nano/buck converter/Cytron
+  attached yet) — confirm mode `P-3` with `IN` shorted to `DC+` behaves as documented, confirm
+  settings survive a full power cycle, and confirm it draws nothing at rest — before it's gating
+  anything that matters.
 - Decide on and mount the pushbutton location (dashboard vs. seat).
 - Work through the [vehicle integration checklist](#vehicle-integration-checklist) above — power,
   grounding, target motor ratings, connectors, enclosure — before connecting any seat motor. Do not
