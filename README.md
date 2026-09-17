@@ -179,9 +179,22 @@ rocker paddles, each a 4-corner rocker, giving 2 × 4 = 8 underlying switches.
 
 ## Proposed system wiring
 
-End-to-end signal path from switch panel to motors, based on the parts in the [hardware
+End-to-end wiring from battery to motors, based on the parts in the [hardware
 inventory](#hardware-inventory). Only PIN 1's behavior is empirically confirmed; the rest of this
-diagram is a proposed build, not a verified one.
+is a proposed build, not a verified one. Split into two diagrams — power and signal — since
+combining both into one gets hard to follow.
+
+<img src="images/power-wiring.png" width="650" alt="Power wiring diagram: battery through the power latch to Nano, switch panel, and Cytron">
+
+*Power path: battery → pushbutton/YYLOCK-2 latch → switched 12V to the Cytron and buck converter →
+5V to the Nano and switch panel. See [Power latch](#power-latch) for how the latch itself works.*
+
+<img src="images/signal-wiring.png" width="650" alt="Signal wiring diagram: switch panel through Nano and Cytron to the motors">
+
+*Signal path: switch panel → Nano → Cytron → motors. Assumes power is already on — ground is
+common across both diagrams, not repeated here.*
+
+A pin-level Mermaid version of the same system, for reference:
 
 ```mermaid
 flowchart LR
