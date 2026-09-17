@@ -181,18 +181,20 @@ rocker paddles, each a 4-corner rocker, giving 2 × 4 = 8 underlying switches.
 
 End-to-end wiring from battery to motors, based on the parts in the [hardware
 inventory](#hardware-inventory). Only PIN 1's behavior is empirically confirmed; the rest of this
-is a proposed build, not a verified one. Split into two diagrams — power and signal — since
-combining both into one gets hard to follow.
+is a proposed build, not a verified one.
 
-<img src="images/power-wiring.png" width="650" alt="Power wiring diagram: battery through the power latch to Nano, switch panel, and Cytron">
+<img src="images/full-pinout-schematic.png" width="900" alt="Full pinout schematic showing every physical connection point on every component, with only the wired ones connected">
 
-*Power path: battery → pushbutton/YYLOCK-2 latch → switched 12V to the Cytron and buck converter →
-5V to the Nano and switch panel. See [Power latch](#power-latch) for how the latch itself works.*
+*Every connection point on every component, drawn like a circuit board view — filled blue dots are
+pins actually wired in this design; grey dots are real pins on the part that are simply unused
+(e.g. the switch panel's 6 unidentified cavities, the YYLOCK-2's `NC` contact, most of the Nano's
+pins). Orange = 12V power, green = signal, dark = motor output, grey dashed = common ground.*
 
-<img src="images/signal-wiring.png" width="650" alt="Signal wiring diagram: switch panel through Nano and Cytron to the motors">
+For a lower-detail overview, the same system split into just power and signal flow:
 
-*Signal path: switch panel → Nano → Cytron → motors. Assumes power is already on — ground is
-common across both diagrams, not repeated here.*
+<img src="images/power-wiring.png" width="620" alt="Power wiring diagram: battery through the power latch to Nano, switch panel, and Cytron">
+
+<img src="images/signal-wiring.png" width="620" alt="Signal wiring diagram: switch panel through Nano and Cytron to the motors">
 
 A pin-level Mermaid version of the same system, for reference:
 
