@@ -188,7 +188,10 @@ is a proposed build, not a verified one.
 *Every connection point on every component, drawn like a circuit board view — filled blue dots are
 pins actually wired in this design; grey dots are real pins on the part that are simply unused
 (e.g. the switch panel's 6 unidentified cavities, the YYLOCK-2's `NC` contact, most of the Nano's
-pins). Orange = 12V power, green = signal, dark = motor output, grey dashed = common ground.*
+pins). Orange = 12V power, green = signal, dark = motor output, black = ground. All grounds
+(battery, YYLOCK-2, buck converter, Nano ×2, Cytron ×2, switch panel PIN 4) return to one common
+chassis/earth point — in the car, that's the vehicle chassis itself, not a separate ground wire run
+back to the battery.*
 
 For a lower-detail overview, the same system split into just power and signal flow:
 
