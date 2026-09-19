@@ -2,12 +2,14 @@
 
 Repurposing an Audi `4N0959748D` switch assembly (Preh `13250-757/0200`) as a standalone control
 interface for 12V seat motors in a different vehicle. This document tracks what's been measured
-on the OEM hardware so far, the wiring scheme inferred from it, and what's still open before any
-12V motor is connected.
+on the OEM hardware so far, the wiring scheme inferred from it, and what's still open before it
+moves from the test bench into a vehicle.
 
-> **Status:** reverse-engineering in progress, with two axes (`fore_aft`, `recline`) confirmed
-> working on real hardware. The remaining wiring is an interpretation of the photographed hardware,
-> not yet confirmed end-to-end — treat resistor values as working hypotheses until verified.
+> **Status:** the full chain — pushbutton → YYLOCK-2 power latch → buck converter → Nano → switch
+> panel → Cytron → motor — is **confirmed working end-to-end on the bench** for two of the four
+> axes (`fore_aft`, `recline`), including a dummy 12V motor. `front_tilt`/`rear_tilt` remain
+> unbuilt pending a second Cytron board. Nothing has been installed in a vehicle yet — see
+> [Vehicle integration checklist](#vehicle-integration-checklist) for what's still open before that.
 
 ## Voltage domains
 
@@ -402,8 +404,9 @@ Not started. Before any of this touches a vehicle:
   than reading the printed code from photos.
 - Probe the 6 unaccounted-for cavities on the 12-position connector — confirm whether they're
   genuinely unused or carry signals not yet identified.
-- Trace the pigtail's 12 wires back to their cavities and record the mapping in this README —
-  needed before wiring the pigtail to the Nano.
+- The pigtail wires actually needed (PINs 3, 4, 5) are landed and confirmed working end-to-end on
+  the bench. The other 9 cavities' wires still aren't traced/recorded — not blocking, since nothing
+  currently needs them, but worth doing before assuming the rest of the pigtail is understood.
 - ~~KF2510 cable wire-to-pin mapping~~ — done, confirmed on both ends: `GND`→orange, `D4`/`DIR1`→
   black, `D5`/`PWM1`→red, `D6`/`PWM2`→yellow, `D7`/`DIR2`→white (see [Proposed system
   wiring](#proposed-system-wiring)). This is the `fore_aft`/`recline` pair, not `front_tilt` as
@@ -413,9 +416,10 @@ Not started. Before any of this touches a vehicle:
   values are measured on the second Cytron board.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
-- Cut off the buck converter's micro-USB plug and wire its `Y`/`B` output leads directly to the
-  Nano's `5V`/`GND` pins via the HW-152 adapter; fuse its `R` (12V in) lead separately from the
-  motor supply fuse, even though both now come from the same switched output.
+- ~~Wire the buck converter's `Y`/`B` output leads directly to the Nano's `5V`/`GND` pins~~ — done,
+  confirmed working on the bench (no micro-USB cable used). Still open: fuse the `R` (12V in) lead
+  separately from the motor supply fuse — not needed for bench testing, but before this is
+  permanent/in a vehicle.
 - ~~Source and bench-test the power latch module~~ — done, see [Power latch](#power-latch):
   P-3 behavior and settings-retention across a power cycle both confirmed on real hardware.
 - Decide on and mount the pushbutton location (dashboard vs. seat).
