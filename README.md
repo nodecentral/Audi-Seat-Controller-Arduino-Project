@@ -396,8 +396,19 @@ Not started. Before any of this touches a vehicle:
 - ~~**Connector matching**~~ — done: pre-wired pigtail (TE `1534096-1` / `1-1534096-1`) bought and
   confirmed to mate with the panel. Still open: trace and record which of its 12 wires land on
   which cavity, per the note under [Switch panel](#switch-panel).
-- **Enclosure** — the Nano, both driver boards, and the wiring need protection from vibration and
-  moisture once installed; this hasn't been designed yet.
+- **Enclosure** — houses all four boards (YYLOCK-2, buck converter, Nano, Cytron). Target: IP65
+  ABS enclosure with a removable internal mounting plate (build/wire the boards on the plate on
+  the bench, then drop the finished assembly into the box), internal usable area ~220×160mm,
+  cable glands for the external bundles rather than ad-hoc drilled holes. Plastic, not metal — no
+  EMI-shielding need here, and it avoids having to isolate boards from a conductive case.
+
+  <img src="images/enclosure-layout.png" width="700" alt="Enclosure layout: top-down view showing YYLOCK-2, buck converter, Nano, and Cytron placement with external wire entry points">
+
+  *Proposed layout — power flows left→right (12V in → YYLOCK-2 → buck converter/Cytron), signal
+  flows top→right (switch panel → Nano → Cytron → motors). The dotted area is open space for a
+  terminal strip where external bundles land before distribution, rather than loose wires crossing
+  the box. External connections: 12V+GND in (2 wires), seat controller (5 wires — PINs 1/2 spare,
+  reserved for the parked second Cytron board), pushbutton+LED (4 wires), motor outputs (4 wires).*
 
 ## Next Steps
 
