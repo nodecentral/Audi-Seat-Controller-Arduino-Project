@@ -188,10 +188,14 @@ is a proposed build, not a verified one.
 *Every connection point on every component, drawn like a circuit board view — filled blue dots are
 pins actually wired in this design; grey dots are real pins on the part that are simply unused
 (e.g. the switch panel's 6 unidentified cavities, the YYLOCK-2's `NC` contact, most of the Nano's
-pins). Orange = 12V power, green = signal, dark = motor output, black = ground. All grounds
-(battery, YYLOCK-2, buck converter, Nano ×2, Cytron ×2, switch panel PIN 4) return to one common
-chassis/earth point — in the car, that's the vehicle chassis itself, not a separate ground wire run
-back to the battery.*
+pins). Orange = 12V power, green = signal, dark = motor output. Each `▽` is a local chassis/earth
+ground symbol — every ground point (battery, YYLOCK-2, buck converter, Nano ×2, Cytron ×2, switch
+panel PIN 4) returns to the same vehicle chassis; they're drawn as separate local symbols rather
+than one wire run joining them all, since in the car they don't share a physical wire back to a
+single point anyway. The Nano↔Cytron control cable's real wire colours are labelled on those four
+signal lines (black/red/yellow/white) — confirmed from the physical KF2510 cable; only the Nano end
+has been traced so far, so double-check the same colours land on Cytron's `DIR1/PWM1/PWM2/DIR2`
+silkscreen before trusting it fully.*
 
 For a lower-detail overview, the same system split into just power and signal flow:
 
@@ -376,8 +380,9 @@ Not started. Before any of this touches a vehicle:
   genuinely unused or carry signals not yet identified.
 - Trace the pigtail's 12 wires back to their cavities and record the mapping in this README —
   needed before wiring the pigtail to the Nano.
-- Identify the KF2510 cable's 5 bare leads against `DIR1/PWM1/DIR2/PWM2/GND` and land them on the
-  correct Nano pins per `seat_control_main.ino` (D2/D3 for front_tilt, D7/D6 for fore_aft).
+- Nano-side landing of the KF2510 cable is done: `GND`→orange, `D2`→black, `D3`→red, `D6`→yellow,
+  `D7`→white (see [Proposed system wiring](#proposed-system-wiring)). Still need to confirm the
+  same colours land on Cytron's `DIR1/PWM1/PWM2/DIR2/GND` silkscreen on the other end.
 - Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
