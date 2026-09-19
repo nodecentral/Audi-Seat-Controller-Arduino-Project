@@ -7,8 +7,9 @@ moves from the test bench into a vehicle.
 
 > **Status:** the full chain — pushbutton → YYLOCK-2 power latch → buck converter → Nano → switch
 > panel → Cytron → motor — is **confirmed working end-to-end on the bench** for two of the four
-> axes (`fore_aft`, `recline`), including a dummy 12V motor. `front_tilt`/`rear_tilt` remain
-> unbuilt pending a second Cytron board. Nothing has been installed in a vehicle yet — see
+> axes (`fore_aft`, `recline`), including a dummy 12V motor. `front_tilt`/`rear_tilt` and the
+> second Cytron board they need are **parked for now** (cost), not a technical blocker. Nothing has
+> been installed in a vehicle yet — see
 > [Vehicle integration checklist](#vehicle-integration-checklist) for what's still open before that.
 
 ## Voltage domains
@@ -365,11 +366,13 @@ the second Cytron board.
 
 Not started. Before any of this touches a vehicle:
 
-- **Power source** — decided: a permanent 12V feed straight from the battery, fused at the battery
-  end and sized to the sum of what's downstream. Seat adjustment needs to work with the ignition
-  off, which rules out simply gating this off an ignition-switched circuit — instead the feed goes
-  through the [power latch](#power-latch) relay, so the controller draws no standby current between
-  uses despite being fed from a permanent source.
+- **Power source** — decided: a permanent 12V feed, already fused from the car's main board into a
+  fuse box. Add a dedicated small inline fuse there for this circuit specifically, sized to what it
+  actually draws — the existing upstream fuse protects the main distribution wiring, not this
+  circuit's own branch wire (see [Next Steps](#next-steps)). Seat adjustment needs to work with the
+  ignition off, which rules out simply gating this off an ignition-switched circuit — instead the
+  feed goes through the [power latch](#power-latch) relay, so the controller draws no standby
+  current between uses despite being fed from a permanent source.
 - **Logic supply** — sourced: a 12V→5V buck converter (module marked `C1205003`, 15W, rated 5V/3A
   output — comfortably more than the Nano will ever draw; the switch panel doesn't need any of this
   rail, since it's read via the Nano's own internal pull-up, not an external 5V feed). It
@@ -398,8 +401,11 @@ Not started. Before any of this touches a vehicle:
 
 ## Next Steps
 
-- Once the second Cytron board exists, flash `diagnostic_read_switch_panel` and measure PIN 1
-  (`front_tilt`) and PIN 2 (`rear_tilt`) to find out which of `A1`/`A2` is which axis.
+**Parked for now:** `front_tilt`/`rear_tilt` and the second Cytron MDD10A board they need are
+deliberately deferred — cost-driven decision, not a technical blocker. The items below (measuring
+PINs 1/2, finding which of `A1`/`A2` is which axis, sourcing the second board, updating their
+placeholder thresholds) all wait on that decision being revisited.
+
 - Confirm the two SMD resistor values (silkscreened `8200` / `3920`) by direct measurement rather
   than reading the printed code from photos.
 - Probe the 6 unaccounted-for cavities on the 12-position connector — confirm whether they're
@@ -407,22 +413,21 @@ Not started. Before any of this touches a vehicle:
 - The pigtail wires actually needed (PINs 3, 4, 5) are landed and confirmed working end-to-end on
   the bench. The other 9 cavities' wires still aren't traced/recorded — not blocking, since nothing
   currently needs them, but worth doing before assuming the rest of the pigtail is understood.
-- ~~KF2510 cable wire-to-pin mapping~~ — done, confirmed on both ends: `GND`→orange, `D4`/`DIR1`→
-  black, `D5`/`PWM1`→red, `D6`/`PWM2`→yellow, `D7`/`DIR2`→white (see [Proposed system
-  wiring](#proposed-system-wiring)). This is the `fore_aft`/`recline` pair, not `front_tilt` as
-  earlier assumed — `front_tilt`/`rear_tilt` are unbuilt, on `D2`/`D3` and `D8`/`D9` for whenever
-  the second Cytron board happens.
-- Update the placeholder `front_tilt`/`rear_tilt` thresholds in `seat_control_main` once real
-  values are measured on the second Cytron board.
-- Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
-  seat motors.
 - ~~Wire the buck converter's `Y`/`B` output leads directly to the Nano's `5V`/`GND` pins~~ — done,
-  confirmed working on the bench (no micro-USB cable used). Still open: fuse the `R` (12V in) lead
-  separately from the motor supply fuse — not needed for bench testing, but before this is
-  permanent/in a vehicle.
+  confirmed working on the bench (no micro-USB cable used).
 - ~~Source and bench-test the power latch module~~ — done, see [Power latch](#power-latch):
   P-3 behavior and settings-retention across a power cycle both confirmed on real hardware.
+- **Fine-tune later, once it's installed and has run reliably for a while:** an optional small
+  electrolytic capacitor (100–470µF) across the YYLOCK-2's `DC+`/`DC-`, to make the power-on more
+  tolerant of a soft/incomplete pushbutton press — smooths a brief or bouncy contact into a more
+  sustained power pulse. Not needed now; the button just needs a firm, deliberate press, which is a
+  reasonable property for a wake button anyway. Revisit only if it proves annoying in practice.
 - Decide on and mount the pushbutton location (dashboard vs. seat).
-- Work through the [vehicle integration checklist](#vehicle-integration-checklist) above — power,
-  grounding, target motor ratings, connectors, enclosure — before connecting any seat motor. Do not
-  wire B+/B- to a vehicle 12V supply until that's done.
+- Vehicle power source: a fused 12V feed already exists from the main board into a fuse box.
+  **Add a dedicated small inline fuse there for this circuit specifically** — the upstream fuse
+  protects the main distribution wiring, not this circuit's own (thinner) branch wire, so it needs
+  its own fuse sized to what this circuit actually draws. Pick the rating once real-world stall
+  current is measured (see [Power latch](#power-latch) — still open).
+- Work through the rest of the [vehicle integration checklist](#vehicle-integration-checklist) —
+  chassis grounding, connector matching, enclosure — before connecting any seat motor in the car.
+  Do not wire B+/B- to the vehicle 12V supply until that's done.
