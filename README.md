@@ -5,9 +5,9 @@ interface for 12V seat motors in a different vehicle. This document tracks what'
 on the OEM hardware so far, the wiring scheme inferred from it, and what's still open before any
 12V motor is connected.
 
-> **Status:** reverse-engineering in progress. The wiring scheme below is an interpretation of the
-> photographed hardware, not yet confirmed end-to-end with a multimeter — treat resistor values and
-> PIN 6's function as working hypotheses until verified.
+> **Status:** reverse-engineering in progress, with two axes (`fore_aft`, `recline`) confirmed
+> working on real hardware. The remaining wiring is an interpretation of the photographed hardware,
+> not yet confirmed end-to-end — treat resistor values as working hypotheses until verified.
 
 ## Voltage domains
 
@@ -17,15 +17,16 @@ directly:
 | Domain | Voltage | Covers |
 |---|---|---|
 | **Motor power** | 12V (vehicle supply) | Cytron `B+`/`B-` terminals → seat motors only |
-| **Logic** | 5V | Nano, its ADC reference, and (per the PIN 6 hypothesis) the switch panel's pull-up supply |
+| **Logic** | 5V | Nano and its ADC reference |
 
 The car is a 12V system, but the Nano and the switch panel's signal lines are **not** — the Nano's
-ADC reads 0–1023 against a 5V reference, and the confirmed PIN 1 idle reading of ~1023 only makes
-sense if the pull-up feeding that line is ~5V. Feeding 12V into a Nano analog/digital pin or into
-the switch panel's signal lines directly will exceed the pin's rating and damage it. The 5V rail is
+ADC reads 0–1023 against a 5V reference. Feeding 12V into a Nano analog/digital pin or into the
+switch panel's signal lines directly will exceed the pin's rating and damage it. The 5V rail is
 **derived from the 12V supply through a buck converter** (module marked `C1205003` — see [Logic
 supply](#vehicle-integration-checklist) below) — it isn't a separate source you wire in
-independently.
+independently. The switch panel's own pull-up doesn't come from this rail at all: the Nano reads
+its analog pins with `INPUT_PULLUP` (its own internal pull-up resistor), confirmed working —
+switch panel PIN 6 turned out not to be needed and isn't connected to anything.
 
 ## Hardware inventory
 
@@ -97,8 +98,8 @@ drives two motors — see [Next Steps](#next-steps) for the implication on a 4-a
 
 **Resolved:** the KF2510 cable's 5 bare leads have been traced and landed on the Nano via the
 HW-152 terminal adapter, matching the assignment in
-[`seat_control_main.ino`](firmware/seat_control_main/seat_control_main.ino) — front_tilt: `D4`=DIR1
-(black), `D5`=PWM1 (red); fore_aft: `D7`=DIR2 (white), `D6`=PWM2 (yellow); GND=orange. Confirmed
+[`seat_control_main.ino`](firmware/seat_control_main/seat_control_main.ino) — fore_aft: `D4`=DIR1
+(black), `D5`=PWM1 (red); recline: `D7`=DIR2 (white), `D6`=PWM2 (yellow); GND=orange. Confirmed
 from both ends, not assumed from a fixed wire-colour order — this specific cable turned out to be
 plugged in reversed relative to the Cytron's own `DIR1/PWM1/DIR2/PWM2/GND` silkscreen order, which
 is why cross-checking both ends mattered.
@@ -126,18 +127,26 @@ successfully decoded PIN 1 signals (10-bit ADC, 0–1023):
 The large gap between neutral (~1023, i.e. pulled high) and either pressed state (~27–41, pulled
 sharply low) indicates a pull-up on the line with a low-value resistor switched in to ground on
 each button press — different resistors per direction, which is exactly the two repeated SMD
-values (820 Ω / 392 Ω) visible on the panel.
+values (820 Ω / 392 Ω) visible on the panel. That pull-up is the Nano's own internal one
+(`INPUT_PULLUP`), confirmed working — not an external 5V feed (see [Voltage
+domains](#voltage-domains)).
+
+PIN 3 (fore_aft) and PIN 5 (recline) have since been independently confirmed on real hardware,
+with very similar but not identical values — backward ~25–30, forward ~38–43. The small difference
+from PIN 1's numbers above is expected: different axes' resistors and the switch to
+`INPUT_PULLUP` both shift the exact thresholds slightly, which is exactly why each axis needs
+measuring rather than assumed identical.
 
 ## Confirmed control mapping
 
 | Pin | Function | Status |
 |---|---|---|
-| PIN 1 | Front seat-base tilt | Confirmed (ADC values above) |
-| PIN 2 | Rear seat-base tilt | Identified, ADC values not yet measured |
-| PIN 3 | Entire seat forward/backward movement | Identified, ADC values not yet measured |
+| PIN 1 | Front seat-base tilt | Identified (ADC values above); axis not yet wired to a driver |
+| PIN 2 | Rear seat-base tilt | Identified, ADC values not yet measured; axis not yet wired to a driver |
+| PIN 3 | Entire seat forward/backward movement (`fore_aft`) | **Confirmed working** — Nano `A3` |
 | PIN 4 | Common reference (ground) | Confirmed |
-| PIN 5 | Backrest recline adjustment | Identified, ADC values not yet measured |
-| PIN 6 | Unknown | **Hypothesis:** shared +5V (logic domain, *not* 12V — see [Voltage domains](#voltage-domains)) pull-up supply for the four resistor-ladder inputs — not yet measured |
+| PIN 5 | Backrest recline adjustment (`recline`) | **Confirmed working** — Nano `A5` |
+| PIN 6 | Unused | **Confirmed not connected to anything** — not needed; the Nano's internal pull-up (`INPUT_PULLUP`) does this job instead |
 
 The panel's mating connector has 12 cavities (see [hardware inventory](#hardware-inventory)); PINs
 1–6 above are the ones identified so far. The remaining 6 cavities haven't been probed — they may
@@ -152,11 +161,9 @@ on the panel plus the PIN 1 readings above. This is inferred from photos, not co
 continuity testing — verify with a multimeter before relying on it:
 
 ```
-                 PIN 6 (+5V?, proposed pull-up supply)
+         Nano internal pull-up (INPUT_PULLUP)
                          |
-                    [pull-up resistor, value TBD]
-                         |
-Nano ADC pin  <----------+----------  e.g. PIN 1 (front tilt)
+Nano ADC pin  <----------+----------  e.g. PIN 3 (fore_aft)
                          |
               +----------+----------+
               |                     |
@@ -169,6 +176,9 @@ Nano ADC pin  <----------+----------  e.g. PIN 1 (front tilt)
                          |
                  PIN 4 (GND, common return)
 ```
+
+Confirmed: the pull-up is internal to the Nano, not an external 5V feed — PIN 6 isn't connected to
+anything (see [Confirmed control mapping](#confirmed-control-mapping)).
 
 Each of the four movement pins (1, 2, 3, 5) is expected to follow this same pattern: idle high
 (~1023), pulled to a low-but-distinct ADC value depending on which of the two direction buttons for
@@ -211,23 +221,21 @@ A pin-level Mermaid version of the same system, for reference:
 ```mermaid
 flowchart LR
     subgraph SWITCH["Preh switch panel (13250-757/0200)"]
-        P1["PIN 1 — front tilt"]
-        P2["PIN 2 — rear tilt"]
+        P1["PIN 1 — front tilt<br/>(not yet wired to a driver)"]
+        P2["PIN 2 — rear tilt<br/>(not yet wired to a driver)"]
         P3["PIN 3 — fore/aft"]
         P5["PIN 5 — recline"]
         P4["PIN 4 — GND"]
-        P6["PIN 6 — +5V? (unconfirmed)"]
+        P6["PIN 6 — confirmed unused"]
     end
 
     subgraph NANO["Arduino Nano (via HW-152 terminal adapter)"]
-        A0["A0"]
-        A1["A1"]
-        A2["A2"]
-        A3["A3"]
+        A3n["A3"]
+        A5n["A5"]
         GND1["GND"]
         FIVEV["5V"]
-        CTRL1["D4/D5 — DIR1/PWM1 (front_tilt)"]
-        CTRL2["D7/D6 — DIR2/PWM2 (fore_aft)"]
+        CTRL1["D4/D5 — DIR1/PWM1 (fore_aft)"]
+        CTRL2["D7/D6 — DIR2/PWM2 (recline)"]
     end
 
     subgraph DRV1["Cytron MDD10A #1 (drives 2 of 4 axes)"]
@@ -236,19 +244,16 @@ flowchart LR
         BSUP["B+ / B-"]
     end
 
-    P1 --> A0
-    P2 --> A1
-    P3 --> A2
-    P5 --> A3
+    P3 --> A3n
+    P5 --> A5n
     P4 --> GND1
-    REG -. proposed .-> P6
     REG -. proposed .-> FIVEV
 
     CTRL1 --> M1
     CTRL2 --> M2
 
-    MOT1["Seat motor — front tilt"]
-    MOT2["Seat motor — fore/aft"]
+    MOT1["Seat motor — fore_aft (seat base)"]
+    MOT2["Seat motor — recline (backrest)"]
     M1 --> MOT1
     M2 --> MOT2
 
@@ -262,7 +267,7 @@ flowchart LR
     BSUP --> M1
     BSUP --> M2
 
-    DRV2["Cytron MDD10A #2 (needed for remaining 2 axes:<br/>rear tilt on D2/D3, recline on D8/D9)<br/>— not yet built"]
+    DRV2["Cytron MDD10A #2 (needed for remaining 2 axes:<br/>front tilt and rear tilt on D2/D3 and D8/D9,<br/>exact pairing TBD)<br/>— not yet built"]
     CTRL1 -.-> DRV2
 ```
 
@@ -333,11 +338,12 @@ this use case — see the module's manual for the full function list if reconsid
 
 | Sketch | Purpose |
 |---|---|
-| [`firmware/diagnostic_read_switch_panel`](firmware/diagnostic_read_switch_panel/diagnostic_read_switch_panel.ino) | Prints raw ADC values for all four movement pins over serial. Use this to fill in the still-missing PIN 2/3/5 measurements and to sanity-check the PIN 6 hypothesis. |
-| [`firmware/seat_control_main`](firmware/seat_control_main/seat_control_main.ino) | Draft control loop: reads all four axes, drives the Cytron board(s), and stops a motor if it's held on past an 8-second safety cutoff. Has no role in power management — the [power latch](#power-latch) handles wake/auto-off entirely in hardware. Thresholds are copied from the PIN 1 measurement and are placeholders for the other three axes until measured. |
+| [`firmware/diagnostic_read_switch_panel`](firmware/diagnostic_read_switch_panel/diagnostic_read_switch_panel.ino) | Prints raw ADC values for `fore_aft`/`recline` (confirmed working) plus the two unconfirmed `front_tilt`/`rear_tilt` pins (`A1`, `A2`) over serial. Use it once the second Cytron board exists to find out which of `A1`/`A2` is which axis. |
+| [`firmware/seat_control_main`](firmware/seat_control_main/seat_control_main.ino) | Control loop: reads all four axes, drives the Cytron board(s), and stops a motor if it's held on past an 8-second safety cutoff. Has no role in power management — the [power latch](#power-latch) handles wake/auto-off entirely in hardware. `fore_aft`/`recline` thresholds are confirmed working; `front_tilt`/`rear_tilt` copy the same placeholder values until that board exists and gets measured. |
 
-Neither sketch has been run against real hardware yet — the diagnostic sketch is the next thing to
-flash once PIN 6 is wired up per the hypothesis above.
+`fore_aft` and `recline` are confirmed running on real hardware, using the Nano's internal
+`INPUT_PULLUP` rather than an external 5V feed. `front_tilt`/`rear_tilt` are still inert pending
+the second Cytron board.
 
 ## Vehicle integration checklist
 
@@ -349,7 +355,8 @@ Not started. Before any of this touches a vehicle:
   through the [power latch](#power-latch) relay, so the controller draws no standby current between
   uses despite being fed from a permanent source.
 - **Logic supply** — sourced: a 12V→5V buck converter (module marked `C1205003`, 15W, rated 5V/3A
-  output — comfortably more than the Nano plus the switch panel's PIN 6 pull-up will ever draw). It
+  output — comfortably more than the Nano will ever draw; the switch panel doesn't need any of this
+  rail, since it's read via the Nano's own internal pull-up, not an external 5V feed). It
   comes with a pre-attached micro-USB cable meant for powering the Nano through its USB port — for
   a permanent vehicle install, **don't use that USB connection**. A USB plug isn't rated for
   continuous vibration and is one more failure point with no benefit here. Instead: cut off (or
@@ -375,8 +382,8 @@ Not started. Before any of this touches a vehicle:
 
 ## Next Steps
 
-- Flash `diagnostic_read_switch_panel` and measure PINs 2, 3, and 5 (same neutral/up/down method
-  used for PIN 1), and check whether tying PIN 6 to 5V is actually needed for sane readings.
+- Once the second Cytron board exists, flash `diagnostic_read_switch_panel` and measure PIN 1
+  (`front_tilt`) and PIN 2 (`rear_tilt`) to find out which of `A1`/`A2` is which axis.
 - Confirm the two SMD resistor values (silkscreened `8200` / `3920`) by direct measurement rather
   than reading the printed code from photos.
 - Probe the 6 unaccounted-for cavities on the 12-position connector — confirm whether they're
@@ -385,9 +392,11 @@ Not started. Before any of this touches a vehicle:
   needed before wiring the pigtail to the Nano.
 - ~~KF2510 cable wire-to-pin mapping~~ — done, confirmed on both ends: `GND`→orange, `D4`/`DIR1`→
   black, `D5`/`PWM1`→red, `D6`/`PWM2`→yellow, `D7`/`DIR2`→white (see [Proposed system
-  wiring](#proposed-system-wiring)). Note this moved front_tilt off `D2`/`D3` — those are now
-  reserved for rear_tilt on the second Cytron board instead, to avoid a pin clash.
-- Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
+  wiring](#proposed-system-wiring)). This is the `fore_aft`/`recline` pair, not `front_tilt` as
+  earlier assumed — `front_tilt`/`rear_tilt` are unbuilt, on `D2`/`D3` and `D8`/`D9` for whenever
+  the second Cytron board happens.
+- Update the placeholder `front_tilt`/`rear_tilt` thresholds in `seat_control_main` once real
+  values are measured on the second Cytron board.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
 - Cut off the buck converter's micro-USB plug and wire its `Y`/`B` output leads directly to the
