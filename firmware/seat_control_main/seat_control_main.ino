@@ -42,9 +42,9 @@ struct Axis {
 };
 
 Axis axes[] = {
-  { "front_tilt", A0, 2, 3, 35, 50, 0, 0 }, // Cytron #1, M1
+  { "front_tilt", A0, 4, 5, 35, 50, 0, 0 }, // Cytron #1, M1 - confirmed from physical KF2510 wiring
   { "fore_aft",   A2, 7, 6, 35, 50, 0, 0 }, // Cytron #1, M2
-  { "rear_tilt",  A1, 4, 5, 35, 50, 0, 0 }, // Cytron #2 (not yet built), M1
+  { "rear_tilt",  A1, 2, 3, 35, 50, 0, 0 }, // Cytron #2 (not yet built), M1
   { "recline",    A3, 8, 9, 35, 50, 0, 0 }, // Cytron #2 (not yet built), M2
 };
 

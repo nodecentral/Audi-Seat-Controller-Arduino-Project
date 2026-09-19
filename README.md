@@ -95,13 +95,13 @@ Control header: `DIR1 / PWM1 / DIR2 / PWM2 / GND` — a standard 2.54mm 5-positi
 by the KF2510 pigtail in the [hardware inventory](#hardware-inventory) above. This board only
 drives two motors — see [Next Steps](#next-steps) for the implication on a 4-axis seat.*
 
-**Open item:** the KF2510 cable's connectorised end plugs straight into the MDD10A header, but the
-5 bare leads on the other end still need to be identified by continuity back to connector position
-(1–5) and matched against `DIR1/PWM1/DIR2/PWM2/GND` — then landed on the correct Nano pins via the
+**Resolved:** the KF2510 cable's 5 bare leads have been traced and landed on the Nano via the
 HW-152 terminal adapter, matching the assignment in
-[`seat_control_main.ino`](firmware/seat_control_main/seat_control_main.ino) (front_tilt: D2=DIR1,
-D3=PWM1; fore_aft: D7=DIR2, D6=PWM2). Don't assume a fixed wire-colour order — KF2510 is a generic
-2.54mm standard, not something Cytron-specific.
+[`seat_control_main.ino`](firmware/seat_control_main/seat_control_main.ino) — front_tilt: `D4`=DIR1
+(black), `D5`=PWM1 (red); fore_aft: `D7`=DIR2 (white), `D6`=PWM2 (yellow); GND=orange. Confirmed
+from both ends, not assumed from a fixed wire-colour order — this specific cable turned out to be
+plugged in reversed relative to the Cytron's own `DIR1/PWM1/DIR2/PWM2/GND` silkscreen order, which
+is why cross-checking both ends mattered.
 
 ### Controller
 
@@ -226,7 +226,7 @@ flowchart LR
         A3["A3"]
         GND1["GND"]
         FIVEV["5V"]
-        CTRL1["D2/D3 — DIR1/PWM1 (front_tilt)"]
+        CTRL1["D4/D5 — DIR1/PWM1 (front_tilt)"]
         CTRL2["D7/D6 — DIR2/PWM2 (fore_aft)"]
     end
 
@@ -262,7 +262,7 @@ flowchart LR
     BSUP --> M1
     BSUP --> M2
 
-    DRV2["Cytron MDD10A #2 (needed for remaining 2 axes:<br/>rear tilt on D4/D5, recline on D8/D9)<br/>— not yet built"]
+    DRV2["Cytron MDD10A #2 (needed for remaining 2 axes:<br/>rear tilt on D2/D3, recline on D8/D9)<br/>— not yet built"]
     CTRL1 -.-> DRV2
 ```
 
@@ -383,9 +383,10 @@ Not started. Before any of this touches a vehicle:
   genuinely unused or carry signals not yet identified.
 - Trace the pigtail's 12 wires back to their cavities and record the mapping in this README —
   needed before wiring the pigtail to the Nano.
-- ~~KF2510 cable wire-to-pin mapping~~ — done, confirmed on both ends: `GND`→orange, `D2`/`DIR1`→
-  black, `D3`/`PWM1`→red, `D6`/`PWM2`→yellow, `D7`/`DIR2`→white (see [Proposed system
-  wiring](#proposed-system-wiring)).
+- ~~KF2510 cable wire-to-pin mapping~~ — done, confirmed on both ends: `GND`→orange, `D4`/`DIR1`→
+  black, `D5`/`PWM1`→red, `D6`/`PWM2`→yellow, `D7`/`DIR2`→white (see [Proposed system
+  wiring](#proposed-system-wiring)). Note this moved front_tilt off `D2`/`D3` — those are now
+  reserved for rear_tilt on the second Cytron board instead, to avoid a pin clash.
 - Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
