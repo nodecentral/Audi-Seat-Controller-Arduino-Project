@@ -39,7 +39,7 @@ independently.
 | Breakout | HW-152 "Nano Terminal Adapter V1.0" | Screw-terminal breakout for the Nano's header pins |
 | Logic supply regulator | 12V→5V buck converter, module marked `C1205003`, 15W, 5V/3A max output | Steps the constant 12V feed down to 5V for the Nano and switch panel; see [Logic supply](#vehicle-integration-checklist) for the recommended wiring — bypass the pre-attached micro-USB cable |
 | Power latch module | Garosa YYLOCK-2 (or equivalent) self-locking delay-relay module, `SLA-12VDC-SL-C` relay, 30A/250VAC or 30A/30VDC at the module level, delay 0s–100min — not yet sourced | Pushbutton-powered, self-latching wake/auto-off controller; its relay contacts also carry the actual switched load (Cytron `B+` + buck converter) — see [Power latch](#power-latch) |
-| Power latch pushbutton | Momentary, normally-open pushbutton — not yet sourced | User-facing wake trigger, dash or seat-mounted; draws zero current when not pressed |
+| Power latch pushbutton | DMiotech 22mm momentary SPDT illuminated pushbutton (`C`/`NO`/`NC`), IP66 — sourced | User-facing wake trigger, dash or seat-mounted; only `C`+`NO` used, `NC` left disconnected; draws zero current when not pressed |
 
 ### Switch panel
 
@@ -187,15 +187,18 @@ is a proposed build, not a verified one.
 
 *Every connection point on every component, drawn like a circuit board view — filled blue dots are
 pins actually wired in this design; grey dots are real pins on the part that are simply unused
-(e.g. the switch panel's 6 unidentified cavities, the YYLOCK-2's `NC` contact, most of the Nano's
-pins). Orange = 12V power, green = signal, dark = motor output. Each `▽` is a local chassis/earth
-ground symbol — every ground point (battery, YYLOCK-2, buck converter, Nano ×2, Cytron ×2, switch
-panel PIN 4) returns to the same vehicle chassis; they're drawn as separate local symbols rather
-than one wire run joining them all, since in the car they don't share a physical wire back to a
-single point anyway. The Nano↔Cytron control cable's real wire colours are labelled on those four
-signal lines (black/red/yellow/white) — confirmed from the physical KF2510 cable; only the Nano end
-has been traced so far, so double-check the same colours land on Cytron's `DIR1/PWM1/PWM2/DIR2`
-silkscreen before trusting it fully.*
+(e.g. the switch panel's 6 unidentified cavities, the pushbutton's and YYLOCK-2's `NC` contacts,
+most of the Nano's pins). Orange = 12V power, green = signal, dark = motor output. Each `▽` is a
+local chassis/earth ground symbol — every ground point (battery, YYLOCK-2, buck converter, Nano
+×2, Cytron ×2, switch panel PIN 4) returns to the same vehicle chassis; they're drawn as separate
+local symbols rather than one wire run joining them all, since in the car they don't share a
+physical wire back to a single point anyway. The pushbutton is drawn as the real SPDT part (`C`/
+`NO`/`NC`) — only `C` and `NO` are used, `NC` stays disconnected. The Nano↔Cytron control cable's
+real wire colours are labelled on those four signal lines (black→`DIR1`, red→`PWM1`, yellow→
+`PWM2`, white→`DIR2`) — confirmed on both ends: traced from the Nano side, then cross-checked
+against the Cytron-side pin order you read directly off the cable (which turned out to be plugged
+in reversed relative to the Cytron's own `DIR1/PWM1/DIR2/PWM2/GND` silkscreen order — both
+readings agree, so this mapping is solid.*
 
 For a lower-detail overview, the same system split into just power and signal flow:
 
@@ -380,9 +383,9 @@ Not started. Before any of this touches a vehicle:
   genuinely unused or carry signals not yet identified.
 - Trace the pigtail's 12 wires back to their cavities and record the mapping in this README —
   needed before wiring the pigtail to the Nano.
-- Nano-side landing of the KF2510 cable is done: `GND`→orange, `D2`→black, `D3`→red, `D6`→yellow,
-  `D7`→white (see [Proposed system wiring](#proposed-system-wiring)). Still need to confirm the
-  same colours land on Cytron's `DIR1/PWM1/PWM2/DIR2/GND` silkscreen on the other end.
+- ~~KF2510 cable wire-to-pin mapping~~ — done, confirmed on both ends: `GND`→orange, `D2`/`DIR1`→
+  black, `D3`/`PWM1`→red, `D6`/`PWM2`→yellow, `D7`/`DIR2`→white (see [Proposed system
+  wiring](#proposed-system-wiring)).
 - Update the placeholder thresholds in `seat_control_main` once real PIN 2/3/5 values are in.
 - Source a second Cytron MDD10A (or equivalent dual H-bridge) — one board only covers 2 of the 4
   seat motors.
