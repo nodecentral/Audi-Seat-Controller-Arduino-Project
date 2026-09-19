@@ -315,6 +315,10 @@ switched +12V (from "NO") ---> Cytron B+ and buck converter IN (both fed from he
   parallel with the pushbutton (so releasing the button changes nothing — the module now holds its
   own power on) **and** feeds the buck converter + Cytron `B+` downstream. One 30A-rated contact
   pair does both jobs — no separate main relay needed, unlike the two-stage design this replaces.
+  Concretely, that means `DC+` has **3 wires** landing on it (pushbutton `NO`, the `IN` jumper,
+  and this self-latch wire), and `NO` has **3 wires** leaving it (self-latch back to `DC+`, to
+  Cytron `B+`, to the buck converter's `IN+`) — easy to undercount at a glance in the diagram, so
+  spelled out here and called out directly on the schematic itself.
 - **Auto-off:** when the set delay elapses, the relay opens, cutting its own power and the
   downstream load together — including the Nano. At rest, the pushbutton is open and the module has
   no power on it: draw is genuinely zero.
