@@ -396,19 +396,28 @@ Not started. Before any of this touches a vehicle:
 - ~~**Connector matching**~~ — done: pre-wired pigtail (TE `1534096-1` / `1-1534096-1`) bought and
   confirmed to mate with the panel. Still open: trace and record which of its 12 wires land on
   which cavity, per the note under [Switch panel](#switch-panel).
-- **Enclosure** — houses all four boards (YYLOCK-2, buck converter, Nano, Cytron). Target: IP65
-  ABS enclosure with a removable internal mounting plate (build/wire the boards on the plate on
-  the bench, then drop the finished assembly into the box), internal usable area ~220×160mm,
-  cable glands for the external bundles rather than ad-hoc drilled holes. Plastic, not metal — no
-  EMI-shielding need here, and it avoids having to isolate boards from a conductive case.
+- **Enclosure** — sourced: **Hammond `1599HBK`**, IP54 black ABS, 220×110×44mm external. Houses
+  all four boards (YYLOCK-2, buck converter, Nano, Cytron). Connectors sourced to match: two
+  9-pin 5.08mm pluggable panel-mount terminal blocks (one for the pushbutton, one for the switch
+  panel — both grouped on the seat-facing side, since both route there), a 4-pin for the motor
+  outputs, a 2-pin for power in — 3 physical connection points total, panel-mount/pluggable so the
+  box can be unplugged from the harness rather than desoldered.
 
-  <img src="images/enclosure-layout.png" width="700" alt="Enclosure layout: top-down view showing YYLOCK-2, buck converter, Nano, and Cytron placement with external wire entry points">
+  **Depth is the thing to verify before final mounting, not footprint.** 44mm external is roughly
+  36–38mm clear internal once you allow for the walls and a mounting plate. The YYLOCK-2's relay is
+  the tallest single component in this build (a 30A-rated relay body is commonly 20–25mm on its
+  own) — stacked with the PCB and any standoff clearance, that's plausibly pushing 28–32mm. It
+  likely fits, but closely enough that it's worth measuring the actual relay height and the box's
+  real internal clearance before drilling or gluing anything down. A physical dry-fit settles this
+  faster than any diagram can.
 
-  *Proposed layout — power flows left→right (12V in → YYLOCK-2 → buck converter/Cytron), signal
-  flows top→right (switch panel → Nano → Cytron → motors). The dotted area is open space for a
-  terminal strip where external bundles land before distribution, rather than loose wires crossing
-  the box. External connections: 12V+GND in (2 wires), seat controller (5 wires — PINs 1/2 spare,
-  reserved for the parked second Cytron board), pushbutton+LED (4 wires), motor outputs (4 wires).*
+  <img src="images/enclosure-layout.png" width="700" alt="Enclosure layout for the Hammond 1599HBK: top-down view showing YYLOCK-2, buck converter, Nano, and Cytron placement with the 3 connector locations">
+
+  *Proposed layout for the 1599HBK's ~210×100mm estimated internal footprint — Cytron and YYLOCK-2
+  side by side (the two largest boards), buck converter and Nano sharing the remaining strip below
+  YYLOCK-2. About 36% of the footprint area is spare, so this is one workable arrangement, not the
+  only one. The two 9-pin connectors both exit the seat-facing side (left), motor output exits
+  opposite (right), power enters from the bottom.*
 
 ## Next Steps
 
@@ -417,6 +426,8 @@ deliberately deferred — cost-driven decision, not a technical blocker. The ite
 PINs 1/2, finding which of `A1`/`A2` is which axis, sourcing the second board, updating their
 placeholder thresholds) all wait on that decision being revisited.
 
+- Measure the YYLOCK-2 relay's actual height and the Hammond `1599HBK`'s real internal clearance
+  before final mounting — see [Enclosure](#vehicle-integration-checklist), depth is tight.
 - Confirm the two SMD resistor values (silkscreened `8200` / `3920`) by direct measurement rather
   than reading the printed code from photos.
 - Probe the 6 unaccounted-for cavities on the 12-position connector — confirm whether they're
