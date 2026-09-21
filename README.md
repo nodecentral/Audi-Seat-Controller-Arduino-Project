@@ -447,6 +447,14 @@ placeholder thresholds) all wait on that decision being revisited.
   tolerant of a soft/incomplete pushbutton press — smooths a brief or bouncy contact into a more
   sustained power pulse. Not needed now; the button just needs a firm, deliberate press, which is a
   reasonable property for a wake button anyway. Revisit only if it proves annoying in practice.
+- **Roadmap, not release 1:** drop the buck converter and power the Nano directly from `VIN`
+  instead (7–12V straight from the switched rail, using the Nano's own onboard regulator) — viable
+  now that PIN 6 is confirmed unused, since the buck converter's only remaining job is powering the
+  Nano itself, whose draw is small enough that the regulator's efficiency loss is negligible. Would
+  take this from a 4-board build down to 3. Release 1 keeps the buck converter as-is — it's already
+  wired, tested, and working, and it gives a bit of extra regulation headroom as a safeguard over
+  relying on the Nano's own onboard regulator. Worth exploring properly on the second build (a
+  second instance of this whole project is planned) rather than reworking the proven one.
 - Decide on and mount the pushbutton location (dashboard vs. seat).
 - Vehicle power source: a fused 12V feed already exists from the main board into a fuse box.
   **Add a dedicated small inline fuse there for this circuit specifically** — the upstream fuse
