@@ -411,13 +411,16 @@ Not started. Before any of this touches a vehicle:
   real internal clearance before drilling or gluing anything down. A physical dry-fit settles this
   faster than any diagram can.
 
-  <img src="images/enclosure-layout.png" width="700" alt="Enclosure layout for the Hammond 1599HBK: top-down view showing YYLOCK-2, buck converter, Nano, and Cytron placement with the 3 connector locations">
+  <img src="images/enclosure-layout.png" width="700" alt="Enclosure layout for the Hammond 1599HBK: top-down view showing Nano, Cytron, YYLOCK-2, buck converter, and WAGO ground block placement, matching the proven bench order">
 
-  *Proposed layout for the 1599HBK's ~210×100mm estimated internal footprint — Cytron and YYLOCK-2
-  side by side (the two largest boards), buck converter and Nano sharing the remaining strip below
-  YYLOCK-2. About 36% of the footprint area is spare, so this is one workable arrangement, not the
-  only one. The two 9-pin connectors both exit the seat-facing side (left), motor output exits
-  opposite (right), power enters from the bottom.*
+  *Layout follows the order already proven working on the bench: **Nano → Cytron → YYLOCK-2**,
+  left to right. Signal flows one direction — switch panel into the Nano (left), Nano's control
+  lines into the Cytron (middle), Cytron's outputs to the motors (bottom) — while power taps in
+  from the right (near the YYLOCK-2) and threads back to Cytron `B+` and the buck converter. A WAGO
+  `221` lever connector serves as the common ground junction, same as on the bench, rather than
+  each board running its own long wire to one corner. Buck converter is grouped with the YYLOCK-2
+  since that's where it takes its input from — flag if it should sit elsewhere. About a third of
+  the footprint is spare, so this is one workable arrangement, not the only one.*
 
 ## Next Steps
 
