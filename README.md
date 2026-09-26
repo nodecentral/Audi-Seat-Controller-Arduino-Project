@@ -366,6 +366,14 @@ the second Cytron board.
 
 Not started. Before any of this touches a vehicle:
 
+- **Wire gauge** — two sizes, not one: **16 AWG (~1.5mm²)** for anything on the direct
+  battery-to-motor current path (power in → YYLOCK-2 `COM`, `NO` → Cytron `B+`, `B-` → ground, and
+  the 4 motor output wires) — sourced from existing stock, confirmed stranded (not solid core) and
+  genuinely full-gauge copper before use, given it's carrying the only real current in this build.
+  **22 AWG (~0.33mm², Fermerry silicone/tinned-copper hookup wire, 6 colours)** for everything
+  else — switch panel signals, Nano↔Cytron control signals, the buck converter's input and output,
+  and the YYLOCK-2/pushbutton/LED wiring. Simple rule: thick wire only between the battery and a
+  motor terminal, thin wire for everything else.
 - **Power source** — decided: a permanent 12V feed, already fused from the car's main board into a
   fuse box. Add a dedicated small inline fuse there for this circuit specifically, sized to what it
   actually draws — the existing upstream fuse protects the main distribution wiring, not this
