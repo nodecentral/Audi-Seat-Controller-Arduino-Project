@@ -1,0 +1,907 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2380" height="2440" viewBox="0 0 2380 2440">
+<rect width="2380" height="2440" fill="#f4f1ea"/>
+<text xml:space="preserve" x="1190.0" y="44" font-family="Helvetica, Arial, sans-serif" font-size="27" text-anchor="middle" font-weight="bold" fill="#222">Audi seat controller - enclosure wiring (bench layout, buck beside the Nano)</text>
+<text xml:space="preserve" x="1190.0" y="72" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="normal" fill="#444">Hammond 1599HBK  |  J1 seat side: switch panel + pushbutton (9-pin)  |  J2 power side: 12V in + 2 motor outputs (9-pin)  |  not to scale</text>
+<g transform="translate(330,110)">
+<rect x="0" y="0" width="1640" height="1010" rx="24" fill="#3a3a3c" stroke="#1c1c1e" stroke-width="6"/>
+<rect x="16" y="16" width="1608" height="978" rx="16" fill="#505054" stroke="#2a2a2c" stroke-width="2"/>
+<rect x="-42" y="222" width="84" height="376" rx="5" fill="#2e8b3e" stroke="#1d5c28" stroke-width="2"/>
+<rect x="-36" y="233" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="250" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="250" x2="-12" y2="250" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="250" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="250" x2="24" y2="250" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="273" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="290" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="290" x2="-12" y2="290" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="290" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="290" x2="24" y2="290" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="313" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="330" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="330" x2="-12" y2="330" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="330" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="330" x2="24" y2="330" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="353" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="370" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="370" x2="-12" y2="370" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="370" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="370" x2="24" y2="370" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="393" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="410" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="410" x2="-12" y2="410" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="410" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="410" x2="24" y2="410" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="433" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="450" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="450" x2="-12" y2="450" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="450" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="450" x2="24" y2="450" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="473" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="490" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="490" x2="-12" y2="490" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="490" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="490" x2="24" y2="490" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="513" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="530" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="530" x2="-12" y2="530" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="530" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="530" x2="24" y2="530" stroke="#555" stroke-width="2.2"/>
+<rect x="-36" y="553" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="-18" cy="570" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="-24" y1="570" x2="-12" y2="570" stroke="#555" stroke-width="2.2"/>
+<circle cx="18" cy="570" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="12" y1="570" x2="24" y2="570" stroke="#555" stroke-width="2.2"/>
+<rect x="1598" y="222" width="84" height="376" rx="5" fill="#2e8b3e" stroke="#1d5c28" stroke-width="2"/>
+<rect x="1604" y="233" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="250" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="250" x2="1628" y2="250" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="250" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="250" x2="1664" y2="250" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="273" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="290" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="290" x2="1628" y2="290" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="290" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="290" x2="1664" y2="290" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="313" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="330" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="330" x2="1628" y2="330" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="330" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="330" x2="1664" y2="330" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="353" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="370" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="370" x2="1628" y2="370" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="370" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="370" x2="1664" y2="370" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="393" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="410" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="410" x2="1628" y2="410" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="410" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="410" x2="1664" y2="410" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="433" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="450" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="450" x2="1628" y2="450" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="450" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="450" x2="1664" y2="450" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="473" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="490" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="490" x2="1628" y2="490" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="490" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="490" x2="1664" y2="490" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="513" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="530" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="530" x2="1628" y2="530" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="530" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="530" x2="1664" y2="530" stroke="#555" stroke-width="2.2"/>
+<rect x="1604" y="553" width="72" height="34" rx="3" fill="#38a84b" stroke="#1d5c28"/>
+<circle cx="1622" cy="570" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1616" y1="570" x2="1628" y2="570" stroke="#555" stroke-width="2.2"/>
+<circle cx="1658" cy="570" r="9.5" fill="#c0c0c0" stroke="#666" stroke-width="1.5"/>
+<line x1="1652" y1="570" x2="1664" y2="570" stroke="#555" stroke-width="2.2"/>
+<rect x="174" y="155" width="240" height="440" rx="8" fill="#00000035"/>
+<rect x="170" y="150" width="240" height="440" rx="8" fill="#1565c0" stroke="#00000090" stroke-width="2"/>
+<circle cx="181" cy="161" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="399" cy="161" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="181" cy="579" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="399" cy="579" r="5" fill="#e0e0e0" stroke="#777"/>
+<rect x="225" y="186" width="130" height="368" rx="4" fill="#0d47a1" stroke="#00000080"/>
+<rect x="272.0" y="172" width="36" height="26" rx="3" fill="#b0b0b0" stroke="#666"/>
+<rect x="270.0" y="330" width="40" height="40" fill="#212121" transform="rotate(45 290.0 350)"/>
+<text xml:space="preserve" x="290.0" y="430" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#fff">ARDUINO</text>
+<text xml:space="preserve" x="290.0" y="448" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#fff">NANO</text>
+<text xml:space="preserve" x="290.0" y="466" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#cfd8dc" font-style="italic">on HW-152</text>
+<rect x="184" y="655" width="220" height="140" rx="8" fill="#00000035"/>
+<rect x="180" y="650" width="220" height="140" rx="8" fill="#37474f" stroke="#00000090" stroke-width="2"/>
+<circle cx="191" cy="661" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="389" cy="661" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="191" cy="779" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="389" cy="779" r="5" fill="#e0e0e0" stroke="#777"/>
+<text xml:space="preserve" x="290.0" y="712" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#fff">BUCK 12V -&gt; 5V</text>
+<text xml:space="preserve" x="290.0" y="730" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#cfd8dc" font-style="italic">C1205003 (USB lead cut off)</text>
+<rect x="484" y="155" width="320" height="570" rx="8" fill="#00000035"/>
+<rect x="480" y="150" width="320" height="570" rx="8" fill="#202020" stroke="#00000090" stroke-width="2"/>
+<circle cx="491" cy="161" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="789" cy="161" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="491" cy="709" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="789" cy="709" r="5" fill="#e0e0e0" stroke="#777"/>
+<rect x="492" y="152" width="296" height="26" rx="3" fill="#111" stroke="#555"/>
+<rect x="618" y="152" width="64" height="26" rx="3" fill="#2e8b57" stroke="#1d5c38"/>
+<circle cx="600" cy="330" r="24" fill="#bdbdbd" stroke="#777"/>
+<circle cx="600" cy="330" r="17" fill="#9e9e9e"/>
+<circle cx="680" cy="330" r="24" fill="#bdbdbd" stroke="#777"/>
+<circle cx="680" cy="330" r="17" fill="#9e9e9e"/>
+<circle cx="600" cy="400" r="24" fill="#bdbdbd" stroke="#777"/>
+<circle cx="600" cy="400" r="17" fill="#9e9e9e"/>
+<circle cx="680" cy="400" r="24" fill="#bdbdbd" stroke="#777"/>
+<circle cx="680" cy="400" r="17" fill="#9e9e9e"/>
+<text xml:space="preserve" x="640" y="480" font-family="Helvetica, Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#fff">CYTRON</text>
+<text xml:space="preserve" x="640" y="500" font-family="Helvetica, Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#fff">MDD10A</text>
+<text xml:space="preserve" x="640" y="520" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#bbb" font-style="italic">dual 10A motor driver</text>
+<rect x="570" y="690" width="140" height="28" rx="3" fill="#fafafa" stroke="#999"/>
+<rect x="860" y="150" width="118" height="86" rx="6" fill="#f5f5f5" stroke="#888" stroke-width="2"/>
+<rect x="866" y="158" width="18" height="50" rx="3" fill="#ff9800" stroke="#c66900"/>
+<rect x="888" y="158" width="18" height="50" rx="3" fill="#ff9800" stroke="#c66900"/>
+<rect x="910" y="158" width="18" height="50" rx="3" fill="#ff9800" stroke="#c66900"/>
+<rect x="932" y="158" width="18" height="50" rx="3" fill="#ff9800" stroke="#c66900"/>
+<rect x="954" y="158" width="18" height="50" rx="3" fill="#ff9800" stroke="#c66900"/>
+<text xml:space="preserve" x="919" y="226" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#555">WAGO 221</text>
+<rect x="1044" y="155" width="320" height="570" rx="8" fill="#00000035"/>
+<rect x="1040" y="150" width="320" height="570" rx="8" fill="#1b7a3d" stroke="#00000090" stroke-width="2"/>
+<circle cx="1051" cy="161" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="1349" cy="161" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="1051" cy="709" r="5" fill="#e0e0e0" stroke="#777"/>
+<circle cx="1349" cy="709" r="5" fill="#e0e0e0" stroke="#777"/>
+<rect x="1080" y="152" width="240" height="30" rx="3" fill="#222" stroke="#555"/>
+<rect x="1120" y="300" width="150" height="150" rx="4" fill="#111" stroke="#444"/>
+<text xml:space="preserve" x="1195" y="360" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#ddd">YEYY relay</text>
+<text xml:space="preserve" x="1195" y="378" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#aaa">HZ90-1C12S 30A</text>
+<text xml:space="preserve" x="1200" y="500" font-family="Helvetica, Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#fff">YYLOCK-2</text>
+<text xml:space="preserve" x="1200" y="520" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#e0f2e9" font-style="italic">power latch, mode P-3</text>
+<text xml:space="preserve" x="1200" y="537" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#e0f2e9" font-style="italic">10-15 min auto-off</text>
+<rect x="1120" y="688" width="160" height="30" rx="3" fill="#1e88e5" stroke="#0d47a1"/>
+<path d="M 42,250 L 128.0,250.0 Q 150,250 150.0,272.0 L 150.0,279.0 Q 150,298 169.0,298.0 L 188,298" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,250 L 128.0,250.0 Q 150,250 150.0,272.0 L 150.0,279.0 Q 150,298 169.0,298.0 L 188,298" fill="none" stroke="#8fbcb5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 6"/>
+<path d="M 42,250 L 128.0,250.0 Q 150,250 150.0,272.0 L 150.0,279.0 Q 150,298 169.0,298.0 L 188,298" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="250" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="298" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,290 L 120.5,290.0 Q 138,290 138.0,307.5 L 138.0,307.5 Q 138,325 155.5,325.0 L 188,325" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,290 L 120.5,290.0 Q 138,290 138.0,307.5 L 138.0,307.5 Q 138,325 155.5,325.0 L 188,325" fill="none" stroke="#8fbcb5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 6"/>
+<path d="M 42,290 L 120.5,290.0 Q 138,290 138.0,307.5 L 138.0,307.5 Q 138,325 155.5,325.0 L 188,325" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="290" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="325" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,330 L 115.0,330.0 Q 126,330 126.0,341.0 L 126.0,341.0 Q 126,352 137.0,352.0 L 188,352" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,330 L 115.0,330.0 Q 126,330 126.0,341.0 L 126.0,341.0 Q 126,352 137.0,352.0 L 188,352" fill="none" stroke="#2a9d8f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,330 L 115.0,330.0 Q 126,330 126.0,341.0 L 126.0,341.0 Q 126,352 137.0,352.0 L 188,352" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="330" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="352" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,370 L 96.0,370.0 Q 114,370 114.0,388.0 L 114.0,388.0 Q 114,406 132.0,406.0 L 188,406" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,370 L 96.0,370.0 Q 114,370 114.0,388.0 L 114.0,388.0 Q 114,406 132.0,406.0 L 188,406" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,370 L 96.0,370.0 Q 114,370 114.0,388.0 L 114.0,388.0 Q 114,406 132.0,406.0 L 188,406" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="406" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,432.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,432.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,432.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="538" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 30,450 C 54,458 54,482 30,490" fill="none" stroke="#e0457b" stroke-width="4"/>
+<text xml:space="preserve" x="58" y="474" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#ffd6e5">link</text>
+<path d="M 205,664 L 205.0,644.5 Q 205,625 185.5,625.0 L 172.0,625.0 Q 150,625 150.0,603.0 L 150.0,506.0 Q 150,487 169.0,487.0 L 188,487" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 205,664 L 205.0,644.5 Q 205,625 185.5,625.0 L 172.0,625.0 Q 150,625 150.0,603.0 L 150.0,506.0 Q 150,487 169.0,487.0 L 188,487" fill="none" stroke="#8a3ffc" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 205,664 L 205.0,644.5 Q 205,625 185.5,625.0 L 172.0,625.0 Q 150,625 150.0,603.0 L 150.0,506.0 Q 150,487 169.0,487.0 L 188,487" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="205" cy="664" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="487" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 250,664 L 250.0,634.0 Q 250,612 228.0,612.0 L 184.0,612.0 Q 162,612 162.0,590.0 L 162.0,558.0 Q 162,545 175.0,545.0 L 188,545" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 250,664 L 250.0,634.0 Q 250,612 228.0,612.0 L 184.0,612.0 Q 162,612 162.0,590.0 L 162.0,558.0 Q 162,545 175.0,545.0 L 188,545" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 250,664 L 250.0,634.0 Q 250,612 228.0,612.0 L 184.0,612.0 Q 162,612 162.0,590.0 L 162.0,558.0 Q 162,545 175.0,545.0 L 188,545" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="250" cy="664" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="545" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 392,325 C 480,325 450,762 510,752" fill="none" stroke="#00000070" stroke-width="6.1" stroke-linecap="round"/>
+<path d="M 392,325 C 480,325 450,762 510,752" fill="none" stroke="#f5f5f5" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 510,752 L 618.0,752.0 Q 640,752 640.0,730.0 L 640,704" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,752 L 618.0,752.0 Q 640,752 640.0,730.0 L 640,704" fill="none" stroke="#f5f5f5" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,752 L 618.0,752.0 Q 640,752 640.0,730.0 L 640,704" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="510" cy="752" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="640" cy="704" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 392,352 C 480,352 450,774 510,764" fill="none" stroke="#00000070" stroke-width="6.1" stroke-linecap="round"/>
+<path d="M 392,352 C 480,352 450,774 510,764" fill="none" stroke="#fdd835" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 510,764 L 590.0,764.0 Q 612,764 612.0,742.0 L 612,704" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,764 L 590.0,764.0 Q 612,764 612.0,742.0 L 612,704" fill="none" stroke="#fdd835" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,764 L 590.0,764.0 Q 612,764 612.0,742.0 L 612,704" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="510" cy="764" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="612" cy="704" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 392,379 C 480,379 450,786 510,776" fill="none" stroke="#00000070" stroke-width="6.1" stroke-linecap="round"/>
+<path d="M 392,379 C 480,379 450,786 510,776" fill="none" stroke="#e53935" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 510,776 L 646.0,776.0 Q 668,776 668.0,754.0 L 668,704" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,776 L 646.0,776.0 Q 668,776 668.0,754.0 L 668,704" fill="none" stroke="#e53935" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,776 L 646.0,776.0 Q 668,776 668.0,754.0 L 668,704" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="510" cy="776" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="668" cy="704" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 392,406 C 480,406 450,798 510,788" fill="none" stroke="#00000070" stroke-width="6.1" stroke-linecap="round"/>
+<path d="M 392,406 C 480,406 450,798 510,788" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 510,788 L 673.0,788.0 Q 695,788 695.0,766.0 L 695,704" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,788 L 673.0,788.0 Q 695,788 695.0,766.0 L 695,704" fill="none" stroke="#111111" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,788 L 673.0,788.0 Q 695,788 695.0,766.0 L 695,704" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="510" cy="788" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="695" cy="704" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 392,484 C 480,487 450,810 510,800" fill="none" stroke="#00000070" stroke-width="6.1" stroke-linecap="round"/>
+<path d="M 392,484 C 480,487 450,810 510,800" fill="none" stroke="#fb8c00" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 510,800 L 563.0,800.0 Q 585,800 585.0,778.0 L 585,704" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,800 L 563.0,800.0 Q 585,800 585.0,778.0 L 585,704" fill="none" stroke="#fb8c00" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,800 L 563.0,800.0 Q 585,800 585.0,778.0 L 585,704" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="510" cy="800" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="585" cy="704" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 392,491 L 400.0,491.0 Q 408,491 408.0,499.0 L 408.0,823.0 Q 408,845 430.0,845.0 L 875.0,845.0 Q 897,845 897.0,823.0 L 897,236" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 392,491 L 400.0,491.0 Q 408,491 408.0,499.0 L 408.0,823.0 Q 408,845 430.0,845.0 L 875.0,845.0 Q 897,845 897.0,823.0 L 897,236" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 392,491 L 400.0,491.0 Q 408,491 408.0,499.0 L 408.0,823.0 Q 408,845 430.0,845.0 L 875.0,845.0 Q 897,845 897.0,823.0 L 897,236" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="392" cy="491" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="897" cy="236" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 375,776 L 375.0,838.0 Q 375,860 397.0,860.0 L 897.0,860.0 Q 919,860 919.0,838.0 L 919,236" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 375,776 L 375.0,838.0 Q 375,860 397.0,860.0 L 897.0,860.0 Q 919,860 919.0,838.0 L 919,236" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 375,776 L 375.0,838.0 Q 375,860 397.0,860.0 L 897.0,860.0 Q 919,860 919.0,838.0 L 919,236" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="375" cy="776" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="919" cy="236" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 630,165 L 630.0,128.0 Q 630,98 660.0,98.0 L 815.0,98.0 Q 845,98 845.0,128.0 L 845.0,255.0 Q 845,270 860.0,270.0 L 860.0,270.0 Q 875,270 875.0,255.0 L 875,236" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 630,165 L 630.0,128.0 Q 630,98 660.0,98.0 L 815.0,98.0 Q 845,98 845.0,128.0 L 845.0,255.0 Q 845,270 860.0,270.0 L 860.0,270.0 Q 875,270 875.0,255.0 L 875,236" fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 630,165 L 630.0,128.0 Q 630,98 660.0,98.0 L 815.0,98.0 Q 845,98 845.0,128.0 L 845.0,255.0 Q 845,270 860.0,270.0 L 860.0,270.0 Q 875,270 875.0,255.0 L 875,236" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="630" cy="165" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="875" cy="236" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 1194,707 L 1194.0,853.0 Q 1194,875 1172.0,875.0 L 985.0,875.0 Q 963,875 963.0,853.0 L 963,236" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1194,707 L 1194.0,853.0 Q 1194,875 1172.0,875.0 L 985.0,875.0 Q 963,875 963.0,853.0 L 963,236" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1194,707 L 1194.0,853.0 Q 1194,875 1172.0,875.0 L 985.0,875.0 Q 963,875 963.0,853.0 L 963,236" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1194" cy="707" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="963" cy="236" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 1598,450 L 1510.0,450.0 Q 1480,450 1480.0,480.0 L 1480.0,860.0 Q 1480,890 1450.0,890.0 L 971.0,890.0 Q 941,890 941.0,860.0 L 941,236" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1598,450 L 1510.0,450.0 Q 1480,450 1480.0,480.0 L 1480.0,860.0 Q 1480,890 1450.0,890.0 L 971.0,890.0 Q 941,890 941.0,860.0 L 941,236" fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1598,450 L 1510.0,450.0 Q 1480,450 1480.0,480.0 L 1480.0,860.0 Q 1480,890 1450.0,890.0 L 971.0,890.0 Q 941,890 941.0,860.0 L 941,236" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1598" cy="450" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="941" cy="236" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 510,165 L 510.0,64.0 Q 510,34 540.0,34.0 L 1550.0,34.0 Q 1580,34 1580.0,64.0 L 1580.0,241.0 Q 1580,250 1589.0,250.0 L 1598,250" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,165 L 510.0,64.0 Q 510,34 540.0,34.0 L 1550.0,34.0 Q 1580,34 1580.0,64.0 L 1580.0,241.0 Q 1580,250 1589.0,250.0 L 1598,250" fill="none" stroke="#4f8cc9" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,165 L 510.0,64.0 Q 510,34 540.0,34.0 L 1550.0,34.0 Q 1580,34 1580.0,64.0 L 1580.0,241.0 Q 1580,250 1589.0,250.0 L 1598,250" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="510" cy="165" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1598" cy="250" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 565,165 L 565.0,80.0 Q 565,50 595.0,50.0 L 1534.0,50.0 Q 1564,50 1564.0,80.0 L 1564.0,273.0 Q 1564,290 1581.0,290.0 L 1598,290" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 565,165 L 565.0,80.0 Q 565,50 595.0,50.0 L 1534.0,50.0 Q 1564,50 1564.0,80.0 L 1564.0,273.0 Q 1564,290 1581.0,290.0 L 1598,290" fill="none" stroke="#4f8cc9" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="14 5"/>
+<path d="M 565,165 L 565.0,80.0 Q 565,50 595.0,50.0 L 1534.0,50.0 Q 1564,50 1564.0,80.0 L 1564.0,273.0 Q 1564,290 1581.0,290.0 L 1598,290" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="565" cy="165" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1598" cy="290" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 735,165 L 735.0,96.0 Q 735,66 765.0,66.0 L 1518.0,66.0 Q 1548,66 1548.0,96.0 L 1548.0,305.0 Q 1548,330 1573.0,330.0 L 1598,330" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 735,165 L 735.0,96.0 Q 735,66 765.0,66.0 L 1518.0,66.0 Q 1548,66 1548.0,96.0 L 1548.0,305.0 Q 1548,330 1573.0,330.0 L 1598,330" fill="none" stroke="#1d4e89" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 735,165 L 735.0,96.0 Q 735,66 765.0,66.0 L 1518.0,66.0 Q 1548,66 1548.0,96.0 L 1548.0,305.0 Q 1548,330 1573.0,330.0 L 1598,330" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="735" cy="165" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1598" cy="330" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 785,165 L 785.0,112.0 Q 785,82 815.0,82.0 L 1502.0,82.0 Q 1532,82 1532.0,112.0 L 1532.0,340.0 Q 1532,370 1562.0,370.0 L 1598,370" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 785,165 L 785.0,112.0 Q 785,82 815.0,82.0 L 1502.0,82.0 Q 1532,82 1532.0,112.0 L 1532.0,340.0 Q 1532,370 1562.0,370.0 L 1598,370" fill="none" stroke="#1d4e89" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="14 5"/>
+<path d="M 785,165 L 785.0,112.0 Q 785,82 815.0,82.0 L 1502.0,82.0 Q 1532,82 1532.0,112.0 L 1532.0,340.0 Q 1532,370 1562.0,370.0 L 1598,370" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="785" cy="165" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1598" cy="370" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 670,165 L 670.0,138.5 Q 670,112 696.5,112.0 L 1188.5,112.0 Q 1212,112 1212.0,135.5 L 1212.0,151.8 Q 1212,159 1206.0,163.0 L 1200,167" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 670,165 L 670.0,138.5 Q 670,112 696.5,112.0 L 1188.5,112.0 Q 1212,112 1212.0,135.5 L 1212.0,151.8 Q 1212,159 1206.0,163.0 L 1200,167" fill="none" stroke="#e0457b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 670,165 L 670.0,138.5 Q 670,112 696.5,112.0 L 1188.5,112.0 Q 1212,112 1212.0,135.5 L 1212.0,151.8 Q 1212,159 1206.0,163.0 L 1200,167" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="670" cy="165" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1200" cy="167" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 1200,167 L 1200.0,163.0 Q 1200,159 1200.0,155.0 L 1200.0,141.5 Q 1200,124 1182.5,124.0 L 1028.0,124.0 Q 1006,124 1006.0,146.0 L 1006.0,888.0 Q 1006,910 984.0,910.0 L 352.0,910.0 Q 330,910 330.0,888.0 L 330,776" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1200,167 L 1200.0,163.0 Q 1200,159 1200.0,155.0 L 1200.0,141.5 Q 1200,124 1182.5,124.0 L 1028.0,124.0 Q 1006,124 1006.0,146.0 L 1006.0,888.0 Q 1006,910 984.0,910.0 L 352.0,910.0 Q 330,910 330.0,888.0 L 330,776" fill="none" stroke="#e0457b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1200,167 L 1200.0,163.0 Q 1200,159 1200.0,155.0 L 1200.0,141.5 Q 1200,124 1182.5,124.0 L 1028.0,124.0 Q 1006,124 1006.0,146.0 L 1006.0,888.0 Q 1006,910 984.0,910.0 L 352.0,910.0 Q 330,910 330.0,888.0 L 330,776" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1200" cy="167" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="330" cy="776" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 1200,167 L 1194.0,163.0 Q 1188,159 1188.0,151.8 L 1188.0,147.5 Q 1188,136 1176.5,136.0 L 1044.0,136.0 Q 1022,136 1022.0,158.0 L 1022.0,768.0 Q 1022,790 1044.0,790.0 L 1123.0,790.0 Q 1145,790 1145.0,768.0 L 1145,703" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1200,167 L 1194.0,163.0 Q 1188,159 1188.0,151.8 L 1188.0,147.5 Q 1188,136 1176.5,136.0 L 1044.0,136.0 Q 1022,136 1022.0,158.0 L 1022.0,768.0 Q 1022,790 1044.0,790.0 L 1123.0,790.0 Q 1145,790 1145.0,768.0 L 1145,703" fill="none" stroke="#e0457b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1200,167 L 1194.0,163.0 Q 1188,159 1188.0,151.8 L 1188.0,147.5 Q 1188,136 1176.5,136.0 L 1044.0,136.0 Q 1022,136 1022.0,158.0 L 1022.0,768.0 Q 1022,790 1044.0,790.0 L 1123.0,790.0 Q 1145,790 1145.0,768.0 L 1145,703" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1200" cy="167" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1145" cy="703" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 1145,705 C 1155,744 1245,744 1255,705" fill="none" stroke="#e0e0e0" stroke-width="3" stroke-dasharray="3 4"/>
+<path d="M 1598,405 L 1530.0,405.0 Q 1500,405 1500.0,375.0 L 1500.0,178.0 Q 1500,148 1470.0,148.0 L 1129.5,148.0 Q 1120,148 1120.0,157.5 L 1120,167" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1598,405 L 1530.0,405.0 Q 1500,405 1500.0,375.0 L 1500.0,178.0 Q 1500,148 1470.0,148.0 L 1129.5,148.0 Q 1120,148 1120.0,157.5 L 1120,167" fill="none" stroke="#d00000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1598,405 L 1530.0,405.0 Q 1500,405 1500.0,375.0 L 1500.0,178.0 Q 1500,148 1470.0,148.0 L 1129.5,148.0 Q 1120,148 1120.0,157.5 L 1120,167" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1598" cy="405" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1120" cy="167" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,490 L 70.0,490.0 Q 92,490 92.0,512.0 L 92.0,908.0 Q 92,930 114.0,930.0 L 1128.0,930.0 Q 1150,930 1150.0,908.0 L 1150,707" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,490 L 70.0,490.0 Q 92,490 92.0,512.0 L 92.0,908.0 Q 92,930 114.0,930.0 L 1128.0,930.0 Q 1150,930 1150.0,908.0 L 1150,707" fill="none" stroke="#d00000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,490 L 70.0,490.0 Q 92,490 92.0,512.0 L 92.0,908.0 Q 92,930 114.0,930.0 L 1128.0,930.0 Q 1150,930 1150.0,908.0 L 1150,707" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="490" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1150" cy="707" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,530 L 61.0,530.0 Q 80,530 80.0,549.0 L 80.0,923.0 Q 80,945 102.0,945.0 L 1184.0,945.0 Q 1206,945 1206.0,923.0 L 1206,707" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,530 L 61.0,530.0 Q 80,530 80.0,549.0 L 80.0,923.0 Q 80,945 102.0,945.0 L 1184.0,945.0 Q 1206,945 1206.0,923.0 L 1206,707" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,530 L 61.0,530.0 Q 80,530 80.0,549.0 L 80.0,923.0 Q 80,945 102.0,945.0 L 1184.0,945.0 Q 1206,945 1206.0,923.0 L 1206,707" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="530" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1206" cy="707" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,570 L 55.0,570.0 Q 68,570 68.0,583.0 L 68.0,938.0 Q 68,960 90.0,960.0 L 1438.0,960.0 Q 1460,960 1460.0,938.0 L 1460.0,437.0 Q 1460,415 1482.0,415.0 L 1598,415" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,570 L 55.0,570.0 Q 68,570 68.0,583.0 L 68.0,938.0 Q 68,960 90.0,960.0 L 1438.0,960.0 Q 1460,960 1460.0,938.0 L 1460.0,437.0 Q 1460,415 1482.0,415.0 L 1598,415" fill="none" stroke="#d00000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,570 L 55.0,570.0 Q 68,570 68.0,583.0 L 68.0,938.0 Q 68,960 90.0,960.0 L 1438.0,960.0 Q 1460,960 1460.0,938.0 L 1460.0,437.0 Q 1460,415 1482.0,415.0 L 1598,415" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="570" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1598" cy="415" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<rect x="319" y="842" width="22" height="48" rx="6" fill="#fff3bf" stroke="#7a5d00" stroke-width="2"/>
+<line x1="330" y1="848" x2="330" y2="884" stroke="#7a5d00" stroke-width="2"/>
+<text xml:space="preserve" x="312" y="870" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="end" font-weight="bold" fill="#ffe066">F2 1A</text>
+<rect x="600" y="806" width="150" height="30" rx="6" fill="#fff3bf" stroke="#7a5d00" stroke-width="1.5"/>
+<text xml:space="preserve" x="675" y="826" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#5a4500">R1 R2 10k pull-downs</text>
+<circle cx="586" cy="821" r="15" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="586" y="826" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111">4</text>
+<rect x="1060" y="560" width="280" height="96" rx="8" fill="#0f5a2b" stroke="#bfe8cc"/>
+<text xml:space="preserve" x="1200" y="580" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#e8fff0">Button powers the module: pressed, it</text>
+<text xml:space="preserve" x="1200" y="599" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#e8fff0">puts 12V on DC+. IN is jumpered to DC+</text>
+<text xml:space="preserve" x="1200" y="618" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#e8fff0">(positive trigger). Mode P-3: relay on for</text>
+<text xml:space="preserve" x="1200" y="637" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#e8fff0">the set time, then off. Bench-tested.</text>
+<circle cx="1050" cy="558" r="15" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1050" y="563" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111">1</text>
+<circle cx="670" cy="209" r="11" fill="#d00000" stroke="#fff" stroke-width="1.5"/>
+<text xml:space="preserve" x="670" y="214" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#fff">+</text>
+<circle cx="630" cy="209" r="11" fill="#111" stroke="#fff" stroke-width="1.5"/>
+<text xml:space="preserve" x="630" y="214" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#fff">−</text>
+<circle cx="652" cy="236" r="15" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="652" y="241" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111">3</text>
+<text xml:space="preserve" x="652" y="270" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffb3b3">no reverse-polarity</text>
+<text xml:space="preserve" x="652" y="284" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffb3b3">protection</text>
+<circle cx="919" cy="262" r="15" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="919" y="267" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111">6</text>
+<circle cx="188" cy="190" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="190" x2="191.5" y2="190" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="194" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">D13</text>
+<circle cx="188" cy="217" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="217" x2="191.5" y2="217" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="221" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">3V3</text>
+<circle cx="188" cy="244" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="244" x2="191.5" y2="244" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="248" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">REF</text>
+<circle cx="188" cy="271" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="271" x2="191.5" y2="271" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="275" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">A0</text>
+<circle cx="188" cy="298" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="298" x2="191.5" y2="298" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="302" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="bold" fill="#fff">A1</text>
+<circle cx="188" cy="325" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="325" x2="191.5" y2="325" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="329" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="bold" fill="#fff">A2</text>
+<circle cx="188" cy="352" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="352" x2="191.5" y2="352" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="356" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="bold" fill="#fff">A3</text>
+<circle cx="188" cy="379" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="379" x2="191.5" y2="379" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="383" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">A4</text>
+<circle cx="188" cy="406" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="406" x2="191.5" y2="406" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="410" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="bold" fill="#fff">A5</text>
+<circle cx="188" cy="433" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="433" x2="191.5" y2="433" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="437" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">A6</text>
+<circle cx="188" cy="460" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="460" x2="191.5" y2="460" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="464" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">A7</text>
+<circle cx="188" cy="487" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="487" x2="191.5" y2="487" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="491" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="bold" fill="#fff">5V</text>
+<circle cx="188" cy="514" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="514" x2="191.5" y2="514" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="518" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">RST</text>
+<circle cx="188" cy="541" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="541" x2="191.5" y2="541" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="545" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="bold" fill="#fff">GND</text>
+<circle cx="188" cy="568" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="184.5" y1="568" x2="191.5" y2="568" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="199" y="572" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#b0bec5">VIN</text>
+<circle cx="392" cy="190" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="190" x2="395.5" y2="190" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="194" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">D12</text>
+<circle cx="392" cy="217" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="217" x2="395.5" y2="217" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="221" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">D11</text>
+<circle cx="392" cy="244" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="244" x2="395.5" y2="244" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="248" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">D10</text>
+<circle cx="392" cy="271" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="271" x2="395.5" y2="271" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="275" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">D9</text>
+<circle cx="392" cy="298" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="298" x2="395.5" y2="298" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="302" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">D8</text>
+<circle cx="392" cy="325" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="325" x2="395.5" y2="325" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="329" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#fff">D7</text>
+<circle cx="392" cy="352" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="352" x2="395.5" y2="352" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="356" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#fff">D6</text>
+<circle cx="392" cy="379" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="379" x2="395.5" y2="379" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="383" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#fff">D5</text>
+<circle cx="392" cy="406" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="406" x2="395.5" y2="406" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="410" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#fff">D4</text>
+<circle cx="392" cy="433" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="433" x2="395.5" y2="433" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="437" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">D3</text>
+<circle cx="392" cy="460" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="460" x2="395.5" y2="460" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="464" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">D2</text>
+<circle cx="392" cy="487" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="487" x2="395.5" y2="487" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="491" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#fff">GND</text>
+<circle cx="392" cy="514" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="514" x2="395.5" y2="514" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="518" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">RST</text>
+<circle cx="392" cy="541" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="541" x2="395.5" y2="541" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="545" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">RX0</text>
+<circle cx="392" cy="568" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="388.5" y1="568" x2="395.5" y2="568" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="381" y="572" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#b0bec5">TX1</text>
+<circle cx="205" cy="664" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="201.5" y1="664" x2="208.5" y2="664" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="205" y="685" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#fff">Y +5V</text>
+<circle cx="250" cy="664" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="246.5" y1="664" x2="253.5" y2="664" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="250" y="685" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#fff">B 0V</text>
+<circle cx="330" cy="776" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="326.5" y1="776" x2="333.5" y2="776" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="330" y="764" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#fff">R 12V</text>
+<circle cx="375" cy="776" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="371.5" y1="776" x2="378.5" y2="776" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="375" y="764" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#fff">B in</text>
+<circle cx="510" cy="165" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="506.5" y1="165" x2="513.5" y2="165" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="510" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">M2B</text>
+<circle cx="565" cy="165" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="561.5" y1="165" x2="568.5" y2="165" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="565" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">M2A</text>
+<circle cx="630" cy="165" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="626.5" y1="165" x2="633.5" y2="165" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="630" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">B-</text>
+<circle cx="670" cy="165" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="666.5" y1="165" x2="673.5" y2="165" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="670" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">B+</text>
+<circle cx="735" cy="165" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="731.5" y1="165" x2="738.5" y2="165" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="735" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">M1A</text>
+<circle cx="785" cy="165" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="781.5" y1="165" x2="788.5" y2="165" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="785" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">M1B</text>
+<circle cx="585" cy="704" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="581.5" y1="704" x2="588.5" y2="704" stroke="#444" stroke-width="1.4"/>
+<circle cx="612" cy="704" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="608.5" y1="704" x2="615.5" y2="704" stroke="#444" stroke-width="1.4"/>
+<circle cx="640" cy="704" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="636.5" y1="704" x2="643.5" y2="704" stroke="#444" stroke-width="1.4"/>
+<circle cx="668" cy="704" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="664.5" y1="704" x2="671.5" y2="704" stroke="#444" stroke-width="1.4"/>
+<circle cx="695" cy="704" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="691.5" y1="704" x2="698.5" y2="704" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="585" y="686" font-family="Helvetica, Arial, sans-serif" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff" transform="rotate(-60 585 686)">GND</text>
+<text xml:space="preserve" x="612" y="686" font-family="Helvetica, Arial, sans-serif" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff" transform="rotate(-60 612 686)">PWM2</text>
+<text xml:space="preserve" x="640" y="686" font-family="Helvetica, Arial, sans-serif" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff" transform="rotate(-60 640 686)">DIR2</text>
+<text xml:space="preserve" x="668" y="686" font-family="Helvetica, Arial, sans-serif" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff" transform="rotate(-60 668 686)">PWM1</text>
+<text xml:space="preserve" x="695" y="686" font-family="Helvetica, Arial, sans-serif" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff" transform="rotate(-60 695 686)">DIR1</text>
+<circle cx="1120" cy="167" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="1116.5" y1="167" x2="1123.5" y2="167" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="1120" y="188" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">COM</text>
+<circle cx="1200" cy="167" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="1196.5" y1="167" x2="1203.5" y2="167" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="1200" y="188" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">NO</text>
+<circle cx="1280" cy="167" r="6.5" fill="#8d8d8d" stroke="#444" stroke-width="1.2"/>
+<line x1="1276.5" y1="167" x2="1283.5" y2="167" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="1280" y="188" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#b0bec5">NC</text>
+<circle cx="1145" cy="703" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="1141.5" y1="703" x2="1148.5" y2="703" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="1145" y="691" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">DC+</text>
+<circle cx="1200" cy="703" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="1196.5" y1="703" x2="1203.5" y2="703" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="1200" y="691" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">DC-</text>
+<circle cx="1255" cy="703" r="6.5" fill="#c9a227" stroke="#444" stroke-width="1.2"/>
+<line x1="1251.5" y1="703" x2="1258.5" y2="703" stroke="#444" stroke-width="1.4"/>
+<text xml:space="preserve" x="1255" y="691" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#fff">IN</text>
+<text xml:space="preserve" x="1200" y="760" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#ddd" font-style="italic">IN-DC+ jumper</text>
+<circle cx="875" cy="236" r="4" fill="#555"/>
+<circle cx="897" cy="236" r="4" fill="#555"/>
+<circle cx="919" cy="236" r="4" fill="#555"/>
+<circle cx="941" cy="236" r="4" fill="#555"/>
+<circle cx="963" cy="236" r="4" fill="#555"/>
+<rect x="-330" y="228" width="292" height="204" rx="8" fill="#e6f4f1"/>
+<rect x="-330" y="468" width="292" height="164" rx="8" fill="#fdecec"/>
+<path d="M -30,250 L -105,250" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,250 L -105,250" fill="none" stroke="#8fbcb5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 6"/>
+<path d="M -30,250 L -105,250" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="250" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="250" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="249" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">1  Switch PIN 1</text>
+<text xml:space="preserve" x="-115" y="264" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">front tilt - parked (A1)</text>
+<path d="M -30,290 L -105,290" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,290 L -105,290" fill="none" stroke="#8fbcb5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 6"/>
+<path d="M -30,290 L -105,290" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="290" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="290" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="289" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">2  Switch PIN 2</text>
+<text xml:space="preserve" x="-115" y="304" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">rear tilt - parked (A2)</text>
+<path d="M -30,330 L -105,330" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,330 L -105,330" fill="none" stroke="#2a9d8f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,330 L -105,330" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="330" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="330" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="329" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">3  Switch PIN 3</text>
+<text xml:space="preserve" x="-115" y="344" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">fore / aft (A3)</text>
+<path d="M -30,370 L -105,370" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,370 L -105,370" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,370 L -105,370" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="369" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">4  Switch PIN 5</text>
+<text xml:space="preserve" x="-115" y="384" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">recline (A5)</text>
+<path d="M -30,410 L -105,410" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,410 L -105,410" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,410 L -105,410" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="409" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">5  Switch PIN 4</text>
+<text xml:space="preserve" x="-115" y="424" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">switch common GND -&gt; Nano GND</text>
+<path d="M -30,450 L -105,450" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,450 L -105,450" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,450 L -105,450" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="450" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="450" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="449" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">6  Pushbutton LED +  (red)</text>
+<text xml:space="preserve" x="-115" y="464" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">linked to J1-7 on the block</text>
+<path d="M -30,490 L -105,490" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,490 L -105,490" fill="none" stroke="#16a34a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,490 L -105,490" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="490" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="490" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="489" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">7  Pushbutton NO  (green)</text>
+<text xml:space="preserve" x="-115" y="504" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">-&gt; YYLOCK DC+</text>
+<path d="M -30,530 L -105,530" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,530 L -105,530" fill="none" stroke="#111111" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,530 L -105,530" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="530" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="530" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="529" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">8  Pushbutton LED -  (black)</text>
+<text xml:space="preserve" x="-115" y="544" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">-&gt; YYLOCK DC-</text>
+<path d="M -30,570 L -105,570" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,570 L -105,570" fill="none" stroke="#1e63d6" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,570 L -105,570" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="-30" cy="570" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="-105" cy="570" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="-115" y="569" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">9  Pushbutton C  (blue)</text>
+<text xml:space="preserve" x="-115" y="584" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">+12V permanent (from J2-5)</text>
+<path d="M -300,228 L -312,228 L -312,432 L -300,432" fill="none" stroke="#777" stroke-width="2"/>
+<text xml:space="preserve" x="-320" y="330" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1b6b5c" transform="rotate(-90 -320 330)">SWITCH PANEL - 5V LOGIC ONLY</text>
+<path d="M -300,468 L -312,468 L -312,632 L -300,632" fill="none" stroke="#777" stroke-width="2"/>
+<text xml:space="preserve" x="-320" y="550" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#a32020" transform="rotate(-90 -320 550)">BUTTON - 12V ONLY</text>
+<path d="M 1670,250 L 1745,250" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,250 L 1745,250" fill="none" stroke="#4f8cc9" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,250 L 1745,250" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1670" cy="250" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1745" cy="250" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1755" y="249" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">1  Recline motor A</text>
+<text xml:space="preserve" x="1755" y="264" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">Cytron M2B</text>
+<path d="M 1670,290 L 1745,290" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,290 L 1745,290" fill="none" stroke="#4f8cc9" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,290 L 1745,290" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1670" cy="290" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1745" cy="290" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1755" y="289" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">2  Recline motor B</text>
+<text xml:space="preserve" x="1755" y="304" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">Cytron M2A</text>
+<path d="M 1670,330 L 1745,330" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,330 L 1745,330" fill="none" stroke="#1d4e89" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,330 L 1745,330" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1670" cy="330" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1745" cy="330" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1755" y="329" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">3  Fore/aft motor A</text>
+<text xml:space="preserve" x="1755" y="344" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">Cytron M1A</text>
+<path d="M 1670,370 L 1745,370" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,370 L 1745,370" fill="none" stroke="#1d4e89" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,370 L 1745,370" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1670" cy="370" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1745" cy="370" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1755" y="369" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">4  Fore/aft motor B</text>
+<text xml:space="preserve" x="1755" y="384" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">Cytron M1B</text>
+<path d="M 1670,410 L 1745,410" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,410 L 1745,410" fill="none" stroke="#d00000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,410 L 1745,410" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1670" cy="410" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1745" cy="410" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1755" y="409" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">5  +12V IN  (+)</text>
+<text xml:space="preserve" x="1755" y="424" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">from fuse F1, permanent feed</text>
+<path d="M 1670,450 L 1745,450" fill="none" stroke="#00000075" stroke-width="9.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,450 L 1745,450" fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670,450 L 1745,450" fill="none" stroke="#ffffff38" stroke-width="2.0" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1670" cy="450" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1745" cy="450" r="5.0" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1755" y="449" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">6  GND IN  (−)</text>
+<text xml:space="preserve" x="1755" y="464" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">chassis ground</text>
+<text xml:space="preserve" x="1755" y="489" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#999">7  spare</text>
+<text xml:space="preserve" x="1755" y="504" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">e.g. 2nd Cytron later</text>
+<text xml:space="preserve" x="1755" y="529" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#999">8  spare</text>
+<text xml:space="preserve" x="1755" y="569" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#999">9  spare</text>
+<rect x="-72" y="604" width="144" height="26" rx="6" fill="#1d5c28"/>
+<text xml:space="preserve" x="0" y="622" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#fff">J1  SEAT SIDE</text>
+<rect x="1568" y="604" width="144" height="26" rx="6" fill="#1d5c28"/>
+<text xml:space="preserve" x="1640" y="622" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#fff">J2  POWER SIDE</text>
+<rect x="1684" y="399" width="48" height="22" rx="6" fill="#fff3bf" stroke="#7a5d00" stroke-width="2"/>
+<line x1="1690" y1="410" x2="1726" y2="410" stroke="#7a5d00" stroke-width="2"/>
+<text xml:space="preserve" x="1708" y="392" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#7a5d00">F1</text>
+<circle cx="1960" cy="414" r="15" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1960" y="419" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111">2</text>
+<circle cx="-312" cy="450" r="15" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="-312" y="455" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111">5</text>
+</g>
+<line x1="60" y1="1164" x2="104" y2="1164" stroke="#00000066" stroke-width="7.5" stroke-linecap="round"/>
+<line x1="60" y1="1164" x2="104" y2="1164" stroke="#d00000" stroke-width="5" stroke-linecap="round"/>
+<text xml:space="preserve" x="114" y="1169" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">permanent +12V</text>
+<line x1="242.2" y1="1164" x2="286.2" y2="1164" stroke="#00000066" stroke-width="7.5" stroke-linecap="round"/>
+<line x1="242.2" y1="1164" x2="286.2" y2="1164" stroke="#e0457b" stroke-width="5" stroke-linecap="round"/>
+<text xml:space="preserve" x="296.2" y="1169" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">switched +12V (only while latched)</text>
+<line x1="570.4" y1="1164" x2="614.4" y2="1164" stroke="#00000066" stroke-width="7.5" stroke-linecap="round"/>
+<line x1="570.4" y1="1164" x2="614.4" y2="1164" stroke="#8a3ffc" stroke-width="5" stroke-linecap="round"/>
+<text xml:space="preserve" x="624.4" y="1169" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">+5V</text>
+<line x1="672.3" y1="1164" x2="716.3" y2="1164" stroke="#00000066" stroke-width="7.5" stroke-linecap="round"/>
+<line x1="672.3" y1="1164" x2="716.3" y2="1164" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+<text xml:space="preserve" x="726.3" y="1169" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">ground</text>
+<line x1="796.0999999999999" y1="1164" x2="840.0999999999999" y2="1164" stroke="#00000066" stroke-width="7.5" stroke-linecap="round"/>
+<line x1="796.0999999999999" y1="1164" x2="840.0999999999999" y2="1164" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/>
+<text xml:space="preserve" x="850.0999999999999" y="1169" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">switch signal (5V logic)</text>
+<line x1="1051.3" y1="1164" x2="1095.3" y2="1164" stroke="#00000066" stroke-width="7.5" stroke-linecap="round"/>
+<line x1="1051.3" y1="1164" x2="1095.3" y2="1164" stroke="#8fbcb5" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 6"/>
+<text xml:space="preserve" x="1105.3" y="1169" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">parked axis</text>
+<line x1="1211.6" y1="1164" x2="1255.6" y2="1164" stroke="#00000066" stroke-width="10.5" stroke-linecap="round"/>
+<line x1="1211.6" y1="1164" x2="1255.6" y2="1164" stroke="#1d4e89" stroke-width="8" stroke-linecap="round"/>
+<text xml:space="preserve" x="1265.6" y="1169" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">motor / B+ / B- / 12V in: 16 AWG</text>
+<text xml:space="preserve" x="60" y="1194" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#333">Inside the box wires are coloured by job. Outside J1 they are the pushbutton's real wire colours. Thin wires are 22 AWG; the KF2510 cable is 26 AWG. Not to scale.</text>
+<rect x="40" y="1224" width="1220" height="910" rx="12" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+<text xml:space="preserve" x="58" y="1254" font-family="Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#222">Wiring list - tick each one off as you wire it</text>
+<text xml:space="preserve" x="60" y="1282" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#555">#</text>
+<text xml:space="preserve" x="150" y="1282" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#555">From</text>
+<text xml:space="preserve" x="450" y="1282" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#555">To</text>
+<text xml:space="preserve" x="790" y="1282" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#555">Notes</text>
+<line x1="56" y1="1290" x2="1244" y2="1290" stroke="#ccc"/>
+<rect x="52" y="1296" width="1196" height="22" rx="4" fill="#eef2f6"/>
+<text xml:space="preserve" x="60" y="1312" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#1d3557">Switch panel to Nano  (22 AWG, 5V logic only)</text>
+<rect x="1220" y="1323" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1336" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W1</text>
+<text xml:space="preserve" x="150" y="1336" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-1  switch PIN 1</text>
+<text xml:space="preserve" x="450" y="1336" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A1</text>
+<text xml:space="preserve" x="790" y="1336" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">parked - front tilt, no driver yet</text>
+<rect x="1220" y="1347" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1360" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W2</text>
+<text xml:space="preserve" x="150" y="1360" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-2  switch PIN 2</text>
+<text xml:space="preserve" x="450" y="1360" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A2</text>
+<text xml:space="preserve" x="790" y="1360" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">parked - rear tilt, no driver yet</text>
+<rect x="1220" y="1371" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1384" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W3</text>
+<text xml:space="preserve" x="150" y="1384" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-3  switch PIN 3</text>
+<text xml:space="preserve" x="450" y="1384" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A3</text>
+<text xml:space="preserve" x="790" y="1384" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">fore / aft</text>
+<rect x="1220" y="1395" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W4</text>
+<text xml:space="preserve" x="150" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-4  switch PIN 5</text>
+<text xml:space="preserve" x="450" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A5</text>
+<text xml:space="preserve" x="790" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">recline  (note: PIN 5 on J1-4)</text>
+<rect x="1220" y="1419" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W5</text>
+<text xml:space="preserve" x="150" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-5  switch PIN 4</text>
+<text xml:space="preserve" x="450" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano GND (analog row)</text>
+<text xml:space="preserve" x="790" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">switch common</text>
+<rect x="52" y="1440" width="1196" height="22" rx="4" fill="#eef2f6"/>
+<text xml:space="preserve" x="60" y="1456" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#1d3557">Pushbutton  (22 AWG, 12V only - never to a Nano pin)</text>
+<rect x="1220" y="1467" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1480" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W6</text>
+<text xml:space="preserve" x="150" y="1480" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-6  (red, LED+)</text>
+<text xml:space="preserve" x="450" y="1480" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-7  short link on the block</text>
+<text xml:space="preserve" x="790" y="1480" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">LED fed from the NO line</text>
+<rect x="1220" y="1491" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1504" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W7</text>
+<text xml:space="preserve" x="150" y="1504" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-7  (green, NO)</text>
+<text xml:space="preserve" x="450" y="1504" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK DC+</text>
+<text xml:space="preserve" x="790" y="1504" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">button powers the module</text>
+<rect x="1220" y="1515" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1528" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W8</text>
+<text xml:space="preserve" x="150" y="1528" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-8  (black, LED-)</text>
+<text xml:space="preserve" x="450" y="1528" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK DC-</text>
+<text xml:space="preserve" x="790" y="1528" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222"></text>
+<rect x="1220" y="1539" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1552" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W9</text>
+<text xml:space="preserve" x="150" y="1552" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-9  (blue, C)</text>
+<text xml:space="preserve" x="450" y="1552" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J2-5 (inside)</text>
+<text xml:space="preserve" x="790" y="1552" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">permanent +12V for the button</text>
+<rect x="52" y="1560" width="1196" height="22" rx="4" fill="#eef2f6"/>
+<text xml:space="preserve" x="60" y="1576" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#1d3557">12V power and motors  (16 AWG)</text>
+<rect x="1220" y="1587" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1600" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W10</text>
+<text xml:space="preserve" x="150" y="1600" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J2-5  +12V in</text>
+<text xml:space="preserve" x="450" y="1600" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK COM</text>
+<text xml:space="preserve" x="790" y="1600" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">feed is fused at F1 before J2</text>
+<rect x="1220" y="1611" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1624" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W11</text>
+<text xml:space="preserve" x="150" y="1624" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK NO</text>
+<text xml:space="preserve" x="450" y="1624" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron B+</text>
+<text xml:space="preserve" x="790" y="1624" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">switched +12V - check polarity</text>
+<rect x="1220" y="1635" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1648" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W12</text>
+<text xml:space="preserve" x="150" y="1648" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron B-</text>
+<text xml:space="preserve" x="450" y="1648" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">WAGO port</text>
+<text xml:space="preserve" x="790" y="1648" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">check polarity</text>
+<rect x="1220" y="1659" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1672" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W13</text>
+<text xml:space="preserve" x="150" y="1672" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J2-6  GND in</text>
+<text xml:space="preserve" x="450" y="1672" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">WAGO port</text>
+<text xml:space="preserve" x="790" y="1672" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222"></text>
+<rect x="1220" y="1683" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1696" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W14-15</text>
+<text xml:space="preserve" x="150" y="1696" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron M2B / M2A</text>
+<text xml:space="preserve" x="450" y="1696" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J2-1 / J2-2</text>
+<text xml:space="preserve" x="790" y="1696" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">recline motor</text>
+<rect x="1220" y="1707" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1720" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W16-17</text>
+<text xml:space="preserve" x="150" y="1720" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron M1A / M1B</text>
+<text xml:space="preserve" x="450" y="1720" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J2-3 / J2-4</text>
+<text xml:space="preserve" x="790" y="1720" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">fore / aft motor</text>
+<rect x="52" y="1728" width="1196" height="22" rx="4" fill="#eef2f6"/>
+<text xml:space="preserve" x="60" y="1744" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#1d3557">YYLOCK-2 and buck converter  (22 AWG)</text>
+<rect x="1220" y="1755" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1768" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W18</text>
+<text xml:space="preserve" x="150" y="1768" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK NO</text>
+<text xml:space="preserve" x="450" y="1768" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK DC+</text>
+<text xml:space="preserve" x="790" y="1768" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">self-latch</text>
+<rect x="1220" y="1779" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1792" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W19</text>
+<text xml:space="preserve" x="150" y="1792" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK DC+</text>
+<text xml:space="preserve" x="450" y="1792" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK IN</text>
+<text xml:space="preserve" x="790" y="1792" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">jumper - mode P-3 trigger</text>
+<rect x="1220" y="1803" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1816" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W20</text>
+<text xml:space="preserve" x="150" y="1816" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK DC-</text>
+<text xml:space="preserve" x="450" y="1816" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">WAGO port</text>
+<text xml:space="preserve" x="790" y="1816" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222"></text>
+<rect x="1220" y="1827" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1840" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W21</text>
+<text xml:space="preserve" x="150" y="1840" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">YYLOCK NO</text>
+<text xml:space="preserve" x="450" y="1840" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">F2 (1A)  then buck R (12V in)</text>
+<text xml:space="preserve" x="790" y="1840" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">buck lead, fused</text>
+<rect x="1220" y="1851" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1864" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W22</text>
+<text xml:space="preserve" x="150" y="1864" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Buck B (input -)</text>
+<text xml:space="preserve" x="450" y="1864" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">WAGO port</text>
+<text xml:space="preserve" x="790" y="1864" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222"></text>
+<rect x="1220" y="1875" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1888" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W23</text>
+<text xml:space="preserve" x="150" y="1888" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Buck Y (+5V out)</text>
+<text xml:space="preserve" x="450" y="1888" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano 5V</text>
+<text xml:space="preserve" x="790" y="1888" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">never 12V on this pin</text>
+<rect x="1220" y="1899" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1912" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W24</text>
+<text xml:space="preserve" x="150" y="1912" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Buck B (output -)</text>
+<text xml:space="preserve" x="450" y="1912" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano GND (analog row)</text>
+<text xml:space="preserve" x="790" y="1912" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222"></text>
+<rect x="52" y="1920" width="1196" height="22" rx="4" fill="#eef2f6"/>
+<text xml:space="preserve" x="60" y="1936" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#1d3557">Nano to Cytron  (KF2510 cable, 26 AWG)</text>
+<rect x="1220" y="1947" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1960" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W25</text>
+<text xml:space="preserve" x="150" y="1960" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano D4</text>
+<text xml:space="preserve" x="450" y="1960" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron DIR1</text>
+<text xml:space="preserve" x="790" y="1960" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">black</text>
+<rect x="1220" y="1971" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="1984" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W26</text>
+<text xml:space="preserve" x="150" y="1984" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano D5</text>
+<text xml:space="preserve" x="450" y="1984" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron PWM1</text>
+<text xml:space="preserve" x="790" y="1984" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">red</text>
+<rect x="1220" y="1995" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2008" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W27</text>
+<text xml:space="preserve" x="150" y="2008" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano D7</text>
+<text xml:space="preserve" x="450" y="2008" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron DIR2</text>
+<text xml:space="preserve" x="790" y="2008" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">white</text>
+<rect x="1220" y="2019" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2032" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W28</text>
+<text xml:space="preserve" x="150" y="2032" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano D6</text>
+<text xml:space="preserve" x="450" y="2032" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron PWM2</text>
+<text xml:space="preserve" x="790" y="2032" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">yellow</text>
+<rect x="1220" y="2043" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2056" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W29</text>
+<text xml:space="preserve" x="150" y="2056" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano GND (digital row)</text>
+<text xml:space="preserve" x="450" y="2056" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron GND</text>
+<text xml:space="preserve" x="790" y="2056" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">orange</text>
+<rect x="1220" y="2067" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2080" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W30</text>
+<text xml:space="preserve" x="150" y="2080" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano GND (digital row)</text>
+<text xml:space="preserve" x="450" y="2080" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">WAGO port</text>
+<text xml:space="preserve" x="790" y="2080" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">22 AWG</text>
+<rect x="1220" y="2091" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2104" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">R1</text>
+<text xml:space="preserve" x="150" y="2104" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron PWM1 (red)</text>
+<text xml:space="preserve" x="450" y="2104" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron GND (orange)</text>
+<text xml:space="preserve" x="790" y="2104" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">10k pull-down at the plug</text>
+<rect x="1220" y="2115" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2128" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">R2</text>
+<text xml:space="preserve" x="150" y="2128" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron PWM2 (yellow)</text>
+<text xml:space="preserve" x="450" y="2128" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Cytron GND (orange)</text>
+<text xml:space="preserve" x="790" y="2128" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">10k pull-down at the plug</text>
+<rect x="1290" y="1224" width="1050" height="250" rx="12" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+<circle cx="1314" cy="1248" r="14" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1314" y="1253" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#111">5</text>
+<text xml:space="preserve" x="1336" y="1254" font-family="Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#222">Pushbutton rear view - 5-wire plug (colours read from your photos)</text>
+<circle cx="1460" cy="1364" r="72" fill="#2f6fd6" stroke="#174a9a" stroke-width="3"/>
+<rect x="1400" y="1337" width="120" height="40" rx="6" fill="#d7d7d0" stroke="#999"/>
+<rect x="1481.0" y="1292.5" width="18" height="9" fill="#c8c8c8" stroke="#555"/>
+<rect x="1416.0" y="1342.0" width="8" height="26" fill="#c8c8c8" stroke="#555"/>
+<rect x="1456.0" y="1342.0" width="8" height="26" fill="#c8c8c8" stroke="#555"/>
+<rect x="1496.0" y="1342.0" width="8" height="26" fill="#c8c8c8" stroke="#555"/>
+<rect x="1441.0" y="1420.5" width="18" height="9" fill="#c8c8c8" stroke="#555"/>
+<path d="M 1499,1297 L 1580,1297" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1499,1297 L 1580,1297" fill="none" stroke="#e53935" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1499,1297 L 1580,1297" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1499" cy="1297" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1580" cy="1297" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1590" y="1302" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#333">red     LED top tab   -&gt;  J1-6  (LED+)</text>
+<path d="M 1420,1342 L 1420.0,1331.0 Q 1420,1321 1430.0,1321.0 L 1580,1321" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1420,1342 L 1420.0,1331.0 Q 1420,1321 1430.0,1321.0 L 1580,1321" fill="none" stroke="#f2c200" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1420,1342 L 1420.0,1331.0 Q 1420,1321 1430.0,1321.0 L 1580,1321" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1420" cy="1342" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1580" cy="1321" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1590" y="1326" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#333">yellow  NC            -&gt;  not used - insulate the end</text>
+<path d="M 1460,1342 L 1460.0,1342.5 Q 1460,1343 1460.5,1343.0 L 1580,1343" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1460,1342 L 1460.0,1342.5 Q 1460,1343 1460.5,1343.0 L 1580,1343" fill="none" stroke="#16a34a" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1460,1342 L 1460.0,1342.5 Q 1460,1343 1460.5,1343.0 L 1580,1343" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1460" cy="1342" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1580" cy="1343" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1590" y="1348" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#333">green   NO            -&gt;  J1-7</text>
+<path d="M 1500,1368 L 1500.0,1379.0 Q 1500,1389 1510.0,1389.0 L 1580,1389" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1500,1368 L 1500.0,1379.0 Q 1500,1389 1510.0,1389.0 L 1580,1389" fill="none" stroke="#1e63d6" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1500,1368 L 1500.0,1379.0 Q 1500,1389 1510.0,1389.0 L 1580,1389" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1500" cy="1368" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1580" cy="1389" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1590" y="1394" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#333">blue    C             -&gt;  J1-9</text>
+<path d="M 1459,1425 L 1580,1425" fill="none" stroke="#00000075" stroke-width="6.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1459,1425 L 1580,1425" fill="none" stroke="#111111" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1459,1425 L 1580,1425" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="1459" cy="1425" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="1580" cy="1425" r="3.25" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<text xml:space="preserve" x="1590" y="1430" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#333">black   LED bottom tab -&gt;  J1-8  (LED-)</text>
+<text xml:space="preserve" x="1815.0" y="1460" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#a32020">Not from a datasheet - confirm with a meter (checklist step 1) before relying on it.</text>
+<rect x="1290" y="1494" width="1050" height="444" rx="12" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+<text xml:space="preserve" x="1308" y="1524" font-family="Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#222">Safety notes - numbered markers on the diagram</text>
+<circle cx="1318" cy="1551" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1318" y="1556" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">1</text>
+<text xml:space="preserve" x="1342" y="1556" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">YYLOCK-2 trigger.</text>
+<text xml:space="preserve" x="1342" y="1575" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">The button does not signal the Nano. Pressing it puts +12V on the module's own DC+ supply; IN is jumpered to DC+ (the maker lists IN as a</text>
+<text xml:space="preserve" x="1342" y="1592" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">positive, high-level trigger). In mode P-3 the relay closes at once, stays on for the set time, then opens and stays off. Bench-tested (README).</text>
+<circle cx="1318" cy="1615" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1318" y="1620" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">2</text>
+<text xml:space="preserve" x="1342" y="1620" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Fuses.</text>
+<text xml:space="preserve" x="1342" y="1639" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">F1 sits in the +12V feed before J2-5, as close to the supply as possible. Its rating is set from the motors' measured stall current and must not</text>
+<text xml:space="preserve" x="1342" y="1656" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">exceed what 16 AWG wire can carry - not yet decided (README open item). F2 is 1A on the buck converter's red input lead.</text>
+<circle cx="1318" cy="1679" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1318" y="1684" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">3</text>
+<text xml:space="preserve" x="1342" y="1684" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Polarity.</text>
+<text xml:space="preserve" x="1342" y="1703" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">The Cytron MDD10A has no reverse-polarity protection: B+ must get the switched +12V from YYLOCK NO, B- must go to ground. Check before</text>
+<text xml:space="preserve" x="1342" y="1720" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">power-up. The YYLOCK relay is labelled 30A, but the module has not been tested at the motors' stall current yet.</text>
+<circle cx="1318" cy="1743" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1318" y="1748" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">4</text>
+<text xml:space="preserve" x="1342" y="1748" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">No movement at start-up.</text>
+<text xml:space="preserve" x="1342" y="1767" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">For about a second while the Nano boots, D5/D6 float. R1/R2 (10k) hold PWM1/PWM2 low, and PWM low = motor stopped whatever DIR</text>
+<text xml:space="preserve" x="1342" y="1784" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">is (Cytron manual). Solder them across the cable wires at the Cytron plug and heat-shrink. The firmware then drives the pins LOW in setup().</text>
+<circle cx="1318" cy="1807" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1318" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">5</text>
+<text xml:space="preserve" x="1342" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Two separate groups on J1.</text>
+<text xml:space="preserve" x="1342" y="1831" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">J1-1 to J1-5: switch panel, 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2 only. No pushbutton wire</text>
+<text xml:space="preserve" x="1342" y="1848" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">goes to a Nano pin. The only thing on the Nano's 5V pin is the buck converter's regulated 5V output.</text>
+<circle cx="1318" cy="1871" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
+<text xml:space="preserve" x="1318" y="1876" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">6</text>
+<text xml:space="preserve" x="1342" y="1876" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Grounds.</text>
+<text xml:space="preserve" x="1342" y="1895" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">All grounds meet at the WAGO (5 ports): Cytron B-, Nano GND, buck input -, J2-6 GND in, YYLOCK DC-. Nano analog-row GND: switch PIN 4 +</text>
+<text xml:space="preserve" x="1342" y="1912" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">buck output -. Nano digital-row GND: KF2510 orange + wire to the WAGO. YYLOCK DC-: WAGO wire + button LED-.</text>
+<rect x="1290" y="1958" width="1050" height="92" rx="12" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+<text xml:space="preserve" x="1308" y="1988" font-family="Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#222">Wires per screw terminal (count them when you check)</text>
+<text xml:space="preserve" x="1308" y="2014" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">YYLOCK DC+: 3 (button NO, self-latch, IN jumper)   |   YYLOCK NO: 3 (Cytron B+, self-latch, F2/buck)   |   COM: 1   |   IN: 1 (jumper)</text>
+<text xml:space="preserve" x="1308" y="2034" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">YYLOCK DC-: 2 (WAGO, LED-)   |   J1-7: 2 (button NO, link)   |   J2-5 inside: 2 (COM, button C)   |   Nano GND pins: 2 each   |   WAGO: 1 per port</text>
+<rect x="40" y="2172" width="1220" height="228" rx="12" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+<text xml:space="preserve" x="58" y="2202" font-family="Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#222">Before the first power-up</text>
+<rect x="1220" y="2217" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2230" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#222">1  Button: with the plug on, meter blue-green beeps only while pressed; blue-yellow beeps when released. Diode test red/black to find LED +.</text>
+<rect x="1220" y="2241" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2254" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#222">2  Check every row of the wiring list by continuity, terminal to terminal, and tick it. Tug-test every screw terminal and WAGO lever.</text>
+<rect x="1220" y="2265" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2278" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#222">3  No supply connected: J2-5 to J2-6 must NOT read near 0 ohms. Cytron B+ to B- must not read near 0 ohms.</text>
+<rect x="1220" y="2289" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2302" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#222">4  Fit F1 (rating decided from stall current) and F2 (1A). Confirm the vehicle feed polarity at the J2 plug before connecting it.</text>
+<rect x="1220" y="2313" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2326" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#222">5  First power-up with motor plugs J2-1..4 disconnected: press the button - relay clicks, Nano LED on, Nano 5V pin reads 4.75-5.25V.</text>
+<rect x="1220" y="2337" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2350" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#222">6  Still without motors: meter M1A-M1B and M2A-M2B read 0V at rest, about 12V only while a seat switch is held, 0V again on release.</text>
+<rect x="1220" y="2361" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
+<text xml:space="preserve" x="60" y="2374" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#222">7  Connect the motors and test each direction; confirm the 8 s run cutoff and that the YYLOCK switches everything off after its set time.</text>
+</svg>
