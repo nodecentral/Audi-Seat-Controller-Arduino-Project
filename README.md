@@ -214,6 +214,23 @@ Changes from the earlier drawings below:
   goes to YYLOCK `DC-`.
 - **New parts:** R1/R2 pull-downs on `PWM1`/`PWM2`, plus fuses F1 and F2.
 
+### Optimised design (prototype, not built yet)
+
+<img src="images/enclosure-wiring-optimised.png" width="900" alt="Optimised enclosure wiring: the current build plus diode D1 in the self-latch wire, capacitor C1 across the YYLOCK-2 DC+/DC-, a 0.96 inch I2C OLED on A4/A5 with recline moved to A0, and a second WAGO for logic grounds">
+
+A future version of the build above, with three additions. It hasn't been built or tested, so
+keep building from the diagram above for now.
+- **D1** (1N5819) in the self-latch wire, so the wake button only has to power the YYLOCK-2. At
+  the moment, through the self-latch wire, it also feeds the Cytron, buck converter and Nano until
+  the relay closes. That's the likely reason a light press doesn't always work.
+- **C1** (330µF 25V) across the YYLOCK-2's `DC+`/`DC-`, to stretch a short or bouncy press.
+- **A 0.96" I2C OLED** in a lid window. It uses A4/A5, so recline moves to A0. A second WAGO
+  (WAGO B) takes the logic grounds.
+
+J1, J2 and the whole 12V side are unchanged, so the same harness fits. Details, row-by-row
+changes and the extra checks are in [`WIRING-OPTIMISED.md`](WIRING-OPTIMISED.md). The firmware
+changes for the display aren't written yet.
+
 ### Earlier drawings (superseded)
 
 The drawings below predate the enclosure diagram above. They don't show the pushbutton LED,
