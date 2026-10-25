@@ -498,6 +498,23 @@ placeholder thresholds) all wait on that decision being revisited.
   wired, tested, and working, and it gives a bit of extra regulation headroom as a safeguard over
   relying on the Nano's own onboard regulator. Worth exploring properly on the second build (a
   second instance of this whole project is planned) rather than reworking the proven one.
+- **Idea, parked:** a 0.96" 128×64 I2C OLED (Elegoo, SSD1306-type, 3–5V) in a window in the
+  enclosure lid.
+  - **What it could show:** time left before the YYLOCK-2 switches off (counted from the Nano's
+    uptime, since the timer starts at power-on and isn't extended by a re-press), which axis is
+    moving, the 8 s cutoff tripping, and raw switch readings for measuring PINs 1/2.
+  - **Pin clash with recline:** I2C on the Nano is fixed to A4 (SDA) and A5 (SCL), so recline
+    would move from A5 to A0. It can't go to A6/A7, which don't support `INPUT_PULLUP`. That's one
+    wire on J1 and one line in the firmware.
+  - **Power and wiring:** VCC from the Nano's 5V pin (about 12mA). Its ground needs a free point:
+    the Nano GND terminals already hold 2 wires each and the WAGO is full, so it needs a WAGO
+    add-on.
+  - **Cable length:** keep the I2C cable short, under about 30cm. It isn't suitable for a remote
+    dash mount.
+  - **Library:** use a light one (SSD1306Ascii, or U8g2 in page mode); the Adafruit library's
+    1KB buffer is half the Nano's RAM.
+  - **Soldering:** the modules have bare pads, so solder wires directly for vibration resistance,
+    or buy a pre-soldered or JST-connector version.
 - Decide on and mount the pushbutton location (dashboard vs. seat).
 - Vehicle power source: a fused 12V feed already exists from the main board into a fuse box.
   **Add a dedicated small inline fuse there for this circuit specifically** — the upstream fuse
