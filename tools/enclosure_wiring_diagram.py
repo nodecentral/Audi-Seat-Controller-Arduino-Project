@@ -143,12 +143,12 @@ YR = {n: (x, YY0+17) for n, x in [('COM', 1120), ('NO', 1200), ('NC', 1280)]}   
 YD = {n: (x, YY1-17) for n, x in [('DC+', 1145), ('DC-', 1200), ('IN', 1255)]}   # confirmed from product image
 
 # ================= wires =================
-# --- switch panel -> Nano analog row (J1-4 = PIN5, J1-5 = PIN4 so nothing crosses)
+# --- switch panel -> Nano analog row. J1 pin n = switch panel PIN n (easy to wire); PIN 4 and PIN 5 cross inside the box
 wire([JI1(1), (150, J1[1][1]), (150, NL['A1'][1]), NL['A1']], PARK, 4, '10 6')
 wire([JI1(2), (138, J1[2][1]), (138, NL['A2'][1]), NL['A2']], PARK, 4, '10 6')
 wire([JI1(3), (126, J1[3][1]), (126, NL['A3'][1]), NL['A3']], SIG, 4)
-wire([JI1(4), (114, J1[4][1]), (114, NL['A5'][1]), NL['A5']], '#43aa8b', 4)
-wire([JI1(5), (102, J1[5][1]), (102, NL['GND'][1]-3), (NL['GND'][0], NL['GND'][1]-3)], GND, 4)
+wire([JI1(4), (102, J1[4][1]), (102, NL['GND'][1]-3), (NL['GND'][0], NL['GND'][1]-3)], GND, 4)   # PIN 4 -> Nano GND
+wire([JI1(5), (114, J1[5][1]), (114, NL['A5'][1]), NL['A5']], '#43aa8b', 4)                       # PIN 5 -> A5
 a(f'<path d="M 30,{J1[6][1]} C 54,{J1[6][1]+8} 54,{J1[7][1]-8} 30,{J1[7][1]}" fill="none" stroke="#e0457b" stroke-width="4"/>')
 text(58, J1[6][1]+24, 'link', 10, 'start', 'bold', '#ffd6e5')
 # --- buck out -> Nano 5V / GND
@@ -228,8 +228,8 @@ for i, p in enumerate(WP): a(f'<circle cx="{p[0]}" cy="{p[1]}" r="4" fill="#555"
 
 # ---- terminal labels (outside)
 ext1 = [('Switch PIN 1', 'front tilt - parked (A1)', PARK, True), ('Switch PIN 2', 'rear tilt - parked (A2)', PARK, True),
-        ('Switch PIN 3', 'fore / aft (A3)', SIG, False), ('Switch PIN 5', 'recline (A5)', '#43aa8b', False),
-        ('Switch PIN 4', 'switch common GND -> Nano GND', GND, False), ('Pushbutton LED +  (red)', 'linked to J1-7 on the block', '#e53935', False),
+        ('Switch PIN 3', 'fore / aft (A3)', SIG, False), ('Switch PIN 4', 'switch common GND -> Nano GND', GND, False),
+        ('Switch PIN 5', 'recline (A5)', '#43aa8b', False), ('Pushbutton LED +  (red)', 'linked to J1-7 on the block', '#e53935', False),
         ('Pushbutton NO  (green)', '-> YYLOCK DC+', '#16a34a', False), ('Pushbutton LED -  (black)', '-> YYLOCK DC-', '#111111', False),
         ('Pushbutton C  (blue)', '+12V permanent (from J2-5)', '#1e63d6', False)]
 a('<rect x="-330" y="228" width="292" height="204" rx="8" fill="#e6f4f1"/>')
@@ -284,8 +284,8 @@ rows = [
  ('W1', 'J1-1  switch PIN 1', 'Nano A1', 'parked - front tilt, no driver yet'),
  ('W2', 'J1-2  switch PIN 2', 'Nano A2', 'parked - rear tilt, no driver yet'),
  ('W3', 'J1-3  switch PIN 3', 'Nano A3', 'fore / aft'),
- ('W4', 'J1-4  switch PIN 5', 'Nano A5', 'recline  (note: PIN 5 on J1-4)'),
- ('W5', 'J1-5  switch PIN 4', 'Nano GND (analog row)', 'switch common'),
+ ('W4', 'J1-4  switch PIN 4', 'Nano GND (analog row)', 'switch common'),
+ ('W5', 'J1-5  switch PIN 5', 'Nano A5', 'recline'),
  ('Pushbutton  (22 AWG, 12V only - never to a Nano pin)', None),
  ('W6', 'J1-6  (red, LED+)', 'J1-7  short link on the block', 'LED fed from the NO line'),
  ('W7', 'J1-7  (green, NO)', 'YYLOCK DC+', 'button powers the module'),
@@ -366,7 +366,7 @@ notes = [
  (2, 'Fuses.', 'F1 sits in the +12V feed before J2-5, as close to the supply as possible. Its rating is set from the motors\' measured stall current and must not', 'exceed what 16 AWG wire can carry - not yet decided (README open item). F2 is 1A on the buck converter\'s red input lead.'),
  (3, 'Polarity.', 'The Cytron MDD10A has no reverse-polarity protection: B+ must get the switched +12V from YYLOCK NO, B- must go to ground. Check before', 'power-up. The YYLOCK relay is labelled 30A, but the module has not been tested at the motors\' stall current yet.'),
  (4, 'No movement at start-up.', 'For about a second while the Nano boots, D5/D6 float. R1/R2 (10k) hold PWM1/PWM2 low, and PWM low = motor stopped whatever DIR', 'is (Cytron manual). Solder them across the cable wires at the Cytron plug and heat-shrink. The firmware then drives the pins LOW in setup().'),
- (5, 'Two separate groups on J1.', 'J1-1 to J1-5: switch panel, 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2 only. No pushbutton wire', 'goes to a Nano pin. The only thing on the Nano\'s 5V pin is the buck converter\'s regulated 5V output.'),
+ (5, 'Two separate groups on J1.', 'J1-1 to J1-5: switch panel PIN 1-5 in order (J1 pin = switch pin), 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2', 'only. No pushbutton wire goes to a Nano pin. The only thing on the Nano\'s 5V pin is the buck converter\'s regulated 5V output.'),
  (6, 'Grounds.', 'All grounds meet at the WAGO (5 ports): Cytron B-, Nano GND, buck input -, J2-6 GND in, YYLOCK DC-. Nano analog-row GND: switch PIN 4 +', 'buck output -. Nano digital-row GND: KF2510 orange + wire to the WAGO. YYLOCK DC-: WAGO wire + button LED-.'),
 ]
 panel(RX, P2, RW, 60 + len(notes)*64, 'Safety notes - numbered markers on the diagram')

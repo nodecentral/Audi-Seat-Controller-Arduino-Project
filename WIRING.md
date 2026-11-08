@@ -27,8 +27,10 @@ Use this together with [`images/enclosure-wiring.png`](images/enclosure-wiring.p
 | J1-1 | switch panel PIN 1 (front tilt, parked) | 5V logic |
 | J1-2 | switch panel PIN 2 (rear tilt, parked) | 5V logic |
 | J1-3 | switch panel PIN 3 (fore/aft) | 5V logic |
-| J1-4 | switch panel PIN 5 (recline). Note: PIN 5 is on J1-4 | 5V logic |
-| J1-5 | switch panel PIN 4 (switch common ground) | ground |
+| J1-4 | switch panel PIN 4 (switch common ground) | ground |
+| J1-5 | switch panel PIN 5 (recline) | 5V logic |
+
+J1-1 to J1-5 match the switch panel's PIN 1 to PIN 5 in order (J1-n = PIN n), so the harness side wires straight across. PIN 4 and PIN 5 cross over inside the box instead.
 | J1-6 | pushbutton LED+ (red) | 12V |
 | J1-7 | pushbutton NO (green) | 12V |
 | J1-8 | pushbutton LED- (black) | ground |
@@ -51,8 +53,8 @@ Pushbutton NC (yellow) is not used; insulate its end.
 | W1 | J1-1 | Nano A1 | 22 AWG | parked axis |
 | W2 | J1-2 | Nano A2 | 22 AWG | parked axis |
 | W3 | J1-3 | Nano A3 | 22 AWG | |
-| W4 | J1-4 | Nano A5 | 22 AWG | |
-| W5 | J1-5 | Nano GND (analog-side row) | 22 AWG | |
+| W4 | J1-4 | Nano GND (analog-side row) | 22 AWG | |
+| W5 | J1-5 | Nano A5 | 22 AWG | |
 | W6 | J1-6 | J1-7 | short link on the terminal block | LED+ is fed from the NO line |
 | W7 | J1-7 | YYLOCK DC+ | 22 AWG | button powers the module |
 | W8 | J1-8 | YYLOCK DC- | 22 AWG | |
@@ -91,7 +93,7 @@ Pushbutton NC (yellow) is not used; insulate its end.
 | YYLOCK DC- | 2: W8, W20 |
 | J1-7 | 2: W6, W7 |
 | J2-5 inside | 2: W9, W10 |
-| Nano GND, analog-side row | 2: W5, W24 |
+| Nano GND, analog-side row | 2: W4, W24 |
 | Nano GND, digital-side row | 2: W29, W30 |
 | WAGO | 5 ports: W12, W13, W20, W22, W30 |
 
