@@ -161,13 +161,13 @@ YR = {n: (x, YY0+17) for n, x in [('COM', 1120), ('NO', 1200), ('NC', 1280)]}   
 YD = {n: (x, YY1-17) for n, x in [('DC+', 1145), ('DC-', 1200), ('IN', 1255)]}   # confirmed from product image
 
 # ================= wires =================
-# --- switch panel -> Nano analog row. Recline (J1-4) moves A5 -> A0 because A4/A5 are the I2C pins.
+# --- switch panel -> Nano analog row. J1 pin n = switch panel PIN n. Recline (J1-5) moves A5 -> A0 because A4/A5 are the I2C pins.
 # J1 itself is unchanged, so the existing harness still fits.
 wire([JI1(1), (150, J1[1][1]), (150, NL['A1'][1]), NL['A1']], PARK, 4, '10 6')
 wire([JI1(2), (138, J1[2][1]), (138, NL['A2'][1]), NL['A2']], PARK, 4, '10 6')
 wire([JI1(3), (126, J1[3][1]), (126, NL['A3'][1]), NL['A3']], SIG, 4)
-wire([JI1(4), (166, J1[4][1]), (166, NL['A0'][1]), NL['A0']], '#43aa8b', 4)
-wire([JI1(5), (94, J1[5][1]), (94, 792), (WB[0][0], 792), WB[0]], GND, 4)                     # PIN4 -> WAGO B
+wire([JI1(4), (94, J1[4][1]), (94, 792), (WB[0][0], 792), WB[0]], GND, 4)                     # PIN 4 -> WAGO B
+wire([JI1(5), (102, J1[5][1]), (102, NL['A0'][1]), NL['A0']], '#43aa8b', 4)                    # PIN 5 (recline) -> A0
 a(f'<path d="M 30,{J1[6][1]} C 54,{J1[6][1]+8} 54,{J1[7][1]-8} 30,{J1[7][1]}" fill="none" stroke="#e0457b" stroke-width="4"/>')
 text(58, J1[6][1]+24, 'link', 10, 'start', 'bold', '#ffd6e5')
 # --- buck out -> Nano 5V / GND
@@ -279,8 +279,8 @@ for i, p in enumerate(WP): a(f'<circle cx="{p[0]}" cy="{p[1]}" r="4" fill="#555"
 
 # ---- terminal labels (outside)
 ext1 = [('Switch PIN 1', 'front tilt - parked (A1)', PARK, True), ('Switch PIN 2', 'rear tilt - parked (A2)', PARK, True),
-        ('Switch PIN 3', 'fore / aft (A3)', SIG, False), ('Switch PIN 5', 'recline (now A0)', '#43aa8b', False),
-        ('Switch PIN 4', 'switch common GND -> WAGO B', GND, False), ('Pushbutton LED +  (red)', 'linked to J1-7 on the block', '#e53935', False),
+        ('Switch PIN 3', 'fore / aft (A3)', SIG, False), ('Switch PIN 4', 'switch common GND -> WAGO B', GND, False),
+        ('Switch PIN 5', 'recline (now A0)', '#43aa8b', False), ('Pushbutton LED +  (red)', 'linked to J1-7 on the block', '#e53935', False),
         ('Pushbutton NO  (green)', '-> YYLOCK DC+', '#16a34a', False), ('Pushbutton LED -  (black)', '-> YYLOCK DC-', '#111111', False),
         ('Pushbutton C  (blue)', '+12V permanent (from J2-5)', '#1e63d6', False)]
 a('<rect x="-330" y="228" width="292" height="204" rx="8" fill="#e6f4f1"/>')
@@ -335,8 +335,8 @@ rows = [
  ('W1', 'J1-1  switch PIN 1', 'Nano A1', 'parked - front tilt, no driver yet'),
  ('W2', 'J1-2  switch PIN 2', 'Nano A2', 'parked - rear tilt, no driver yet'),
  ('W3', 'J1-3  switch PIN 3', 'Nano A3', 'fore / aft'),
- ('W4', 'J1-4  switch PIN 5', 'Nano A0', 'CHANGED (was A5) - recline'),
- ('W5', 'J1-5  switch PIN 4', 'WAGO B', 'CHANGED (was Nano GND)'),
+ ('W4', 'J1-4  switch PIN 4', 'WAGO B', 'CHANGED (was Nano GND)'),
+ ('W5', 'J1-5  switch PIN 5', 'Nano A0', 'CHANGED (was A5) - recline'),
  ('Pushbutton  (22 AWG, 12V only - never to a Nano pin)', None),
  ('W6', 'J1-6  (red, LED+)', 'J1-7  short link on the block', 'LED fed from the NO line'),
  ('W7', 'J1-7  (green, NO)', 'YYLOCK DC+', 'button wakes the module'),
@@ -426,7 +426,7 @@ notes = [
  (2, 'Fuses.', 'F1 sits in the +12V feed before J2-5, as close to the supply as possible, rated from the motors\' measured stall current and no more than 16 AWG', 'wire can carry - not yet decided (WIRING.md test T1). F2 is 1A on the buck converter\'s red input lead.'),
  (3, 'Polarity.', 'The Cytron MDD10A has no reverse-polarity protection: B+ must get the switched +12V from YYLOCK NO, B- must go to ground. D1 and C1 are', 'polarised too: D1 stripe towards DC+, C1 + leg to DC+. Fitted backwards, D1 stops the latch holding; C1 can fail and vent.'),
  (4, 'No movement at start-up.', 'R1/R2 (10k) hold PWM1/PWM2 low while the Nano boots; PWM low = motor stopped whatever DIR is (Cytron manual). The firmware must', 'set up the motor pins before it starts the display, so a slow or missing OLED can never delay that.'),
- (5, 'Two separate groups on J1.', 'J1-1 to J1-5: switch panel, 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2 only. J1 is identical to the current', 'build, so the same harness plugs in. Only the wire behind J1-4 moves inside the box (A5 to A0).'),
+ (5, 'Two separate groups on J1.', 'J1-1 to J1-5: switch panel, 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2 only. J1 is identical to the current', 'build, so the same harness plugs in. Only the wire behind J1-5 moves inside the box (A5 to A0).'),
  (6, 'Grounds - two WAGOs.', 'WAGO A (power, 5 ports): Cytron B-, Nano GND, buck input -, J2-6 GND in, YYLOCK DC-. WAGO B (logic, 4 of 5 ports): switch PIN 4,', 'buck output -, OLED GND, and the link to the Nano\'s analog-row GND. Both meet through the Nano\'s two GND pins, which are joined on the board.'),
  (7, 'Easier wake: D1 and C1.', 'Without D1, the self-latch wire lets the button also feed NO - the Cytron, buck and Nano - until the relay closes. D1 (1N5819) blocks that, so a', 'press only has to wake the YYLOCK. C1 then holds DC+ up for a moment if the contact is short or bouncy. Untested: confirm with test T3.'),
  (8, 'OLED (prototype).', 'I2C is fixed to A4 (SDA) / A5 (SCL), so recline moves to A0 (A6/A7 can\'t use INPUT_PULLUP). Needs new firmware: use a light library', '(SSD1306Ascii or U8g2 page mode - 2KB RAM). Shown from the back as mounted in the lid, so its pin order is reversed: SDA, SCL, VCC, GND.'),
@@ -468,7 +468,7 @@ for t in steps:
     text(60, yy, t, 12, 'start', 'normal', '#222'); yy += 24
 P5 = P4
 chg = ['Parts to add: D1 1N5819, C1 330uF 25V (105C rated preferred), 0.96in I2C OLED, one more WAGO 221-415 (WAGO B), 22 AWG wire.',
-       'Wires that move: J1-4 recline A5 -> A0 (inside the box only), switch PIN 4 and buck B out from the Nano GND to WAGO B.',
+       'Wires that move: J1-5 recline A5 -> A0 (inside the box only), switch PIN 4 (J1-4) and buck B out from the Nano GND to WAGO B.',
        'Wires added: WAGO B -> Nano GND, OLED SDA/SCL/VCC/GND. The self-latch wire gets D1 in line; C1 goes under the blue DC block.',
        'Firmware: recline pin A5 -> A0, plus display code. The enclosure plugs (J1, J2) and everything on the 12V side stay exactly as built.']
 panel(RX, P5, RW, 60 + len(chg)*22, 'What changes from the current build')

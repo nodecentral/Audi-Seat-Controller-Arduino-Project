@@ -51,8 +51,8 @@ The Nano's two GND terminals already hold two wires each, so the OLED's ground n
 ## What changes, row by row
 | # | From | To | Change |
 |---|---|---|---|
-| W4 | J1-4 (switch PIN 5, recline) | Nano A0 | moved from A5 (inside the box only) |
-| W5 | J1-5 (switch PIN 4) | WAGO B | moved from Nano GND |
+| W4 | J1-4 (switch PIN 4) | WAGO B | moved from Nano GND |
+| W5 | J1-5 (switch PIN 5, recline) | Nano A0 | moved from A5 (inside the box only) |
 | W18 | YYLOCK NO | D1, then YYLOCK DC+ | D1 in line, band towards DC+ |
 | C1 | YYLOCK DC+ (C1 +) | YYLOCK DC- (C1 −) | new, soldered under the DC block |
 | W24 | buck B (output −) | WAGO B | moved from Nano GND |
@@ -73,7 +73,7 @@ All other rows (W1–W3, W6–W17, W19–W23, W25–W30, R1, R2) are exactly as 
 | Nano GND, analog-side row | 1: W31 |
 | Nano GND, digital-side row | 2: W29, W30 (unchanged) |
 | WAGO A | 5 of 5 (unchanged) |
-| WAGO B | 4 of 5: W5, W24, W31, W35, plus 1 spare |
+| WAGO B | 4 of 5: W4, W24, W31, W35, plus 1 spare |
 | Nano A0, A4, A5 | 1 each |
 
 ## Firmware changes needed (not written yet)

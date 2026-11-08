@@ -191,16 +191,16 @@
 <path d="M 42,330 L 115.0,330.0 Q 126,330 126.0,341.0 L 126.0,341.0 Q 126,352 137.0,352.0 L 188,352" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="42" cy="330" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="188" cy="352" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<path d="M 42,370 L 144.0,370.0 Q 166,370 166.0,348.0 L 166.0,282.0 Q 166,271 177.0,271.0 L 188,271" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,370 L 144.0,370.0 Q 166,370 166.0,348.0 L 166.0,282.0 Q 166,271 177.0,271.0 L 188,271" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,370 L 144.0,370.0 Q 166,370 166.0,348.0 L 166.0,282.0 Q 166,271 177.0,271.0 L 188,271" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<path d="M 42,370 L 72.0,370.0 Q 94,370 94.0,392.0 L 94.0,781.5 Q 94,792 104.5,792.0 L 111.0,792.0 Q 115,792 115.0,796.0 L 115,800" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,370 L 72.0,370.0 Q 94,370 94.0,392.0 L 94.0,781.5 Q 94,792 104.5,792.0 L 111.0,792.0 Q 115,792 115.0,796.0 L 115,800" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,370 L 72.0,370.0 Q 94,370 94.0,392.0 L 94.0,781.5 Q 94,792 104.5,792.0 L 111.0,792.0 Q 115,792 115.0,796.0 L 115,800" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="42" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<circle cx="188" cy="271" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<path d="M 42,410 L 72.0,410.0 Q 94,410 94.0,432.0 L 94.0,781.5 Q 94,792 104.5,792.0 L 111.0,792.0 Q 115,792 115.0,796.0 L 115,800" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,410 L 72.0,410.0 Q 94,410 94.0,432.0 L 94.0,781.5 Q 94,792 104.5,792.0 L 111.0,792.0 Q 115,792 115.0,796.0 L 115,800" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,410 L 72.0,410.0 Q 94,410 94.0,432.0 L 94.0,781.5 Q 94,792 104.5,792.0 L 111.0,792.0 Q 115,792 115.0,796.0 L 115,800" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
-<circle cx="42" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="115" cy="800" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,388.0 L 102.0,293.0 Q 102,271 124.0,271.0 L 188,271" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,388.0 L 102.0,293.0 Q 102,271 124.0,271.0 L 188,271" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,388.0 L 102.0,293.0 Q 102,271 124.0,271.0 L 188,271" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="271" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <path d="M 30,450 C 54,458 54,482 30,490" fill="none" stroke="#e0457b" stroke-width="4"/>
 <text xml:space="preserve" x="58" y="474" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#ffd6e5">link</text>
 <path d="M 210,654 L 210.0,638.0 Q 210,622 194.0,622.0 L 176.0,622.0 Q 154,622 154.0,600.0 L 154.0,508.0 Q 154,491 171.0,491.0 L 188,491" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
@@ -594,19 +594,19 @@
 <text xml:space="preserve" x="-115" y="329" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">3  Switch PIN 3</text>
 <text xml:space="preserve" x="-115" y="344" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">fore / aft (A3)</text>
 <path d="M -30,370 L -105,370" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M -30,370 L -105,370" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,370 L -105,370" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,370 L -105,370" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="-30" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="-105" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<text xml:space="preserve" x="-115" y="369" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">4  Switch PIN 5</text>
-<text xml:space="preserve" x="-115" y="384" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">recline (now A0)</text>
+<text xml:space="preserve" x="-115" y="369" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">4  Switch PIN 4</text>
+<text xml:space="preserve" x="-115" y="384" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">switch common GND -&gt; WAGO B</text>
 <path d="M -30,410 L -105,410" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M -30,410 L -105,410" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,410 L -105,410" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,410 L -105,410" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="-30" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="-105" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<text xml:space="preserve" x="-115" y="409" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">5  Switch PIN 4</text>
-<text xml:space="preserve" x="-115" y="424" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">switch common GND -&gt; WAGO B</text>
+<text xml:space="preserve" x="-115" y="409" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">5  Switch PIN 5</text>
+<text xml:space="preserve" x="-115" y="424" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">recline (now A0)</text>
 <path d="M -30,450 L -105,450" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,450 L -105,450" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,450 L -105,450" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
@@ -746,15 +746,15 @@
 <rect x="1220" y="1395" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
 <rect x="52" y="1392" width="1196" height="22" rx="4" fill="#fff6d6"/>
 <text xml:space="preserve" x="60" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W4</text>
-<text xml:space="preserve" x="150" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-4  switch PIN 5</text>
-<text xml:space="preserve" x="450" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A0</text>
-<text xml:space="preserve" x="790" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#7a4b00">CHANGED (was A5) - recline</text>
+<text xml:space="preserve" x="150" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-4  switch PIN 4</text>
+<text xml:space="preserve" x="450" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">WAGO B</text>
+<text xml:space="preserve" x="790" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#7a4b00">CHANGED (was Nano GND)</text>
 <rect x="1220" y="1419" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
 <rect x="52" y="1416" width="1196" height="22" rx="4" fill="#fff6d6"/>
 <text xml:space="preserve" x="60" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W5</text>
-<text xml:space="preserve" x="150" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-5  switch PIN 4</text>
-<text xml:space="preserve" x="450" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">WAGO B</text>
-<text xml:space="preserve" x="790" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#7a4b00">CHANGED (was Nano GND)</text>
+<text xml:space="preserve" x="150" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-5  switch PIN 5</text>
+<text xml:space="preserve" x="450" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A0</text>
+<text xml:space="preserve" x="790" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#7a4b00">CHANGED (was A5) - recline</text>
 <rect x="52" y="1440" width="1196" height="22" rx="4" fill="#eef2f6"/>
 <text xml:space="preserve" x="60" y="1456" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#1d3557">Pushbutton  (22 AWG, 12V only - never to a Nano pin)</text>
 <rect x="1220" y="1467" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
@@ -996,7 +996,7 @@
 <text xml:space="preserve" x="1318" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">5</text>
 <text xml:space="preserve" x="1342" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Two separate groups on J1.</text>
 <text xml:space="preserve" x="1342" y="1831" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">J1-1 to J1-5: switch panel, 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2 only. J1 is identical to the current</text>
-<text xml:space="preserve" x="1342" y="1848" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">build, so the same harness plugs in. Only the wire behind J1-4 moves inside the box (A5 to A0).</text>
+<text xml:space="preserve" x="1342" y="1848" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">build, so the same harness plugs in. Only the wire behind J1-5 moves inside the box (A5 to A0).</text>
 <circle cx="1318" cy="1871" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
 <text xml:space="preserve" x="1318" y="1876" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">6</text>
 <text xml:space="preserve" x="1342" y="1876" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Grounds - two WAGOs.</text>
@@ -1038,7 +1038,7 @@
 <rect x="1290" y="2218" width="1050" height="148" rx="12" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
 <text xml:space="preserve" x="1308" y="2248" font-family="Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#222">What changes from the current build</text>
 <text xml:space="preserve" x="1308" y="2274" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">Parts to add: D1 1N5819, C1 330uF 25V (105C rated preferred), 0.96in I2C OLED, one more WAGO 221-415 (WAGO B), 22 AWG wire.</text>
-<text xml:space="preserve" x="1308" y="2296" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">Wires that move: J1-4 recline A5 -&gt; A0 (inside the box only), switch PIN 4 and buck B out from the Nano GND to WAGO B.</text>
+<text xml:space="preserve" x="1308" y="2296" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">Wires that move: J1-5 recline A5 -&gt; A0 (inside the box only), switch PIN 4 (J1-4) and buck B out from the Nano GND to WAGO B.</text>
 <text xml:space="preserve" x="1308" y="2318" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">Wires added: WAGO B -&gt; Nano GND, OLED SDA/SCL/VCC/GND. The self-latch wire gets D1 in line; C1 goes under the blue DC block.</text>
 <text xml:space="preserve" x="1308" y="2340" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">Firmware: recline pin A5 -&gt; A0, plus display code. The enclosure plugs (J1, J2) and everything on the 12V side stay exactly as built.</text>
 </svg>

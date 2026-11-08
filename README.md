@@ -207,8 +207,8 @@ T1–T4 that must pass before the seat motors run at full power. The diagram is 
 re-run it rather than editing the image.
 
 Changes from the earlier drawings below:
-- **J1/J2:** J1 (seat side) carries the switch panel on pins 1–5, which is 5V logic only. Switch
-  PIN 5 is on J1-4 and PIN 4 on J1-5. The pushbutton is on pins 6–9, which is 12V only. J2
+- **J1/J2:** J1 (seat side) carries the switch panel on pins 1–5, which is 5V logic only. J1
+  pins 1–5 match switch panel PINs 1–5 in order. The pushbutton is on pins 6–9, which is 12V only. J2
   (power side) carries both motors on pins 1–4, +12V in on 5 and ground on 6.
 - **Pushbutton LED:** LED+ is linked to the button's NO pin on J1 (lit while latched), and LED−
   goes to YYLOCK `DC-`.
