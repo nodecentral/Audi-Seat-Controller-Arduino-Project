@@ -173,16 +173,16 @@
 <path d="M 42,330 L 115.0,330.0 Q 126,330 126.0,341.0 L 126.0,341.0 Q 126,352 137.0,352.0 L 188,352" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="42" cy="330" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="188" cy="352" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<path d="M 42,370 L 96.0,370.0 Q 114,370 114.0,388.0 L 114.0,388.0 Q 114,406 132.0,406.0 L 188,406" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,370 L 96.0,370.0 Q 114,370 114.0,388.0 L 114.0,388.0 Q 114,406 132.0,406.0 L 188,406" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,370 L 96.0,370.0 Q 114,370 114.0,388.0 L 114.0,388.0 Q 114,406 132.0,406.0 L 188,406" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<path d="M 42,370 L 80.0,370.0 Q 102,370 102.0,392.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,370 L 80.0,370.0 Q 102,370 102.0,392.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,370 L 80.0,370.0 Q 102,370 102.0,392.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="42" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<circle cx="188" cy="406" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,432.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,432.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 42,410 L 80.0,410.0 Q 102,410 102.0,432.0 L 102.0,516.0 Q 102,538 124.0,538.0 L 188,538" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
-<circle cx="42" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="188" cy="538" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<path d="M 42,410 L 112.0,410.0 Q 114,410 114.0,408.0 L 114.0,408.0 Q 114,406 116.0,406.0 L 188,406" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,410 L 112.0,410.0 Q 114,410 114.0,408.0 L 114.0,408.0 Q 114,406 116.0,406.0 L 188,406" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 42,410 L 112.0,410.0 Q 114,410 114.0,408.0 L 114.0,408.0 Q 114,406 116.0,406.0 L 188,406" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
+<circle cx="42" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
+<circle cx="188" cy="406" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <path d="M 30,450 C 54,458 54,482 30,490" fill="none" stroke="#e0457b" stroke-width="4"/>
 <text xml:space="preserve" x="58" y="474" font-family="Helvetica, Arial, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#ffd6e5">link</text>
 <path d="M 205,664 L 205.0,644.5 Q 205,625 185.5,625.0 L 172.0,625.0 Q 150,625 150.0,603.0 L 150.0,506.0 Q 150,487 169.0,487.0 L 188,487" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
@@ -518,19 +518,19 @@
 <text xml:space="preserve" x="-115" y="329" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">3  Switch PIN 3</text>
 <text xml:space="preserve" x="-115" y="344" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">fore / aft (A3)</text>
 <path d="M -30,370 L -105,370" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M -30,370 L -105,370" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,370 L -105,370" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,370 L -105,370" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="-30" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="-105" cy="370" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<text xml:space="preserve" x="-115" y="369" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">4  Switch PIN 5</text>
-<text xml:space="preserve" x="-115" y="384" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">recline (A5)</text>
+<text xml:space="preserve" x="-115" y="369" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">4  Switch PIN 4</text>
+<text xml:space="preserve" x="-115" y="384" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">switch common GND -&gt; Nano GND</text>
 <path d="M -30,410 L -105,410" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M -30,410 L -105,410" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M -30,410 L -105,410" fill="none" stroke="#43aa8b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,410 L -105,410" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
 <circle cx="-30" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
 <circle cx="-105" cy="410" r="3.5" fill="#d9d9d9" stroke="#555" stroke-width="1"/>
-<text xml:space="preserve" x="-115" y="409" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">5  Switch PIN 4</text>
-<text xml:space="preserve" x="-115" y="424" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">switch common GND -&gt; Nano GND</text>
+<text xml:space="preserve" x="-115" y="409" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#222">5  Switch PIN 5</text>
+<text xml:space="preserve" x="-115" y="424" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#555" font-style="italic">recline (A5)</text>
 <path d="M -30,450 L -105,450" fill="none" stroke="#00000075" stroke-width="6.8" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,450 L -105,450" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M -30,450 L -105,450" fill="none" stroke="#ffffff38" stroke-width="1.2" stroke-linecap="round" transform="translate(-0.8,-0.8)"/>
@@ -669,14 +669,14 @@
 <text xml:space="preserve" x="790" y="1384" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">fore / aft</text>
 <rect x="1220" y="1395" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
 <text xml:space="preserve" x="60" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W4</text>
-<text xml:space="preserve" x="150" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-4  switch PIN 5</text>
-<text xml:space="preserve" x="450" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A5</text>
-<text xml:space="preserve" x="790" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">recline  (note: PIN 5 on J1-4)</text>
+<text xml:space="preserve" x="150" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-4  switch PIN 4</text>
+<text xml:space="preserve" x="450" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano GND (analog row)</text>
+<text xml:space="preserve" x="790" y="1408" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">switch common</text>
 <rect x="1220" y="1419" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
 <text xml:space="preserve" x="60" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">W5</text>
-<text xml:space="preserve" x="150" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-5  switch PIN 4</text>
-<text xml:space="preserve" x="450" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano GND (analog row)</text>
-<text xml:space="preserve" x="790" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">switch common</text>
+<text xml:space="preserve" x="150" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">J1-5  switch PIN 5</text>
+<text xml:space="preserve" x="450" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">Nano A5</text>
+<text xml:space="preserve" x="790" y="1432" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#222">recline</text>
 <rect x="52" y="1440" width="1196" height="22" rx="4" fill="#eef2f6"/>
 <text xml:space="preserve" x="60" y="1456" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#1d3557">Pushbutton  (22 AWG, 12V only - never to a Nano pin)</text>
 <rect x="1220" y="1467" width="14" height="14" rx="2" fill="#fff" stroke="#888"/>
@@ -877,8 +877,8 @@
 <circle cx="1318" cy="1807" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
 <text xml:space="preserve" x="1318" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">5</text>
 <text xml:space="preserve" x="1342" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Two separate groups on J1.</text>
-<text xml:space="preserve" x="1342" y="1831" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">J1-1 to J1-5: switch panel, 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2 only. No pushbutton wire</text>
-<text xml:space="preserve" x="1342" y="1848" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">goes to a Nano pin. The only thing on the Nano's 5V pin is the buck converter's regulated 5V output.</text>
+<text xml:space="preserve" x="1342" y="1831" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">J1-1 to J1-5: switch panel PIN 1-5 in order (J1 pin = switch pin), 5V logic, to the Nano. J1-6 to J1-9: pushbutton, 12V, to the YYLOCK/J2</text>
+<text xml:space="preserve" x="1342" y="1848" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#333">only. No pushbutton wire goes to a Nano pin. The only thing on the Nano's 5V pin is the buck converter's regulated 5V output.</text>
 <circle cx="1318" cy="1871" r="13" fill="#ffcc00" stroke="#111" stroke-width="2"/>
 <text xml:space="preserve" x="1318" y="1876" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">6</text>
 <text xml:space="preserve" x="1342" y="1876" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#222">Grounds.</text>
